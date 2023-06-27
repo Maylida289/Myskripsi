@@ -9,6 +9,10 @@ class AdminController extends Controller
 {
     public function data()
     {
-        return view('admin');
+        return view('operator.dashboard.dashboard');
+    }
+
+    public function mainOperator(){
+        return view('operator.main');
     }
 }

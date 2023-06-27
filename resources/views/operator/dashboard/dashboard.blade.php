@@ -1,4 +1,4 @@
-@extends('main')
+@extends('operator.main')
 
 @section('title', 'Dashboard')
 

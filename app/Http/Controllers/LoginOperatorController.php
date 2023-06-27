@@ -14,7 +14,7 @@ class LoginOperatorController extends Controller
 
     public function postlogin(Request $request){
         if(Auth::attempt($request->only('email','password'))){
-            return redirect('/admin') ->with('login-success', 'Login Berhasil');
+            return redirect('/operator') ->with('login-success', 'Login Berhasil');
         }    
         return redirect('login-operator')->with('login-failed', 'Email atau Password salah');
     }

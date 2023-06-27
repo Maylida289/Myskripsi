@@ -17,11 +17,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-//tampilan registrasi menggunakan template laravel
-Route::get('/main', function () {
-    return view('main');
-});
-
 // coba routing array assosoatif untuk edit blade tempalate di view
 route::get('/',function() {
     return view ('halo');
@@ -69,5 +64,7 @@ Route::get('login-operator', 'App\Http\Controllers\LoginOperatorController@login
 route::post('postlogin',[LoginOperatorController::class,'postlogin'])->name('post-login-operator');
 Route::get('logout', 'App\Http\Controllers\LoginOperatorController@logout');
 Route::group(['middleware' => ['auth','ceklevel:admin,admin-operator']], function () {
-    route::get('admin',[AdminController::class,'data'])->name('admin');    
+    route::get('operator',[AdminController::class,'data'])->name('operator');    
 });
+// Halaman utama Operator
+route::get('main-operator',[AdminController::class,'mainOperator'])->name('operator');  

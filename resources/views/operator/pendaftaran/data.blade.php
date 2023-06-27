@@ -1,4 +1,4 @@
-@extends('main')
+@extends('operator.main')
 
 @section('title', 'Pendaftaran TKI')
 @section('breadcrumbs')
@@ -70,10 +70,12 @@
                                     <td>{{ $item->alamat }}</td>
                                     <td>{{ $item->usia }}</td>
                                     <td class="text-center">
-                                        <a href="{{ url('pendaftarantki/edit/'.$item->id) }}" class="btn btn-primary btn-sm">
+                                        <a href="{{ url('pendaftarantki/edit/' . $item->id) }}"
+                                            class="btn btn-primary btn-sm">
                                             <i class="fa fa-pencil"></i>
                                         </a>
-                                        <form action="{{ url('pendaftarantki/' .$item->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Ingin Menghapus Data ?')">
+                                        <form action="{{ url('pendaftarantki/' . $item->id) }}" method="POST"
+                                            class="d-inline" onsubmit="return confirm('Ingin Menghapus Data ?')">
                                             @method('delete')
                                             @csrf
                                             <button class="btn btn-danger btn-sm">

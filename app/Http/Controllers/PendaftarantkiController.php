@@ -13,12 +13,12 @@ class PendaftarantkiController extends Controller
         $pendaftaran_tki = DB::table('pendaftaran_tki')->get();
 
         //return $pendaftaran_tki;
-        return view('pendaftaran.data',['pendaftaran_tki'=> $pendaftaran_tki]);
+        return view('operator.pendaftaran.data',['pendaftaran_tki'=> $pendaftaran_tki]);
     }
 
     public function add ()
     {
-        return view('pendaftaran.add');
+        return view('operator.pendaftaran.add');
     }
 
     public function addProcess (Request $request)
@@ -35,7 +35,7 @@ class PendaftarantkiController extends Controller
     public function edit ($id)
     {
         $editpendaftarantki = DB::table('pendaftaran_tki')->where('id', $id)->first();
-        return view('pendaftaran/edit', compact('editpendaftarantki'));
+        return view('operator/pendaftaran/edit', compact('editpendaftarantki'));
     }
 
     public function editProcess(Request $request, $id)

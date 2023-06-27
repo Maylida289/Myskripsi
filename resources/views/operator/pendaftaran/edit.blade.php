@@ -1,4 +1,4 @@
-@extends('main')
+@extends('operator.main')
 
 @section('title', 'Pendaftaran TKI')
 @section('breadcrumbs')
@@ -48,12 +48,13 @@
 
                     <div class="row">
                         <div class="col-md-4 offset-md-4">
-                            <form action="{{ url('pendaftarantki/' .$editpendaftarantki->id) }}" method="post">
+                            <form action="{{ url('pendaftarantki/' . $editpendaftarantki->id) }}" method="post">
                                 @method('patch')
                                 @csrf
                                 <div class="form-group">
                                     <label> Nama TKI</label>
-                                    <input type="text" name="nama" class="form-control" value="{{ $editpendaftarantki->nama }}" autofocus required>
+                                    <input type="text" name="nama" class="form-control"
+                                        value="{{ $editpendaftarantki->nama }}" autofocus required>
                                 </div>
                                 <div class="form-group">
                                     <label> Alamat</label>
@@ -61,7 +62,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label> Usia TKI</label>
-                                    <input type="number" name="usia" class="form-control" value="{{ $editpendaftarantki->usia }}" required>
+                                    <input type="number" name="usia" class="form-control"
+                                        value="{{ $editpendaftarantki->usia }}" required>
                                 </div>
                                 <button type="submit" class="btn btn-success">Save</button>
                             </form>
