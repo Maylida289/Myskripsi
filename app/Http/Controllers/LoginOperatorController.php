@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Log;
 class LoginOperatorController extends Controller
 {
     public function loginOperator(){
-        return view('login_operator.data');
+        return view('operator.login_operator.data');
     }
 
     public function postlogin(Request $request){
