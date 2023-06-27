@@ -20,6 +20,7 @@ class PendaftarantkiController extends Controller
     {
         return view('pendaftaran.add');
     }
+
     public function addProcess (Request $request)
     {
         //return $request;
@@ -30,6 +31,7 @@ class PendaftarantkiController extends Controller
         ]);
         return redirect('pendaftarantki')->with('status','Nama TKI Berhasil Ditambahkan');
     }
+    
     public function edit ($id)
     {
         $editpendaftarantki = DB::table('pendaftaran_tki')->where('id', $id)->first();
