@@ -9,6 +9,6 @@ class AdminController extends Controller
 {
     public function data()
     {
-        //return $admin;
+        return view('admin');
     }
 }

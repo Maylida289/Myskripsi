@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\PendaftaranTkiController;
+use App\Http\Controllers\LoginOperatorController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,9 +31,6 @@ Route::get('/contoh', function () {
     return view ('contoh');
 });
 
-Route::get('admin', function () {
-    return view('admin');
-});
 
 Route::get('p3mi', function () {
     return view('p3mi');
@@ -64,3 +63,11 @@ Route::delete('pendaftarantki/{id}','App\Http\Controllers\PendaftarantkiControll
 
 // untuk halaman pendaftaran p3mi
 Route::get('pendaftaranp3mi', 'App\Http\Controllers\Pendaftaranp3miController@data');
+
+// Login Operator
+Route::get('login-operator', 'App\Http\Controllers\LoginOperatorController@loginOperator');
+route::post('postlogin',[LoginOperatorController::class,'postlogin'])->name('post-login-operator');
+Route::get('logout', 'App\Http\Controllers\LoginOperatorController@logout');
+Route::group(['middleware' => ['auth','ceklevel:admin,admin-operator']], function () {
+    route::get('admin',[AdminController::class,'data'])->name('admin');    
+});

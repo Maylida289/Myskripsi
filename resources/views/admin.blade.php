@@ -4,6 +4,15 @@
 
 @section('breadcrumbs')
 
+    @if (session('login-success'))
+        <div class="alert alert-success">
+            {{ session('login-success') }}
+        </div>
+        @php
+            session()->flash('login-success');
+        @endphp
+    @endif
+
     <div class="breadcrumbs">
         <div class="col-sm-4">
             <div class="page-header float-left">
@@ -23,76 +32,75 @@
         </div>
     </div>
 
-        <!-- Main content -->
-        <section class="content">
-            <div class="container-fluid">
-              <!-- Small boxes (Stat box) -->
-              <div class="row">
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
                 <div class="col-lg-3 col-6">
-                  <!-- small box -->
-                  <div class="small-box bg-info">
-                    <div class="inner">
-                      <h3 style="margin-left: 10px; margin-top:10px">100</h3>
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3 style="margin-left: 10px; margin-top:10px">100</h3>
 
-                      <p style="color:antiquewhite; margin-left: 10px;">Total TKI</p>
+                            <p style="color:antiquewhite; margin-left: 10px;">Total TKI</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info</a>
                     </div>
-                    <div class="icon">
-                      <i class="ion ion-bag"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">More info</a>
-                  </div>
                 </div>
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
-                  <!-- small box -->
-                  <div class="small-box bg-success">
-                    <div class="inner">
-                      <h3 style="margin-left: 10px; margin-top:10px">53</h3>
+                    <!-- small box -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3 style="margin-left: 10px; margin-top:10px">53</h3>
 
-                      <p style="margin-left: 10px; color:antiquewhite">Medical</p>
+                            <p style="margin-left: 10px; color:antiquewhite">Medical</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-stats-bars"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info</a>
                     </div>
-                    <div class="icon">
-                      <i class="ion ion-stats-bars"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">More info</a>
-                  </div>
                 </div>
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
-                  <!-- small box -->
-                  <div class="small-box bg-warning">
-                    <div class="inner">
-                      <h3 style="margin-left: 10px; margin-top:10px">44</h3>
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3 style="margin-left: 10px; margin-top:10px">44</h3>
 
-                      <p style="color:antiquewhite; margin-left: 10px;">BLK</p>
+                            <p style="color:antiquewhite; margin-left: 10px;">BLK</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info</a>
                     </div>
-                    <div class="icon">
-                      <i class="ion ion-person-add"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">More info</a>
-                  </div>
                 </div>
 
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
-                  <!-- small box -->
-                  <div class="small-box bg-danger">
-                    <div class="inner">
-                      <h3 style="margin-left: 10px; margin-top:10px">65</h3>
+                    <!-- small box -->
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3 style="margin-left: 10px; margin-top:10px">65</h3>
 
-                      <p style="color:antiquewhite; margin-left: 10px;">Berangkat</p>
+                            <p style="color:antiquewhite; margin-left: 10px;">Berangkat</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info</a>
                     </div>
-                    <div class="icon">
-                      <i class="ion ion-pie-graph"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">More info</a>
-                  </div>
                 </div>
 
                 <!-- ./col -->
-              </div>
             </div>
-        </section>
+        </div>
+    </section>
 
 @endsection
-
