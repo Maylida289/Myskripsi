@@ -45,6 +45,9 @@
                     <li>
                         <a href="{{url('pendaftaranp3mi')}}"> <i class="menu-icon fa fa-puzzle-piece"></i>Pendaftaran P3MI </a>
                     </li>
+                    <li>
+                        <a href="{{ url('admin') }}"> <i class="menu-icon fa fa-puzzle-piece"></i> Hasil Validasi Berkas TKI </a>
+                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>

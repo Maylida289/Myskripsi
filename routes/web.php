@@ -37,6 +37,14 @@ Route::get('p3mi', function () {
     return view('p3mi');
 });
 
+Route::get('pengecekan', function () {
+    return view('pengecekan');
+});
+
+Route::get('dashboardp3mi', function () {
+    return view('dashboardp3mi');
+});
+
 // Beberapa Routing pada Pendaftaran TKI(Operator)
 // ==============================
 // 1. untuk tampilan depan
@@ -51,6 +59,8 @@ Route::get('pendaftarantki/edit/{id}', 'App\Http\Controllers\PendaftarantkiContr
 Route::patch('pendaftarantki/{id}','App\Http\Controllers\PendaftarantkiController@editProcess');
 // 6. untuk hapus data
 Route::delete('pendaftarantki/{id}','App\Http\Controllers\PendaftarantkiController@delete');
+
+
 
 // untuk halaman pendaftaran p3mi
 Route::get('pendaftaranp3mi', 'App\Http\Controllers\Pendaftaranp3miController@data');

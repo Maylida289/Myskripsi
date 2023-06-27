@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>@yield('Admin') - APJATI </title>
+    <title>@yield('title') - APJATI </title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, iqnitial-scale=1">
     <link rel="apple-touch-icon" href="apple-icon.png">
@@ -40,7 +40,13 @@
                         <a href="{{url('admin')}}"> <i class="menu-icon fa fa-dashboard"></i>Dasboard </a>
                     </li>
                     <li>
-                        <a href="{{url('pengecekan')}}"> <i class="menu-icon fa fa-puzzle-piece"></i>Validasi Berkas TKI</a>
+                        <a href="{{url('pendaftarantki')}}"> <i class="menu-icon fa fa-puzzle-piece"></i>Pendaftaran TKI </a>
+                    </li>
+                    <li>
+                        <a href="{{url('pendaftaranp3mi')}}"> <i class="menu-icon fa fa-puzzle-piece"></i>Data Total TKI </a>
+                    </li>
+                    <li>
+                        <a href="{{ url('admin') }}"> <i class="menu-icon fa fa-puzzle-piece"></i> Data TKI Pribadi</a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
