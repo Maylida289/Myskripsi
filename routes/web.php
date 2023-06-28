@@ -64,7 +64,7 @@ Route::get('login-operator', 'App\Http\Controllers\LoginOperatorController@login
 route::post('postlogin',[LoginOperatorController::class,'postlogin'])->name('post-login-operator');
 Route::get('logout', 'App\Http\Controllers\LoginOperatorController@logout');
 Route::group(['middleware' => ['auth','ceklevel:admin,admin-operator']], function () {
-    route::get('operator',[AdminController::class,'data'])->name('operator');    
+    route::get('operator',[AdminController::class,'data'])->name('operator');
 });
 // Halaman utama Operator
-route::get('main-operator',[AdminController::class,'mainOperator'])->name('operator');  
+route::get('main-operator',[AdminController::class,'mainOperator'])->name('operator');
