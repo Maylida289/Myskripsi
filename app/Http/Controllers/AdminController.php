@@ -15,4 +15,8 @@ class AdminController extends Controller
     public function mainOperator(){
         return view('operator.main');
     }
+
+    public function mainAdmin(){
+        return view('admin.main');
+    }
 }

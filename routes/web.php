@@ -68,3 +68,6 @@ Route::group(['middleware' => ['auth','ceklevel:admin,admin-operator']], functio
 });
 // Halaman utama Operator
 route::get('main-operator',[AdminController::class,'mainOperator'])->name('operator');  
+
+// Halaman utama Admin
+route::get('main-admin',[AdminController::class,'mainAdmin'])->name('admin');  
