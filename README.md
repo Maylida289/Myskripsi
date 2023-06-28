@@ -309,9 +309,9 @@ syntax admin.blade.php
 
 </body>
 </html>
-================================================================================================================
+==============================================================================================================
 Jika Ingin menjalankan seeder maka buat seeder terlebih dahulu setelah meigration lalu daftarkan seeder pada DatabaseSeeder sebelum seeder dijalanlankan. 
-==================================================================================================================
+==============================================================================================================
 Alur
 1. Setiap user yang ingin masuk ke laman diharuskan untuk login
 2. Bagaimana dia tau, email dan password nya sebagai admin, operator dll (yang buat anak IT nya aja) 
@@ -321,7 +321,7 @@ Alur
 6. apakah nanti ketika pendaftaran p3mi dimasukan email dan password untuk mereka masuk/login ke sistem atau bagaimana
 7. membuat sentuhan sedikit pada tampilan halo/ tampilan interface
 8. membuat tampilan dasboard dari yang total tki, medikal, diambil dari masing2 halaman. 
-==================================================================================================================
+==========================================================================================================
 Field untuk pendaftaran TKI : 
 1. Nama TKI
 2. Jenis Kelamin
@@ -336,47 +336,22 @@ Data Kerabat
 1. Nama Kerabat
 2. Alamat Kerabat
 3. No Telfon Kerabat
-========================================================================================================================SSStruktur code :
+=======================================================================================================
+Struktur code :
 1. Pembuatan routing
 2. view
 3. controller mengarah lagi ke view
-=========================================================================================
-
-<?php
-
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
-
-class CreatePendaftaranTki extends Migration
-{
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('pendaftaran_tki', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama',100);
-            $table->string('jk',20);
-            $table->string('tempatlahir',50);
-            $table->integer('tanggallahir',50);
-            $table->text('alamat');
-            $table->integer('notlp',50);
-            $table->string('pendidikan',30);
-            $table->integer(20);
-        });
-    }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('pendaftaran_tki');
-    }
-}
+======================================================================================================
+kebutuhan skripsi : 
+perubahan yang aku bikin : 
+1. melengkapi fitur admin 
+2. membuat routing admin
+3. mengganti file admin menjadi operator dan mengubah semua nama admin menjadi operator
+======================================================================================================
+notes : 
+1. ketika halaman not found langkah yang dilakukan dan ketika ada halaman routing yg diupdate :
+php artisan cache:clear
+php artisan route:cache
+====================================================================================================
+Progress : 
+1. 29 Juni 2023 : done login page for operator
