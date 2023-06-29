@@ -16,12 +16,29 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::truncate();
-        User::create([
+        User::insert([
+            [
+
             'name' => 'Admin Aplikasi',
             'level' => 'admin-operator',
             'email' => 'maylida@operator.com',
             'password' => bcrypt('guecakep123'),
             'remember_token' => Str::random(60),
+            ],
+            [
+                'name' => 'Admin Aplikasi',
+                'level' => 'admin-operator',
+                'email' => 'admin@operator.com',
+                'password' => bcrypt('admin'),
+                'remember_token' => Str::random(60),
+            ],
+            [
+                'name' => 'Admin Aplikasi',
+                'level' => 'admin-admin',
+                'email' => 'admin@admin.com',
+                'password' => bcrypt('admin'),
+                'remember_token' => Str::random(60),
+            ],
         ]);
     }
 }

@@ -102,7 +102,7 @@
                         </a>
                         <div class="user-menu dropdown-menu">
                             <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
-                            <a class="nav-link" href="{{ url('logout') }}"><i
+                            <a class="nav-link" href="{{ url('logout-operator') }}"><i
                                     class="fa fa-power -off"></i>Logout</a>
                         </div>
                     </div>

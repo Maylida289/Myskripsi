@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PendaftaranTkiController;
 use App\Http\Controllers\LoginOperatorController;
+use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
@@ -61,13 +62,21 @@ Route::get('pendaftaranp3mi', 'App\Http\Controllers\Pendaftaranp3miController@da
 
 // Login Operator
 Route::get('login-operator', 'App\Http\Controllers\LoginOperatorController@loginOperator');
-route::post('postlogin',[LoginOperatorController::class,'postlogin'])->name('post-login-operator');
-Route::get('logout', 'App\Http\Controllers\LoginOperatorController@logout');
+route::post('post-login-operator',[LoginOperatorController::class,'postlogin'])->name('post-login-operator');
+Route::get('logout-operator', 'App\Http\Controllers\LoginOperatorController@logout');
 Route::group(['middleware' => ['auth','ceklevel:admin,admin-operator']], function () {
     route::get('operator',[AdminController::class,'data'])->name('operator');
 });
 // Halaman utama Operator
 route::get('main-operator',[AdminController::class,'mainOperator'])->name('operator');  
 
+
+// Login Admin
+Route::get('login-admin', 'App\Http\Controllers\LoginAdminController@loginAdmin');
+route::post('post-login-admin',[LoginAdminController::class,'postlogin'])->name('post-login-admin');
+Route::get('logout-admin', 'App\Http\Controllers\LoginAdminController@logout');
+Route::group(['middleware' => ['auth','ceklevel:admin,admin-admin']], function () {
+    route::get('admin',[AdminController::class,'data'])->name('admin');
+});
 // Halaman utama Admin
 route::get('main-admin',[AdminController::class,'mainAdmin'])->name('admin');  
