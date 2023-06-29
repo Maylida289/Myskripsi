@@ -11,8 +11,6 @@ class PendaftarantkiController extends Controller
     public function data()
     {
         $pendaftaran_tki = DB::table('pendaftaran_tki')->get();
-
-        //return $pendaftaran_tki;
         return view('operator.pendaftaran.data',['pendaftaran_tki'=> $pendaftaran_tki]);
     }
 

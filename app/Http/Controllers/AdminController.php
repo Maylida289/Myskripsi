@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Return_;
+use Illuminate\Support\Facades\DB;
+
 
 class AdminController extends Controller
 {
@@ -17,6 +19,9 @@ class AdminController extends Controller
     }
 
     public function validationDataTki(){
-        return view('admin.file_validation_tki.data');
+
+        $list_tki = DB::table('pendaftaran_tki')->get();
+        return view('admin.file_validation_tki.data', ['pendaftaran_tki' => $list_tki]);
+        //return view('operator.pendaftaran.data',['pendaftaran_tki'=> $pendaftaran_tki]);
     }
 }
