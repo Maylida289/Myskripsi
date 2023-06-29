@@ -57,8 +57,13 @@
                             <tr>
                                 <th>No</th>
                                 <th>Nama</th>
+                                <th>Jenis Kelamin</th>
+                                <th>Tempat Lahir</th>
+                                <th>Tgl Lahir</th>
                                 <th>Alamat</th>
-                                <th>Usia</th>
+                                <th>Agama</th>
+                                <th>Pendidikan Terakhir</th>
+                                <th>No Telfon</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -67,8 +72,13 @@
                                 <tr>
                                     <td class="text-center">{{ $loop->iteration }}</td>
                                     <td>{{ $item->nama }}</td>
+                                    <td>{{ $item->jenis_kelamin }}</td>
+                                    <td>{{ $item->tempat_lahir }}</td>
+                                    <td>{{ $item->tgl_lahir }}</td>
                                     <td>{{ $item->alamat }}</td>
-                                    <td>{{ $item->usia }}</td>
+                                    <td>{{ $item->agama }}</td>
+                                    <td>{{ $item->pendidikan }}</td>
+                                    <td>{{ $item->no_tlp }}</td>
                                     <td class="text-center">
                                         <a href="{{ url('pendaftarantki/edit/' . $item->id) }}"
                                             class="btn btn-primary btn-sm">

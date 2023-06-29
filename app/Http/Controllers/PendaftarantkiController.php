@@ -26,12 +26,17 @@ class PendaftarantkiController extends Controller
         //return $request;
         DB::table('pendaftaran_tki')->insert([
             'nama' => $request->nama ,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'tempat_lahir' => $request->tempat_lahir,
+            'tgl_lahir' => $request->tgl_lahir,
             'alamat' => $request->alamat,
-            'usia' => $request->usia,
+            'agama' => $request->agama,
+            'pendidikan' => $request->pendidikan,
+            'no_tlp' => $request->no_tlp,
         ]);
         return redirect('pendaftarantki')->with('status','Nama TKI Berhasil Ditambahkan');
     }
-    
+
     public function edit ($id)
     {
         $editpendaftarantki = DB::table('pendaftaran_tki')->where('id', $id)->first();
@@ -42,9 +47,14 @@ class PendaftarantkiController extends Controller
     {
      DB::table('pendaftaran_tki')->where('id', $id)
      ->update([
-        'nama' => $request ->nama,
-        'alamat' => $request ->alamat,
-        'usia' => $request->usia
+        'nama' => $request->nama ,
+        'jenis_kelamin' => $request->jenis_kelamin,
+        'tempat_lahir' => $request->tempat_lahir,
+        'tgl_lahir' => $request->tgl_lahir,
+        'alamat' => $request->alamat,
+        'agama' => $request->agama,
+        'pendidikan' => $request->pendidikan,
+        'no_tlp' => $request->no_tlp,
      ]);
      return redirect('pendaftarantki')->with('status', 'Data TKI berhasil diupdate!');
     }

@@ -17,13 +17,23 @@ class PendaftaranTkiSeeder extends Seeder
         DB::table('pendaftaran_tki')->insert([
             [
             'nama' => 'Thalita Anggraeni',
-            'alamat' => 'Cikarang Seletan',
-            'usia'=> 30,
+            'jenis_kelamin' => 'Perempuan',
+            'tempat_lahir' => 'Indramayu',
+            'tgl_lahir' => '27 April 1994',
+            'alamat' => 'Desa Sukamakmur, Indramayu Jawa Tengah',
+            'agama' => 'islam',
+            'pendidikan'=> 'SMA Sederajat',
+            'no_tlp'=> '91087',
             ],
             [
-            'nama' => 'Aminah Cendikiawan',
-            'alamat' => 'Jl Pantai Utara, Sukambumi Jawa Barat',
-            'usia'=> 30,
+            'nama' => 'Yohanes Situmorang',
+            'jenis_kelamin' => 'Laki - Laki',
+            'tempat_lahir' => 'Medan',
+            'tgl_lahir' => '21 Oktober 1990',
+            'alamat' => 'Jl Tuanku Imam Bonjol no 9, Medan',
+            'agama' => 'kristen katolik',
+            'pendidikan'=> 'SMA/SMK',
+            'no_tlp' => '130657',
             ]
         ]);
     }

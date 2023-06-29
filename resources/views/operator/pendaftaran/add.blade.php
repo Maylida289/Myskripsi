@@ -55,12 +55,32 @@
                                     <input type="text" name="nama" class="form-control" autofocus required>
                                 </div>
                                 <div class="form-group">
+                                    <label> Jenis Kelamim</label>
+                                    <input type="text" name="jenis_kelamin" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label> Tempat Lahir</label>
+                                    <input type="text" name="tempat_lahir" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label> Tgl Lahir</label>
+                                    <input type="text" name="tgl_lahir" class="form-control" required>
+                                </div>
+                                <div class="form-group">
                                     <label> Alamat TKI</label>
                                     <textarea name="alamat" class="form-control" required></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label> Usia TKI</label>
-                                    <input type="number" name="usia" class="form-control" required>
+                                    <label> Agama </label>
+                                    <input type="text" name="agama" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label> Pendidikan Terakhir</label>
+                                    <input type="text" name="pendidikan" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label> No Telfon</label>
+                                    <input type="number" name="no_tlp" class="form-control" required>
                                 </div>
                                 <button type="submit" class="btn btn-success">Save</button>
                             </form>

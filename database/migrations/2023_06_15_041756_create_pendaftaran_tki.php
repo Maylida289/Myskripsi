@@ -16,8 +16,13 @@ class CreatePendaftaranTki extends Migration
         Schema::create('pendaftaran_tki', function (Blueprint $table) {
             $table->id();
             $table->string('nama',100);
+            $table->string('jenis_kelamin');
+            $table->string('tempat_lahir');
+            $table->string('tgl_lahir');
             $table->text('alamat');
-            $table->integer('usia');
+            $table->string('agama');
+            $table->string('pendidikan');
+            $table->string('no_tlp',200);
         });
     }
 
