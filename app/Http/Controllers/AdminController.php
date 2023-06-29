@@ -9,14 +9,14 @@ class AdminController extends Controller
 {
     public function data()
     {
-        return view('operator.dashboard.dashboard');
-    }
-
-    public function mainOperator(){
-        return view('operator.main');
+        return view('admin.dashboard.dashboard');
     }
 
     public function mainAdmin(){
         return view('admin.main');
+    }
+
+    public function validationDataTki(){
+        return view('admin.file_validation_tki.data');
     }
 }
