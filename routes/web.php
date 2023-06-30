@@ -83,3 +83,5 @@ Route::group(['middleware' => ['auth','ceklevel:admin,admin-admin']], function (
 route::get('main-admin',[AdminController::class,'mainAdmin']); 
 // Validasi berkas TKI - Admin
 route::get('validation-admin',[AdminController::class,'validationDataTki']); 
+// Halaman Detail TKI - Admin
+Route::get('admin/detail-tki/{id}', 'App\Http\Controllers\AdminController@detailTki');

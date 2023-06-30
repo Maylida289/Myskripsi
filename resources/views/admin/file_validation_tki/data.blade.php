@@ -56,7 +56,8 @@
                             @foreach ($pendaftaran_tki as $item)
                                 <tr>
                                     <td class="text-center">{{ $loop->iteration }}</td>
-                                    <td>{{ $item->nama }}</td>
+                                    <td> <a href="{{ url('admin/detail-tki/' . $item->id) }}"
+                                            style="color: black;">{{ $item->nama }}</a> </td>
                                     <td>{{ $item->jenis_kelamin }}</td>
                                     <td>{{ $item->alamat }}</td>
                                     <td class="text-center">
