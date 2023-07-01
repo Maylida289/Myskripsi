@@ -11,7 +11,9 @@ class AdminController extends Controller
 {
     public function data()
     {
-        return view('admin.dashboard.dashboard');
+        $totalTki = DB::table('pendaftaran_tki')->count();
+
+        return view('admin.dashboard.dashboard', ['totalTki' => $totalTki]);
     }
 
     public function mainAdmin(){
@@ -22,7 +24,6 @@ class AdminController extends Controller
 
         $list_tki = DB::table('pendaftaran_tki')->get();
         return view('admin.file_validation_tki.data', ['pendaftaran_tki' => $list_tki]);
-        //return view('operator.pendaftaran.data',['pendaftaran_tki'=> $pendaftaran_tki]);
     }
 
     public function detailTki ($id)
