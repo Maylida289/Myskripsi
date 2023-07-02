@@ -57,7 +57,7 @@
                                 <th style="text-align: center;">Nama</th>
                                 <th style="text-align: center;">Jenis Kelamin</th>
                                 <th style="text-align: center;">Alamat</th>
-                                <th style="text-align: center;">Aksi</th>
+                                <th style="text-align: center;">Serifikat Kesehatan</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -68,11 +68,17 @@
                                     <td>{{ $item->jenis_kelamin }}</td>
                                     <td>{{ $item->alamat }}</td>
                                     <td class="text-center">
-                                        <a href="{{ url('medical-checkup/detail-tki/' . $item->id) }}"
-                                            class="btn btn-success btn-sm" style="color: white;">
-                                            Upload Sertifikat Kesehatan
-                                        </a>
+                                        @if (isset($item->sertifikat_kesehatan))
+                                            <i class="fa fa-check-circle" style="color: green;"></i>
+                                        @else
+                                            <a href="{{ url('medical-checkup/detail-tki/' . $item->id) }}"
+                                                class="btn btn-success btn-sm" style="color: white;">
+                                                Upload Sertifikat
+                                            </a>
+                                        @endif
                                     </td>
+
+
                                 </tr>
                             @endforeach
                         </tbody>
