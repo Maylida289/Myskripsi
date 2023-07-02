@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Return_;
 use Illuminate\Support\Facades\DB;
 
-class PendaftarantkiController extends Controller
+class OperatorPendaftarantkiController extends Controller
 {
     public function data()
     {

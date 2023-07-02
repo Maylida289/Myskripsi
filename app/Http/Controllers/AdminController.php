@@ -9,10 +9,11 @@ use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
-    public function data()
-    {
+    public function dashboard()
+    {   
+        // Menampilkan jumlah total TKI
         $totalTki = DB::table('pendaftaran_tki')->count();
-
+        //------------------------------------------------
         return view('admin.dashboard.dashboard', ['totalTki' => $totalTki]);
     }
 

@@ -45,30 +45,25 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>No</th>
-                                <th>Nama</th>
-                                <th>Jenis Kelamin</th>
-                                <th>Alamat</th>
-                                <th>Aksi</th>
+                                <th style="text-align: center;">No</th>
+                                <th style="text-align: center;">Nama</th>
+                                <th style="text-align: center;">Jenis Kelamin</th>
+                                <th style="text-align: center;">Alamat</th>
+                                <th style="text-align: center;">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($pendaftaran_tki as $item)
                                 <tr>
                                     <td class="text-center">{{ $loop->iteration }}</td>
-                                    <td> <a href="{{ url('admin/detail-tki/' . $item->id) }}"
-                                            style="color: black;">{{ $item->nama }}</a> </td>
+                                    <td>{{ $item->nama }}</td>
                                     <td>{{ $item->jenis_kelamin }}</td>
                                     <td>{{ $item->alamat }}</td>
                                     <td class="text-center">
-                                        <a href="" class="btn btn-primary btn-sm">
-                                            <i class="fa fa-check"></i>
+                                        <a href="{{ url('admin/detail-tki/' . $item->id) }}" class="btn btn-success btn-sm"
+                                            style="color: white;">
+                                            Detail
                                         </a>
-                                        <form action="" class="d-inline">
-                                            <button class="btn btn-danger btn-sm">
-                                                <i class="fa fa-times"></i>
-                                            </button>
-                                        </form>
                                     </td>
                                 </tr>
                             @endforeach
