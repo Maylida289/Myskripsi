@@ -100,3 +100,5 @@ Route::group(['middleware' => ['auth','ceklevel:admin,admin-medical']], function
 route::get('listtki-medical-checkup',[MedicalCheckupController::class,'listDataTki']); 
 // Halaman Detail TKI - Medical Checkup
 Route::get('medical-checkup/detail-tki/{id}', 'App\Http\Controllers\MedicalCheckupController@detailTki');
+// Upload Sertifikat - Medical Checkup
+Route::post('/save','App\Http\Controllers\MedicalCheckupController@uploadSertifikatKesehatan')->name('uploads.store');

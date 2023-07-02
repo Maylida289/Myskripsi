@@ -28,4 +28,27 @@ class MedicalCheckupController extends Controller
         $detail_tki = DB::table('pendaftaran_tki')->where('id', $id)->first();
         return view('medical_checkup/list_tki/detail', compact('detail_tki'));
     }
+
+
+    public function uploadSertifikatKesehatan(Request $request)
+    {       
+        $request->validate([
+            'filename' => 'required',
+            'filename.*' => 'mimes:doc,docx,PDF,pdf,jpg,jpeg,png|max:2000'
+        ]);
+        if ($request->hasfile('filename')) {            
+            $filename = round(microtime(true) * 1000).'-'.str_replace(' ','-',$request->file('filename')->getClientOriginalName());
+            $request->file('filename')->move(public_path('images'), $filename);
+
+            DB::table('pendaftaran_tki')->where('id', 1)
+            ->update([
+               'foto_ktp' => $filename
+         
+            ]);
+            return redirect('listtki-medical-checkup')->with('status-upload', 'Ktp berhasil di upload!');
+        }else{
+            echo'Gagal';
+        }
+       
+    }
 }

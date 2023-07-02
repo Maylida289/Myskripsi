@@ -3,6 +3,17 @@
 @section('title', 'List TKI')
 @section('breadcrumbs')
 
+
+    @if (session('status-upload'))
+        <div class="alert alert-success">
+            {{ session('status-upload') }}
+        </div>
+        @php
+            session()->flash('status-upload');
+        @endphp
+    @endif
+
+
     <div class="breadcrumbs">
         <div class="col-sm-4">
             <div class="page-header float-left">
@@ -59,7 +70,7 @@
                                     <td class="text-center">
                                         <a href="{{ url('medical-checkup/detail-tki/' . $item->id) }}"
                                             class="btn btn-success btn-sm" style="color: white;">
-                                            Detail
+                                            Upload Sertifikat Kesehatan
                                         </a>
                                     </td>
                                 </tr>
