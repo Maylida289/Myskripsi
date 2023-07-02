@@ -1,4 +1,4 @@
-@extends('admin.main')
+@extends('medical_checkup.main')
 
 @section('title', 'Dashboard')
 
@@ -17,7 +17,7 @@
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1 style="color :blue"> Halaman Admin</h1>
+                    <h1 style="color :blue"> Halaman Medical Checkup</h1>
                 </div>
             </div>
         </div>

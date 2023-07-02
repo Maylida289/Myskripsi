@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginOperatorController;
 use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\MedicalCheckupController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -85,3 +86,11 @@ route::get('main-admin',[AdminController::class,'mainAdmin']);
 route::get('validation-admin',[AdminController::class,'validationDataTki']); 
 // Halaman Detail TKI - Admin
 Route::get('admin/detail-tki/{id}', 'App\Http\Controllers\AdminController@detailTki');
+
+
+// Medical Checkup
+route::get('medical-checkup',[MedicalCheckupController::class,'dashboard']);
+// List TKI - Medical Checkup
+route::get('listtki-medical-checkup',[MedicalCheckupController::class,'listDataTki']); 
+// Halaman Detail TKI - Medical Checkup
+Route::get('medical-checkup/detail-tki/{id}', 'App\Http\Controllers\MedicalCheckupController@detailTki');
