@@ -77,7 +77,8 @@
                         </a>
                         <div class="user-menu dropdown-menu">
                             <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
-                            <a class="nav-link" href=""><i class="fa fa-power -off"></i>Logout</a>
+                            <a class="nav-link" href="{{ url('logout-medical-checkup') }}"><i
+                                    class="fa fa-power -off"></i>Logout</a>
                         </div>
                     </div>
 

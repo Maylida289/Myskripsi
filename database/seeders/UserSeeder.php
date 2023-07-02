@@ -17,14 +17,7 @@ class UserSeeder extends Seeder
     {
         User::truncate();
         User::insert([
-            [
-
-            'name' => 'Admin Aplikasi',
-            'level' => 'admin-operator',
-            'email' => 'maylida@operator.com',
-            'password' => bcrypt('guecakep123'),
-            'remember_token' => Str::random(60),
-            ],
+           
             [
                 'name' => 'Admin Aplikasi',
                 'level' => 'admin-operator',
@@ -36,6 +29,13 @@ class UserSeeder extends Seeder
                 'name' => 'Admin Aplikasi',
                 'level' => 'admin-admin',
                 'email' => 'admin@admin.com',
+                'password' => bcrypt('admin'),
+                'remember_token' => Str::random(60),
+            ],
+            [
+                'name' => 'Admin Aplikasi',
+                'level' => 'admin-medical',
+                'email' => 'admin@medical.com',
                 'password' => bcrypt('admin'),
                 'remember_token' => Str::random(60),
             ],

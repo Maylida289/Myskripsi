@@ -3,6 +3,7 @@
 use App\Http\Controllers\OperatorPendaftaranTkiController;
 use App\Http\Controllers\LoginOperatorController;
 use App\Http\Controllers\LoginAdminController;
+use App\Http\Controllers\LoginMedicalCheckupController;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MedicalCheckupController;
@@ -88,8 +89,13 @@ route::get('validation-admin',[AdminController::class,'validationDataTki']);
 Route::get('admin/detail-tki/{id}', 'App\Http\Controllers\AdminController@detailTki');
 
 
-// Medical Checkup
-route::get('medical-checkup',[MedicalCheckupController::class,'dashboard']);
+// Login Medical Checkup
+Route::get('login-medical-checkup', 'App\Http\Controllers\LoginMedicalCheckupController@loginMedicalCheckup');
+route::post('post-login-medical-checkup',[LoginMedicalCheckupController::class,'postlogin'])->name('post-login-medical-checkup');
+Route::get('logout-medical-checkup', 'App\Http\Controllers\LoginMedicalCheckupController@logout');
+Route::group(['middleware' => ['auth','ceklevel:admin,admin-medical']], function () {
+    route::get('medical-checkup',[MedicalCheckupController::class,'dashboard'])->name('medical-checkup');
+});
 // List TKI - Medical Checkup
 route::get('listtki-medical-checkup',[MedicalCheckupController::class,'listDataTki']); 
 // Halaman Detail TKI - Medical Checkup
