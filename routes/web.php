@@ -101,4 +101,4 @@ route::get('listtki-medical-checkup',[MedicalCheckupController::class,'listDataT
 // Halaman Detail TKI - Medical Checkup
 Route::get('medical-checkup/detail-tki/{id}', 'App\Http\Controllers\MedicalCheckupController@detailTki');
 // Upload Sertifikat - Medical Checkup
-Route::post('/save','App\Http\Controllers\MedicalCheckupController@uploadSertifikatKesehatan')->name('uploads.store');
+Route::post('upload/store/{id}','App\Http\Controllers\MedicalCheckupController@uploadSertifikatKesehatan');

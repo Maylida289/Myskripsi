@@ -30,7 +30,7 @@ class MedicalCheckupController extends Controller
     }
 
 
-    public function uploadSertifikatKesehatan(Request $request)
+    public function uploadSertifikatKesehatan(Request $request, $id)
     {       
         $request->validate([
             'filename' => 'required',
@@ -40,12 +40,12 @@ class MedicalCheckupController extends Controller
             $filename = round(microtime(true) * 1000).'-'.str_replace(' ','-',$request->file('filename')->getClientOriginalName());
             $request->file('filename')->move(public_path('images'), $filename);
 
-            DB::table('pendaftaran_tki')->where('id', 1)
+            DB::table('pendaftaran_tki')->where('id', $id)
             ->update([
-               'foto_ktp' => $filename
+               'sertifikat_kesehatan' => $filename
          
             ]);
-            return redirect('listtki-medical-checkup')->with('status-upload', 'Ktp berhasil di upload!');
+            return redirect('listtki-medical-checkup')->with('status-upload', 'Sertifikat Kesehatan berhasil di upload!');
         }else{
             echo'Gagal';
         }
