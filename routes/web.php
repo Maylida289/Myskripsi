@@ -26,17 +26,8 @@ route::get('/',function() {
     return view ('welcome');
 });
 
-Route::get('/contoh', function () {
-    return view ('contoh');
-});
-
-
 Route::get('p3mi', function () {
     return view('p3mi');
-});
-
-Route::get('backup', function () {
-    return view('backup');
 });
 
 Route::get('dashboardp3mi', function () {
@@ -102,3 +93,7 @@ route::get('listtki-medical-checkup',[MedicalCheckupController::class,'listDataT
 Route::get('medical-checkup/detail-tki/{id}', 'App\Http\Controllers\MedicalCheckupController@detailTki');
 // Upload Sertifikat - Medical Checkup
 Route::post('upload/store/{id}','App\Http\Controllers\MedicalCheckupController@uploadSertifikatKesehatan');
+
+
+// Login BLK
+Route::get('login-blk', 'App\Http\Controllers\LoginBlkController@loginBlk');
