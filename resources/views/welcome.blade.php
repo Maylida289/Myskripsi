@@ -109,7 +109,7 @@ body {
           <h5 class="card-title">Halaman Admin </h5>
           <p class="card-text">Halaman ini berisi seputar validasi data serta berkas yang para calon Pekerja Migran
             berikan mulai dari biodata sampai sertifikasi.</p>
-          <a href="{{ url('main-admin') }}" class="btn btn-primary">Klik Disini !</a>
+          <a href="{{ url('login-admin') }}" class="btn btn-primary">Klik Disini !</a>
         </div>
       </div>
     </div>
@@ -122,7 +122,7 @@ body {
           <h5 class="card-title">Medical Checkup</h5>
           <p class="card-text">Halaman ini merupakan halaman yang diberikan kepada beberapa admin rumah sakit yang sudah
             bekerja sama dengan APJATI untuk upload sertifikasi kesehatan.</p>
-          <a href="#" class="btn btn-primary">Klik Disini !</a>
+          <a href="{{ url('login-medical-checkup') }}" class="btn btn-primary">Klik Disini !</a>
         </div>
       </div>
     </div>
