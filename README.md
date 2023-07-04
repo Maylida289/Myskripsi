@@ -312,16 +312,28 @@ syntax admin.blade.php
 ==============================================================================================================
 Jika Ingin menjalankan seeder maka buat seeder terlebih dahulu setelah meigration lalu daftarkan seeder pada DatabaseSeeder sebelum seeder dijalanlankan. 
 ==============================================================================================================
-Alur
-1. Setiap user yang ingin masuk ke laman diharuskan untuk login
-2. Bagaimana dia tau, email dan password nya sebagai admin, operator dll (yang buat anak IT nya aja) 
-3. apakah user harus daftar/sign up terlebih dahulu untuk bisa login dan tau username mereka masing2
-4. jika tidak perlu daftar/ sign up bagaimana solusinya
-5. untuk p3mi kan mereka harus daftar di operator, si p3mi ini juga bisa masuk/login ke sistem 
-6. apakah nanti ketika pendaftaran p3mi dimasukan email dan password untuk mereka masuk/login ke sistem atau bagaimana
-7. membuat sentuhan sedikit pada tampilan halo/ tampilan interface
-8. membuat tampilan dasboard dari yang total tki, medikal, diambil dari masing2 halaman. 
-==========================================================================================================
+Alur/flow :  
+1. Setiap user yang ingin masuk ke laman diharuskan untuk login (done)
+2. Untuk login setiap user karna yang bisa akses hanya orang apjati jadi us dan pw diberikan oleh tekinis(done)
+3. untuk p3mi kan mereka harus daftar di operator, si p3mi ini juga bisa masuk/login ke sistem 
+4. membuat tampilan interface/frontend(done)
+5. membuat validasi data (done)
+5. passing data dari operator (pendaftaran tki) ke halaman admin sebalikny (done)
+6. upload sertif medical (done)
+7. upload sertif BLK 
+8. pasing data sertif medical ke admin (done)
+9. passing sertif BLK ke admin 
+9. penambahan image foto ktp+passing ke halaman admin (done)
+10. Real data total tki di dashboard (done)
+11. Edit real data yg di dashboard berangkat ganti Terverifikasi
+12. buat pendaftaran P3MI
+13. buat login P3MI dari pendaftaran di halaman operator
+14. bikin fitur download di halaman admin
+15. bikin fitur preview image di halaman admin
+16. membuat halaman pemberangkatan
+17. di dashboard, medical diganti terverifikasi, BLK diganti Berangkat, pemberangkatan diganti bekerja.
+18. membuat fitur operasional untuk pemberangkatan isinya upload visa dan paspor serta pembelian tiket pesawat
+============================================================================================================
 Field untuk pendaftaran TKI : 
 1. Nama TKI
 2. Jenis Kelamin
@@ -355,3 +367,8 @@ php artisan route:cache
 ====================================================================================================
 Progress : 
 1. 29 Juni 2023 : done login page for operator
+2. 30 Juni 2023 :  menambahkan field pendaftaran tki, menambahkan data diri, menambhakna foto
+research dlu bagaimana cara menambahkan foto ke database. 
+update logic :
+masuk ke database
+3. 03 & 04 : pembuatan interface dan passing data operator admin serta pembuatan halaman medical
