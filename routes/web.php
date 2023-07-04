@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 // coba routing array assosoatif untuk edit blade tempalate di view
 route::get('/',function() {
-    return view ('halo');
+    return view ('welcome');
 });
 
 Route::get('/contoh', function () {
@@ -35,8 +35,8 @@ Route::get('p3mi', function () {
     return view('p3mi');
 });
 
-Route::get('pengecekan', function () {
-    return view('pengecekan');
+Route::get('backup', function () {
+    return view('backup');
 });
 
 Route::get('dashboardp3mi', function () {
@@ -82,9 +82,9 @@ Route::group(['middleware' => ['auth','ceklevel:admin,admin-admin']], function (
     route::get('admin',[AdminController::class,'dashboard'])->name('admin');
 });
 // Halaman utama - Admin
-route::get('main-admin',[AdminController::class,'mainAdmin']); 
+route::get('main-admin',[AdminController::class,'mainAdmin']);
 // Validasi berkas TKI - Admin
-route::get('validation-admin',[AdminController::class,'validationDataTki']); 
+route::get('validation-admin',[AdminController::class,'validationDataTki']);
 // Halaman Detail TKI - Admin
 Route::get('admin/detail-tki/{id}', 'App\Http\Controllers\AdminController@detailTki');
 
@@ -97,7 +97,7 @@ Route::group(['middleware' => ['auth','ceklevel:admin,admin-medical']], function
     route::get('medical-checkup',[MedicalCheckupController::class,'dashboard'])->name('medical-checkup');
 });
 // List TKI - Medical Checkup
-route::get('listtki-medical-checkup',[MedicalCheckupController::class,'listDataTki']); 
+route::get('listtki-medical-checkup',[MedicalCheckupController::class,'listDataTki']);
 // Halaman Detail TKI - Medical Checkup
 Route::get('medical-checkup/detail-tki/{id}', 'App\Http\Controllers\MedicalCheckupController@detailTki');
 // Upload Sertifikat - Medical Checkup

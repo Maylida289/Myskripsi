@@ -48,7 +48,7 @@
 
                     <div class="row">
                         <div class="col-md-4 offset-md-4">
-                            <form action="{{ url('pendaftarantki') }}" method="post">
+                            <form action="{{ url('pendaftarantki') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label> Nama TKI</label>
