@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>@yield('Admin') - APJATI </title>
+    <title>Medical Checkup - APJATI </title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, iqnitial-scale=1">
     <link rel="apple-touch-icon" href="apple-icon.png">
@@ -40,11 +40,10 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="{{ url('admin') }}"> <i class="menu-icon fa fa-dashboard"></i>Dahsboard </a>
+                        <a href={{ url('medical-checkup') }}> <i class="menu-icon fa fa-dashboard"></i>Dahsboard </a>
                     </li>
                     <li>
-                        <a href="{{ url('validation-admin') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>Validasi
-                            Berkas
+                        <a href={{ url('listtki-medical-checkup') }}> <i class="menu-icon fa fa-puzzle-piece"></i>List
                             TKI</a>
                     </li>
                 </ul>
@@ -78,7 +77,7 @@
                         </a>
                         <div class="user-menu dropdown-menu">
                             <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
-                            <a class="nav-link" href="{{ url('logout-admin') }}"><i
+                            <a class="nav-link" href="{{ url('logout-medical-checkup') }}"><i
                                     class="fa fa-power -off"></i>Logout</a>
                         </div>
                     </div>
