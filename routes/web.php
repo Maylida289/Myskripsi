@@ -8,6 +8,7 @@ use App\Http\Controllers\LoginBlkController;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MedicalCheckupController;
+use App\Http\Controllers\BlkController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -101,5 +102,5 @@ Route::get('login-blk', 'App\Http\Controllers\LoginBlkController@loginBlk');
 route::post('post-login-blk',[LoginBlkController::class,'postlogin'])->name('post-login-blk');
 Route::get('logout-blk', 'App\Http\Controllers\LoginBlkController@logout');
 Route::group(['middleware' => ['auth','ceklevel:admin,admin-blk']], function () {
-    route::get('blk',[MedicalCheckupController::class,'dashboard'])->name('blk');
+    route::get('blk',[BlkController::class,'dashboard'])->name('blk');
 });
