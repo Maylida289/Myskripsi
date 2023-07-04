@@ -4,6 +4,7 @@ use App\Http\Controllers\OperatorPendaftaranTkiController;
 use App\Http\Controllers\LoginOperatorController;
 use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\LoginMedicalCheckupController;
+use App\Http\Controllers\LoginBlkController;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MedicalCheckupController;
@@ -97,3 +98,8 @@ Route::post('upload/store/{id}','App\Http\Controllers\MedicalCheckupController@u
 
 // Login BLK
 Route::get('login-blk', 'App\Http\Controllers\LoginBlkController@loginBlk');
+route::post('post-login-blk',[LoginBlkController::class,'postlogin'])->name('post-login-blk');
+Route::get('logout-blk', 'App\Http\Controllers\LoginBlkController@logout');
+Route::group(['middleware' => ['auth','ceklevel:admin,admin-blk']], function () {
+    route::get('blk',[MedicalCheckupController::class,'dashboard'])->name('blk');
+});

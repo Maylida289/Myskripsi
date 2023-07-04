@@ -38,7 +38,7 @@
             <div class="login-content">
                 <div class="login-form">
                     {{-- TODO: Login Routing --}}
-                    <form action="" method="post">
+                    <form action="{{ route('post-login-blk') }}" method="post">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label>Email address</label>

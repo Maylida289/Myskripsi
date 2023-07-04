@@ -13,9 +13,9 @@ class LoginBlkController extends Controller
 
     public function postlogin(Request $request){
         if(Auth::attempt($request->only('email','password'))){
-            return redirect('/medical-checkup') ->with('login-success', 'Login Berhasil');
+        return redirect('/blk') ->with('login-success', 'Login Berhasil');
         }
-        return redirect('login-medical-checkup')->with('login-failed', 'Email atau Password salah');
+        return redirect('login-blk')->with('login-failed', 'Email atau Password salah');
     }
 
     public function logout(){
