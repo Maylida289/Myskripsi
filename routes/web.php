@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 // coba routing array assosoatif untuk edit blade tempalate di view
 route::get('/',function() {
-    return view ('halo');
+    return view ('welcome');
 });
 
 Route::get('/contoh', function () {
@@ -31,8 +31,8 @@ Route::get('p3mi', function () {
     return view('p3mi');
 });
 
-Route::get('pengecekan', function () {
-    return view('pengecekan');
+Route::get('backup', function () {
+    return view('backup');
 });
 
 Route::get('dashboardp3mi', function () {
@@ -67,7 +67,7 @@ Route::group(['middleware' => ['auth','ceklevel:admin,admin-operator']], functio
     route::get('operator',[AdminController::class,'data'])->name('operator');
 });
 // Halaman utama Operator
-route::get('main-operator',[AdminController::class,'mainOperator'])->name('operator');  
+route::get('main-operator',[AdminController::class,'mainOperator'])->name('operator');
 
 // Halaman utama Admin
-route::get('main-admin',[AdminController::class,'mainAdmin'])->name('admin');  
+route::get('main-admin',[AdminController::class,'mainAdmin'])->name('admin');
