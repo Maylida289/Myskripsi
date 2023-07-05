@@ -45,7 +45,7 @@
                     </li>
                     <li>
                         {{-- TODO : List TKI routing --}}
-                        <a href=""> <i class="menu-icon fa fa-puzzle-piece"></i>List
+                        <a href="{{ url('listtki-blk') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>List
                             TKI</a>
                     </li>
                 </ul>

@@ -17,10 +17,10 @@ class BlkController extends Controller
         return view('blk.dashboard.dashboard', ['totalTki' => $totalTki]);
     }
 
-    public function validationDataTki(){
+    public function listDataTki(){
 
-        $list_tki = DB::table('pendaftaran_tki')->get();
-        return view('admin.file_validation_tki.data', ['pendaftaran_tki' => $list_tki]);
+        $list_blk = DB::table('data_blk')->get();
+        return view('blk.list_tki.data', ['data_blk' => $list_blk]);
     }
 
     public function detailTki ($id)

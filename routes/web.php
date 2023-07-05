@@ -104,3 +104,5 @@ Route::get('logout-blk', 'App\Http\Controllers\LoginBlkController@logout');
 Route::group(['middleware' => ['auth','ceklevel:admin,admin-blk']], function () {
     route::get('blk',[BlkController::class,'dashboard'])->name('blk');
 });
+// List TKI - BLK
+route::get('listtki-blk',[BlkController::class,'listDataTki']);
