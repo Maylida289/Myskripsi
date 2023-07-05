@@ -62,24 +62,26 @@
                         </thead>
                         <tbody>
                             @foreach ($data_blk as $item)
-                                <tr>
-                                    <td class="text-center">{{ $loop->iteration }}</td>
-                                    <td>{{ $item->nama }}</td>
-                                    <td>{{ $item->jenis_kelamin }}</td>
-                                    <td>{{ $item->alamat }}</td>
-                                    <td class="text-center">
-                                        @if (isset($item->sertifikat_blk))
-                                            <i class="fa fa-check-circle" style="color: green;"></i>
+                                @if ($item->sertifikat_kesehatan !== null)
+                                    <tr>
+                                        <td class="text-center">{{ $loop->iteration }}</td>
+                                        <td>{{ $item->nama }}</td>
+                                        <td>{{ $item->jenis_kelamin }}</td>
+                                        <td>{{ $item->alamat }}</td>
+                                        @if ($item->sertifikat_blk !== null)
+                                            <td class="text-center"><i class="fa fa-check-circle" style="color: green;"></i>
+                                            </td>
                                         @else
-                                            <a href="{{ url('blk/detail-tki/' . $item->id) }}"
-                                                class="btn btn-success btn-sm" style="color: white;">
-                                                Upload Sertifikat
-                                            </a>
+                                            <td class="text-center">
+                                                <a href="{{ url('blk/detail-tki/' . $item->id) }}"
+                                                    class="btn btn-success btn-sm" style="color: white;">
+                                                    Upload Sertifikat
+                                                </a>
+                                            </td>
                                         @endif
-                                    </td>
-
-
-                                </tr>
+                                    </tr>
+                                @else
+                                @endif
                             @endforeach
                         </tbody>
                     </table>

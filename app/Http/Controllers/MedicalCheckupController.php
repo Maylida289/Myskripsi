@@ -13,7 +13,7 @@ class MedicalCheckupController extends Controller
     {   
         // Menampilkan jumlah total TKI
         $totalTki = DB::table('pendaftaran_tki')->count();
-        $totalBlk =DB::table('data_blk')->count();
+        $totalBlk = DB::table('pendaftaran_tki')->whereNotNull('sertifikat_blk')->count();
         //------------------------------------------------
         return view('medical_checkup.dashboard.dashboard', ['totalTki' => $totalTki, 'totalBlk' => $totalBlk]);
     }

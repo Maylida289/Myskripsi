@@ -96,6 +96,16 @@
                                     @else
                                     @endif
                                 </td>
+                                <td class="text-center">
+                                    @if (isset($detail_tki->sertifikat_blk))
+                                        <div class="form-group">
+                                            <label> Sertifikat BLK</label>
+                                            <img src="{{ asset('images/' . $detail_tki->sertifikat_blk) }}"
+                                                alt="Gambar Contoh" style="height: 200px; width: 400px;">
+                                        </div>
+                                    @else
+                                    @endif
+                                </td>
                             </form>
                         </div>
                     </div>

@@ -11,7 +11,7 @@ class OperatorController extends Controller
     public function data()
     {   
         $totalTki = DB::table('pendaftaran_tki')->count();
-        $totalBlk = DB::table('data_blk')->count();
+        $totalBlk = DB::table('pendaftaran_tki')->whereNotNull('sertifikat_blk')->count();
         return view('operator.dashboard.dashboard',  ['totalTki' => $totalTki, 'totalBlk' => $totalBlk]);
     }
 }

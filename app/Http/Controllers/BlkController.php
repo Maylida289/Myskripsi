@@ -13,20 +13,19 @@ class BlkController extends Controller
     {   
         // Menampilkan jumlah total TKI
         $totalTki = DB::table('pendaftaran_tki')->count();
-        $totalBlk = DB::table('data_blk')->count();
+        $totalBlk = DB::table('pendaftaran_tki')->whereNotNull('sertifikat_blk')->count();
         //------------------------------------------------
         return view('blk.dashboard.dashboard', ['totalTki' => $totalTki, 'totalBlk' => $totalBlk]);
     }
 
     public function listDataTki(){
-
-        $list_blk = DB::table('data_blk')->get();
+        $list_blk = DB::table('pendaftaran_tki')->get();
         return view('blk.list_tki.data', ['data_blk' => $list_blk]);
     }
 
     public function detailTki ($id)
     {
-        $detail_tki = DB::table('data_blk')->where('id', $id)->first();
+        $detail_tki = DB::table('pendaftaran_tki')->where('id', $id)->first();
         return view('blk/list_tki/detail', compact('detail_tki'));
     }
 
@@ -40,7 +39,7 @@ class BlkController extends Controller
             $filename = round(microtime(true) * 1000).'-'.str_replace(' ','-',$request->file('filename')->getClientOriginalName());
             $request->file('filename')->move(public_path('images'), $filename);
 
-            DB::table('data_blk')->where('id', $id)
+            DB::table('pendaftaran_tki')->where('id', $id)
             ->update([
                'sertifikat_blk' => $filename
          

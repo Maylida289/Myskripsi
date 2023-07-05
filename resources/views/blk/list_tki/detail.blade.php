@@ -1,4 +1,4 @@
-@extends('medical_checkup.main')
+@extends('blk.main')
 @section('content')
     <div class="container">
         <div class="row justify-content-center">

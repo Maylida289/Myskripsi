@@ -41,7 +41,7 @@
                 <ul class="nav navbar-nav">
                     <li>
                         {{-- TODO : Dashboard routing --}}
-                        <a href=""> <i class="menu-icon fa fa-dashboard"></i>Dahsboard </a>
+                        <a href="{{ url('blk') }}"> <i class="menu-icon fa fa-dashboard"></i>Dahsboard </a>
                     </li>
                     <li>
                         {{-- TODO : List TKI routing --}}
