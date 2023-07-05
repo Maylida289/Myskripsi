@@ -13,8 +13,9 @@ class BlkController extends Controller
     {   
         // Menampilkan jumlah total TKI
         $totalTki = DB::table('pendaftaran_tki')->count();
+        $totalBlk = DB::table('data_blk')->count();
         //------------------------------------------------
-        return view('blk.dashboard.dashboard', ['totalTki' => $totalTki]);
+        return view('blk.dashboard.dashboard', ['totalTki' => $totalTki, 'totalBlk' => $totalBlk]);
     }
 
     public function listDataTki(){

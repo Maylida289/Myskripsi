@@ -41,14 +41,14 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h3 style="margin-left: 10px; margin-top:10px">100</h3>
+                            <h3 style="margin-left: 10px; margin-top:10px">{{ $totalTki }}</h3>
 
                             <p style="color:antiquewhite; margin-left: 10px;">Total TKI</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-bag"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info</a>
+
                     </div>
                 </div>
                 <!-- ./col -->
@@ -56,14 +56,14 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3 style="margin-left: 10px; margin-top:10px">53</h3>
+                            <h3 style="margin-left: 10px; margin-top:10px">{{ $totalTki }}</h3>
 
                             <p style="margin-left: 10px; color:antiquewhite">Medical</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-stats-bars"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info</a>
+
                     </div>
                 </div>
                 <!-- ./col -->
@@ -71,14 +71,14 @@
                     <!-- small box -->
                     <div class="small-box bg-warning">
                         <div class="inner">
-                            <h3 style="margin-left: 10px; margin-top:10px">44</h3>
+                            <h3 style="margin-left: 10px; margin-top:10px">{{ $totalBlk }}</h3>
 
                             <p style="color:antiquewhite; margin-left: 10px;">BLK</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-person-add"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info</a>
+
                     </div>
                 </div>
 
@@ -87,14 +87,14 @@
                     <!-- small box -->
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3 style="margin-left: 10px; margin-top:10px">65</h3>
+                            <h3 style="margin-left: 10px; margin-top:10px">0</h3>
 
                             <p style="color:antiquewhite; margin-left: 10px;">Berangkat</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-pie-graph"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info</a>
+
                     </div>
                 </div>
 

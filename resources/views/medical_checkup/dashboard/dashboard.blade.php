@@ -55,7 +55,7 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3 style="margin-left: 10px; margin-top:10px">53</h3>
+                            <h3 style="margin-left: 10px; margin-top:10px">{{ $totalTki }}</h3>
 
                             <p style="margin-left: 10px; color:antiquewhite">Medical</p>
                         </div>
@@ -70,7 +70,7 @@
                     <!-- small box -->
                     <div class="small-box bg-warning">
                         <div class="inner">
-                            <h3 style="margin-left: 10px; margin-top:10px">44</h3>
+                            <h3 style="margin-left: 10px; margin-top:10px">{{ $totalBlk }}</h3>
 
                             <p style="color:antiquewhite; margin-left: 10px;">BLK</p>
                         </div>
@@ -86,7 +86,7 @@
                     <!-- small box -->
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3 style="margin-left: 10px; margin-top:10px">65</h3>
+                            <h3 style="margin-left: 10px; margin-top:10px">0</h3>
 
                             <p style="color:antiquewhite; margin-left: 10px;">Berangkat</p>
                         </div>
