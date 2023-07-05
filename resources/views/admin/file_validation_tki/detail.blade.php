@@ -27,6 +27,30 @@
 
 @endsection
 
+<style>
+    .button-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .button-approved {
+        background-color: green;
+        color: white;
+        width: 50%;
+        margin-right: 8px;
+        margin-left: 8px
+    }
+
+    .button-rejected {
+        background-color: red;
+        color: white;
+        width: 50%;
+        margin-right: 8px;
+        margin-left: 8px
+    }
+</style>
+
 @section('content')
 
     <div class="content mt-3">
@@ -106,6 +130,12 @@
                                     @else
                                     @endif
                                 </td>
+                                @if ($detail_tki->sertifikat_blk)
+                                    <div class="button-container">
+                                        <button class="btn button-approved">Approved</button>
+                                        <button class="btn button-rejected">Rejected</button>
+                                    </div>
+                                @endif
                             </form>
                         </div>
                     </div>
