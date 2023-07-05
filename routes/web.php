@@ -94,7 +94,7 @@ route::get('listtki-medical-checkup',[MedicalCheckupController::class,'listDataT
 // Halaman Detail TKI - Medical Checkup
 Route::get('medical-checkup/detail-tki/{id}', 'App\Http\Controllers\MedicalCheckupController@detailTki');
 // Upload Sertifikat - Medical Checkup
-Route::post('upload/store/{id}','App\Http\Controllers\MedicalCheckupController@uploadSertifikatKesehatan');
+Route::post('upload/store-medical/{id}','App\Http\Controllers\MedicalCheckupController@uploadSertifikatKesehatan');
 
 
 // Login BLK
@@ -106,3 +106,7 @@ Route::group(['middleware' => ['auth','ceklevel:admin,admin-blk']], function () 
 });
 // List TKI - BLK
 route::get('listtki-blk',[BlkController::class,'listDataTki']);
+// Halaman Detail TKI - BLK
+Route::get('blk/detail-tki/{id}', 'App\Http\Controllers\BlkController@detailTki');
+// Upload Sertifikat - BLK
+Route::post('upload/store-blk/{id}','App\Http\Controllers\BlkController@uploadSertifikatBlk');

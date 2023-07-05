@@ -71,7 +71,7 @@
                                         @if (isset($item->sertifikat_blk))
                                             <i class="fa fa-check-circle" style="color: green;"></i>
                                         @else
-                                            <a href="{{ url('medical-checkup/detail-tki/' . $item->id) }}"
+                                            <a href="{{ url('blk/detail-tki/' . $item->id) }}"
                                                 class="btn btn-success btn-sm" style="color: white;">
                                                 Upload Sertifikat
                                             </a>

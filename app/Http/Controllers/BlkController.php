@@ -25,7 +25,29 @@ class BlkController extends Controller
 
     public function detailTki ($id)
     {
-        $detail_tki = DB::table('pendaftaran_tki')->where('id', $id)->first();
-        return view('admin/file_validation_tki/detail', compact('detail_tki'));
+        $detail_tki = DB::table('data_blk')->where('id', $id)->first();
+        return view('blk/list_tki/detail', compact('detail_tki'));
+    }
+
+    public function uploadSertifikatBlk(Request $request, $id)
+    {       
+        $request->validate([
+            'filename' => 'required',
+            'filename.*' => 'mimes:doc,docx,PDF,pdf,jpg,jpeg,png|max:2000'
+        ]);
+        if ($request->hasfile('filename')) {            
+            $filename = round(microtime(true) * 1000).'-'.str_replace(' ','-',$request->file('filename')->getClientOriginalName());
+            $request->file('filename')->move(public_path('images'), $filename);
+
+            DB::table('data_blk')->where('id', $id)
+            ->update([
+               'sertifikat_blk' => $filename
+         
+            ]);
+            return redirect('listtki-blk')->with('status-upload', 'Sertifikat BLK berhasil di upload!');
+        }else{
+            echo'Gagal';
+        }
+       
     }
 }

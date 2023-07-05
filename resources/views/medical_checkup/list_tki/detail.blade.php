@@ -6,7 +6,7 @@
                 <div class="card">
                     <div class="card-header">{{ __('Upload File or Images') }}</div>
                     <div class="card-body">
-                        <form method="POST" action="{{ url('upload/store/' . $detail_tki->id) }}"
+                        <form method="POST" action="{{ url('upload/store-medical/' . $detail_tki->id) }}"
                             enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">

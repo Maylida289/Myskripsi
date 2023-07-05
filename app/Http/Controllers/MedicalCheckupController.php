@@ -49,6 +49,5 @@ class MedicalCheckupController extends Controller
         }else{
             echo'Gagal';
         }
-       
     }
 }
