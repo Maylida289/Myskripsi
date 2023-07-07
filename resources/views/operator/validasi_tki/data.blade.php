@@ -53,25 +53,28 @@
                                 <th>Agama</th>
                                 <th>Pendidikan Terakhir</th>
                                 <th>No Telfon</th>
-                                <th>Keterangan</th>
+                                <th>Validasi</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($validasiTki as $item)
-                                @if ($item->hasil_validasi)
-                                    <tr>
-                                        <td class="text-center">{{ $loop->iteration }}</td>
-                                        <td>{{ $item->nama }}</td>
-                                        <td>{{ $item->jenis_kelamin }}</td>
-                                        <td>{{ $item->tempat_lahir }}</td>
-                                        <td>{{ $item->tgl_lahir }}</td>
-                                        <td>{{ $item->alamat }}</td>
-                                        <td>{{ $item->agama }}</td>
-                                        <td>{{ $item->pendidikan }}</td>
-                                        <td>{{ $item->no_tlp }}</td>
+                                <tr>
+                                    <td class="text-center">{{ $loop->iteration }}</td>
+                                    <td>{{ $item->nama }}</td>
+                                    <td>{{ $item->jenis_kelamin }}</td>
+                                    <td>{{ $item->tempat_lahir }}</td>
+                                    <td>{{ $item->tgl_lahir }}</td>
+                                    <td>{{ $item->alamat }}</td>
+                                    <td>{{ $item->agama }}</td>
+                                    <td>{{ $item->pendidikan }}</td>
+                                    <td>{{ $item->no_tlp }}</td>
+                                    @if ($item->hasil_validasi === 'Approved')
                                         <td class="text-center"><i class="fa fa-check-circle" style="color: green;"></i>
-                                    </tr>
-                                @endif
+                                        </td>
+                                    @else
+                                        <td>{{ $item->hasil_validasi }}</td>
+                                    @endif
+                                </tr>
                             @endforeach
                         </tbody>
                     </table>
