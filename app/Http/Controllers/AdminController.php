@@ -43,10 +43,12 @@ class AdminController extends Controller
 
     }
 
-    public function rejected ($id, $inforamtion){
+    public function rejected ($id, $information){
+      
         DB::table('pendaftaran_tki')->where('id', $id)
         ->update([
-           'sertifikat_blk' => 'information'
+           'hasil_validasi' => $information
         ]);
+        return redirect('validation-admin')->with('status-validation', 'Calon TKI berhasil di verifikasi!');
     }
 }

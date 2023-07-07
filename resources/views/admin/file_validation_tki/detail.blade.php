@@ -27,7 +27,29 @@
 
 @endsection
 
+<style>
+    .button-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
+    .button-approved {
+        background-color: green;
+        color: white;
+        width: 50%;
+        margin-right: 8px;
+        margin-left: 8px
+    }
+
+    .button-rejected {
+        background-color: red;
+        color: white;
+        width: 50%;
+        margin-right: 8px;
+        margin-left: 8px
+    }
+</style>
 
 @section('content')
 
@@ -123,11 +145,13 @@
                                             style="color: white; width: 150px;">
                                             Approved
                                         </a>
-                                        <a href="{{ url('validasi-tki/approved/' . $detail_tki->id) }}"
+                                        <a onclick="openPopup()"
                                             class="btn btn-danger btn-sm d-flex justify-content-center align-items-center"
-                                            style="color: white; width: 150px;">
-                                            Rejected
-                                        </a>
+                                            style="color: white; width: 150px;">Rejected</a>
+                                    </div>
+                                    <div id="popup" style="display: none; margin-top: 20px;">
+                                        <input type="text" id="message" placeholder="Enter your reason">
+                                        <a href="#" onclick="sendReason()">Send</a>
                                     </div>
                                 @endif
                             </form>
@@ -141,5 +165,22 @@
         </div>
 
     </div>
+
+    <script>
+        function openPopup() {
+            document.getElementById("popup").style.display = "block";
+        }
+
+        function sendReason() {
+            var reason = document.getElementById("message").valuxe;
+            var id = <?php echo $detail_tki->id; ?>; // Mendapatkan nilai $detailTki->id dari PHP
+
+            // Bangun URL dengan nilai parameter yang diperlukan
+            var url = "{{ url('validasi-tki/rejected') }}/" + id + "/" + "aditya";
+
+            // Redirect ke URL yang dibangun
+            window.location.href = url;
+        }
+    </script>
 
 @endsection
