@@ -172,11 +172,11 @@
         }
 
         function sendReason() {
-            var reason = document.getElementById("message").valuxe;
+            var reason = document.getElementById("message").value;
             var id = <?php echo $detail_tki->id; ?>; // Mendapatkan nilai $detailTki->id dari PHP
 
             // Bangun URL dengan nilai parameter yang diperlukan
-            var url = "{{ url('validasi-tki/rejected') }}/" + id + "/" + "aditya";
+            var url = "{{ url('validasi-tki/rejected/') }}/" + id + "/" + encodeURIComponent(reason);
 
             // Redirect ke URL yang dibangun
             window.location.href = url;

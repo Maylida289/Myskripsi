@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 class AdminController extends Controller
 {
     public function dashboard()
-    {   
+    {
         // Menampilkan jumlah total TKI
         $totalTki = DB::table('pendaftaran_tki')->count();
         $totalBlk = DB::table('pendaftaran_tki')->whereNotNull('sertifikat_blk')->count();
@@ -39,16 +39,16 @@ class AdminController extends Controller
         ->update([
            'hasil_validasi' => 'Approved'
         ]);
-        return redirect('validation-admin')->with('status-validation', 'Calon TKI berhasil di verifikasi!');
+        return redirect('validation-admin')->with('status-validation', 'Calon TKI berhasil di verifikasi !');
 
     }
 
     public function rejected ($id, $information){
-      
+
         DB::table('pendaftaran_tki')->where('id', $id)
         ->update([
            'hasil_validasi' => $information
         ]);
-        return redirect('validation-admin')->with('status-validation', 'Calon TKI berhasil di verifikasi!');
+        return redirect('validation-admin')->with('status-validation', 'Calon TKI berhasil di verifikasi !');
     }
 }
