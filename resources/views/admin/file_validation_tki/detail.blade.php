@@ -27,29 +27,7 @@
 
 @endsection
 
-<style>
-    .button-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
 
-    .button-approved {
-        background-color: green;
-        color: white;
-        width: 50%;
-        margin-right: 8px;
-        margin-left: 8px
-    }
-
-    .button-rejected {
-        background-color: red;
-        color: white;
-        width: 50%;
-        margin-right: 8px;
-        margin-left: 8px
-    }
-</style>
 
 @section('content')
 
@@ -140,8 +118,16 @@
                                 </td>
                                 @if ($detail_tki->sertifikat_blk)
                                     <div class="button-container">
-                                        <button class="btn button-approved">Approved</button>
-                                        <button class="btn button-rejected">Rejected</button>
+                                        <a href="{{ url('validasi-tki/approved/' . $detail_tki->id) }}"
+                                            class="btn btn-success btn-sm d-flex justify-content-center align-items-center"
+                                            style="color: white; width: 150px;">
+                                            Approved
+                                        </a>
+                                        <a href="{{ url('validasi-tki/approved/' . $detail_tki->id) }}"
+                                            class="btn btn-danger btn-sm d-flex justify-content-center align-items-center"
+                                            style="color: white; width: 150px;">
+                                            Rejected
+                                        </a>
                                     </div>
                                 @endif
                             </form>

@@ -83,6 +83,8 @@ route::get('main-admin',[AdminController::class,'mainAdmin']);
 route::get('validation-admin',[AdminController::class,'validationDataTki']);
 // Halaman Detail TKI - Admin
 Route::get('admin/detail-tki/{id}', 'App\Http\Controllers\AdminController@detailTki');
+// Routing Approved - admin
+Route::get('validasi-tki/approved/{id}', 'App\Http\Controllers\AdminController@approved');
 
 
 // Login Medical Checkup

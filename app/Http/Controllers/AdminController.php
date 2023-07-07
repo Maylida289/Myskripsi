@@ -33,4 +33,20 @@ class AdminController extends Controller
         $detail_tki = DB::table('pendaftaran_tki')->where('id', $id)->first();
         return view('admin/file_validation_tki/detail', compact('detail_tki'));
     }
+
+    public function approved ($id){
+        DB::table('pendaftaran_tki')->where('id', $id)
+        ->update([
+           'hasil_validasi' => 'Approved'
+        ]);
+        return redirect('validation-admin')->with('status-validation', 'Calon TKI berhasil di verifikasi!');
+
+    }
+
+    public function rejected ($id, $inforamtion){
+        DB::table('pendaftaran_tki')->where('id', $id)
+        ->update([
+           'sertifikat_blk' => 'information'
+        ]);
+    }
 }

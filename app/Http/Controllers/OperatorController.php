@@ -20,5 +20,5 @@ class OperatorController extends Controller
         $validasiTki = DB::table('pendaftaran_tki')->get();
         return view('operator.validasi_tki.data',  ['validasiTki' => $validasiTki]);
     }
-
+    
 }

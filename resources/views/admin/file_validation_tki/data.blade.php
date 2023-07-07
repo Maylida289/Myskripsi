@@ -3,6 +3,15 @@
 @section('title', 'Validasi Data TKI')
 @section('breadcrumbs')
 
+    @if (session('status-validation'))
+        <div class="alert alert-success">
+            {{ session('status-validation') }}
+        </div>
+        @php
+            session()->flash('status-validation');
+        @endphp
+    @endif
+
     <div class="breadcrumbs">
         <div class="col-sm-4">
             <div class="page-header float-left">
