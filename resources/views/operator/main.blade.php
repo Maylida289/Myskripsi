@@ -51,7 +51,8 @@
                             P3MI </a>
                     </li>
                     <li>
-                        <a href="{{ url('operator') }}"> <i class="menu-icon fa fa-puzzle-piece"></i> Hasil Validasi
+                        <a href="{{ url('validasi-tki-operator') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>
+                            Hasil Validasi
                             Berkas TKI </a>
                     </li>
                 </ul>

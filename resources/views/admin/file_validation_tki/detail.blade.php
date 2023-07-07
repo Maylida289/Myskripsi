@@ -118,6 +118,10 @@
                                                 alt="Gambar Contoh" style="height: 200px; width: 400px;">
                                         </div>
                                     @else
+                                        <div>
+                                            <label> Sertifikat Kesehatan</label>
+                                        </div>
+                                        <i class="fa fa-times-circle" style="color: red;"></i>
                                     @endif
                                 </td>
                                 <td class="text-center">
@@ -128,6 +132,10 @@
                                                 alt="Gambar Contoh" style="height: 200px; width: 400px;">
                                         </div>
                                     @else
+                                        <div>
+                                            <label> Sertifikat BLK</label>
+                                        </div>
+                                        <i class="fa fa-times-circle" style="color: red;"></i>
                                     @endif
                                 </td>
                                 @if ($detail_tki->sertifikat_blk)

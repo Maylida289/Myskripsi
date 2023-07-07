@@ -65,6 +65,9 @@ Route::group(['middleware' => ['auth','ceklevel:admin,admin-operator']], functio
 });
 // Halaman utama Operator
 route::get('main-operator',[OperatorController::class,'mainOperator']);
+// Halaman Hasil Validasi Berkas TKI - Operator
+Route::get('validasi-tki-operator', 'App\Http\Controllers\OperatorController@validasiTki');
+
 
 
 // Login Admin
