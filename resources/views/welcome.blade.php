@@ -108,58 +108,71 @@
     <br><br><br>
 
     {{-- Halaman Role --}}
-    <div class="row">
-        <div class="col-sm-6 mb-3 mb-sm-0">
-            <div class="card">
-                <img src="{{ asset('style/images/regis.jpg') }}">
+
+
+    <div class="row row-cols-2 row-cols-md-3 g-5">
+        <div class="col">
+            <div class="card border-primary-subtle border-3" style="width: 25rem; margin-left:25px;">
+                <img src="{{ asset('style/images/pendaftaran.jpg') }}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Halaman Operator</h5>
-                    <p class="card-text">Halaman Pertama yang diakses oleh para calon Pekerja Migran untuk melakukan
-                        pendaftaran sebagai
-                        Pekerja Migran Indonesia ke Luar Negri.</p>
-                    <a href="{{ url('login-operator') }}" class="btn btn-primary">Klik Disini !</a>
+                    <a href="{{ url('login-operator') }}"  class="btn btn-warning">Klik Disini !</a>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6">
-            <div class="card">
-                <img src="{{ asset('style/images/validation.jpg') }}">
+
+        <div class="col">
+            <div class="card border-primary-subtle border-3" style="width: 26rem;">
+                <img src="{{ asset('style/images/validation2.jpg') }}" class="card-img-top" alt="perlindungan tki ">
                 <div class="card-body">
-                    <h5 class="card-title">Halaman Admin </h5>
-                    <p class="card-text">Halaman ini berisi seputar validasi data serta berkas yang para calon Pekerja
-                        Migran
-                        berikan mulai dari biodata sampai sertifikasi.</p>
-                    <a href="{{ url('login-admin') }}" class="btn btn-primary">Klik Disini !</a>
+                    <h5 class="card-title">Halaman Admin</h5>
+                    <a href="{{ url('login-admin') }}" class="btn btn-warning">Klik Disini ! </a>
                 </div>
             </div>
         </div>
-    </div> <br>
-    <div class="row">
-        <div class="col-sm-6 mb-3 mb-sm-0">
-            <div class="card">
-                <img src="{{ asset('style/images/medical.jpg') }}">
+
+        <div class="col">
+            <div class="card border-primary-subtle border-3" style="width: 26rem;">
+                <img src="{{ asset('style/images/pemeriksaan.jpg') }}" class="card-img-top" alt="perjalanan tki">
                 <div class="card-body">
-                    <h5 class="card-title">Medical Checkup</h5>
-                    <p class="card-text">Halaman ini merupakan halaman yang diberikan kepada beberapa admin rumah sakit
-                        yang sudah
-                        bekerja sama dengan APJATI untuk upload sertifikasi kesehatan.</p>
-                    <a href="{{ url('login-medical-checkup') }}" class="btn btn-primary">Klik Disini !</a>
+                    <h5 class="card-title">Halaman Medical Checkup</h5>
+                    <a href="{{ url('login-medical-checkup') }}" class="btn btn-warning">Klik Disini !</a>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6">
-            <div class="card">
-                <img src="{{ asset('style/images/BLK.jpg') }}">
+    </div><br>
+
+    <div class="row row-cols-2 row-cols-md-3 g-5">
+        <div class="col">
+            <div class="card border-primary-subtle border-3" style="width: 25rem; margin-left:25px">
+                <img src="{{ asset('style/images/BLK.jpg') }}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Balai Latihan Kerja(BLK)</h5>
-                    <p class="card-text">Halaman ini merupakan halaman bagi para calon para calon Pekerja Migran untuk
-                        melakukan
-                        pelatihan berdasarkan sertifikasi nasional.</p>
-                    <a href="{{ url('login-blk') }}" class="btn btn-primary">Klik Disini !</a>
+                    <h5 class="card-title">Halaman BLK (Sertifikasi)</h5>
+                    <a href="{{ url('login-blk') }}" class="btn btn-warning">Klik Disini !</a>
                 </div>
             </div>
         </div>
-    </div>
+
+        <div class="col">
+            <div class="card border-primary-subtle border-3" style="width: 26rem;">
+                <img src="{{ asset('style/images/traveling.jpg') }}" class="card-img-top" alt="perlindungan tki ">
+                <div class="card-body">
+                    <h5 class="card-title">Halaman Pemberangkatan</h5>
+                    <a href="#" class="btn btn-warning">Klik Disini ! </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card border-primary-subtle border-3" style="width: 25rem;">
+                <img src="{{ asset('style/images/P3MI.jpg') }}" class="card-img-top" alt="perjalanan tki">
+                <div class="card-body">
+                    <h5 class="card-title">Halaman P3MI</h5>
+                    <a href="#" class="btn btn-warning">Klik Disini !</a>
+                </div>
+            </div>
+        </div>
+    </div><br><hr><br><br>
 
 
 </body>
