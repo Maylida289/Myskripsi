@@ -34,7 +34,7 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="">APJATI</a>
-                <a class="navbar-brand hidden" href="">M</a>
+                <a class="navbar-brand hidden" href=""></a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -99,10 +99,9 @@
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="{{ asset('style/images/admin.jpg') }}">
+                            <img class="user-avatar rounded-circle" src="{{ asset('style/images/user2.png') }}">
                         </a>
                         <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
                             <a class="nav-link" href="{{ url('logout-operator') }}"><i
                                     class="fa fa-power -off"></i>Logout</a>
                         </div>
