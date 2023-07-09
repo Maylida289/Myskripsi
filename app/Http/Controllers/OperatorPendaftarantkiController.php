@@ -31,6 +31,14 @@ class OperatorPendaftarantkiController extends Controller
         $ktp = round(microtime(true) * 1000).'-'.str_replace(' ','-',$request->file('ktp')->getClientOriginalName());
         $request->file('ktp')->move(public_path('images'), $ktp);
 
+        // Upload Ijazah
+        $request->validate([
+            'ijazah' => 'required',
+            'ijazah.*' => 'mimes:doc,docx,PDF,pdf,jpg,jpeg,png|max:2000'
+        ]);
+        $ijazah = round(microtime(true) * 1000).'-'.str_replace(' ','-',$request->file('ijazah')->getClientOriginalName());
+        $request->file('ijazah')->move(public_path('images'), $ijazah);
+
         //return $request;
         DB::table('pendaftaran_tki')->insert([
             'nama' => $request->nama ,
@@ -42,8 +50,7 @@ class OperatorPendaftarantkiController extends Controller
             'pendidikan' => $request->pendidikan,
             'no_tlp' => $request->no_tlp,
             'ktp'=> $ktp,
-            
-
+            'ijazah' => $ijazah
         ]);
         return redirect('pendaftarantki')->with('status','Nama TKI Berhasil Ditambahkan');
     }
