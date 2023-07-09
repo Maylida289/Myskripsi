@@ -47,7 +47,8 @@
                             TKI </a>
                     </li>
                     <li>
-                        <a href="#"> <i class="menu-icon fa fa-puzzle-piece"></i>Pendaftaran
+                        <a href="{{ url('pendaftaranp3mi/add') }}"> <i
+                                class="menu-icon fa fa-puzzle-piece"></i>Pendaftaran
                             P3MI </a>
                     </li>
                     <li>

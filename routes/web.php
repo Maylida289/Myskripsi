@@ -67,6 +67,9 @@ route::get('main-operator',[OperatorController::class,'mainOperator']);
 Route::get('validasi-tki-operator', 'App\Http\Controllers\OperatorController@validasiTki');
 // Fungsi Upload KTP - Operator
 Route::post('upload-ktp/store-operator/{id}','App\Http\Controllers\Operatorontroller@uploadKtp');
+// Daftar P3MI - Operator
+Route::get('pendaftaranp3mi/add', 'App\Http\Controllers\OperatorPendaftaranP3miController@addP3mi');
+Route::post('pendaftaranp3mi', 'App\Http\Controllers\OperatorPendaftaranP3miController@addProcess');
 
 
 // Login Admin
@@ -124,5 +127,3 @@ Route::get('logout-p3mi', 'App\Http\Controllers\LoginP3miController@logout');
 Route::group(['middleware' => ['auth','ceklevel:admin,admin-p3mi']], function () {
     route::get('p3mi/{sponsor}',[P3miController::class,'dashboard']);
 });
-// Pendaftaran P3MI - P3MI
-Route::get('pendaftaran-p3mi', 'App\Http\Controllers\P3miPendaftaranController@data');
