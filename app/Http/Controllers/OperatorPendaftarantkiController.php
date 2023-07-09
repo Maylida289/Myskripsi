@@ -51,7 +51,8 @@ class OperatorPendaftarantkiController extends Controller
             'pendidikan' => $request->pendidikan,
             'no_tlp' => $request->no_tlp,
             'ktp'=> $ktp,
-            'ijazah' => $ijazah
+            'ijazah' => $ijazah,
+            'sponsor' => $request->sponsor,
         ]);
         return redirect('pendaftarantki')->with('status','Nama TKI Berhasil Ditambahkan');
     }

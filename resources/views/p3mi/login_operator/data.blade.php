@@ -47,6 +47,10 @@
                             <label>Password</label>
                             <input type="password" class="form-control" placeholder="Password" name="password">
                         </div>
+                        <div class="form-group">
+                            <label>Sponsor</label>
+                            <input type="text" class="form-control" placeholder="Sponsor" name="sponsor">
+                        </div>
                         <div style="display: flex; justify-content: center; margin-bottom: 20px">
                             <button type="submit" class="btn btn-success btn-flat"
                                 style="display: block; width: 100%;">Sign in</button>

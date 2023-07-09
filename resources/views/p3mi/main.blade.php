@@ -40,22 +40,9 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="{{-- url('operator') --}}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                        <a href="{{-- url('operator') --}}"> <i class="menu-icon fa fa-dashboard"></i>List TKI </a>
                     </li>
-                    <li>
-                        <a href=""> <i class="menu-icon fa fa-puzzle-piece"></i>Pendaftaran
-                            TKI </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('pendaftaran-p3mi') }}"> <i
-                                class="menu-icon fa fa-puzzle-piece"></i>Pendaftaran
-                            P3MI </a>
-                    </li>
-                    <li>
-                        <a href=""> <i class="menu-icon fa fa-puzzle-piece"></i>
-                            Hasil Validasi
-                            Berkas TKI </a>
-                    </li>
+
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>

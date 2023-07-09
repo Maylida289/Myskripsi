@@ -9,12 +9,9 @@ use Illuminate\Support\Facades\DB;
 
 class P3miController extends Controller
 {
-    public function dashboard()
+    public function dashboard($sponsor)
     {
-        // Menampilkan jumlah total TKI
-        $totalTki = DB::table('pendaftaran_tki')->count();
-        $totalBlk = DB::table('pendaftaran_tki')->whereNotNull('sertifikat_blk')->count();
-        //------------------------------------------------
-        return view('p3mi.dashboard.dashboard', ['totalTki' => $totalTki, 'totalBlk' => $totalBlk]);
+        $list_p3mi = DB::table('pendaftaran_tki')->get();
+        return view('p3mi.dashboard.dashboard', ['list_p3mi' => $list_p3mi, 'sponsor' => $sponsor]);
     }
 }

@@ -1,13 +1,13 @@
 @extends('p3mi.main')
 
-@section('title', 'Pendaftaran TKI')
+@section('title', 'List TKI')
 @section('breadcrumbs')
 
     <div class="breadcrumbs">
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Pendaftarn P3MI</h1>
+                    <h1>List P3MI</h1>
                 </div>
             </div>
         </div>
@@ -16,7 +16,7 @@
                 <div class="page-title">
                     <ol class="breadcrumb text-right">
                         <li>
-                            <a href="#">Pendaftaran P3MI</a>
+                            <a href="#">List P3MI</a>
                         </li>
                         <li class="active">Data</li>
                     </ol>

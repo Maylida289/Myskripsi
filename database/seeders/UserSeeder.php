@@ -23,6 +23,7 @@ class UserSeeder extends Seeder
                 'level' => 'admin-operator',
                 'email' => 'admin@operator.com',
                 'password' => bcrypt('admin'),
+                'sponsor' => '',
                 'remember_token' => Str::random(60),
             ],
             [
@@ -30,6 +31,7 @@ class UserSeeder extends Seeder
                 'level' => 'admin-admin',
                 'email' => 'admin@admin.com',
                 'password' => bcrypt('admin'),
+                'sponsor' => '',
                 'remember_token' => Str::random(60),
             ],
             [
@@ -37,6 +39,7 @@ class UserSeeder extends Seeder
                 'level' => 'admin-medical',
                 'email' => 'admin@medical.com',
                 'password' => bcrypt('admin'),
+                'sponsor' => '',
                 'remember_token' => Str::random(60),
             ],
             [
@@ -44,13 +47,23 @@ class UserSeeder extends Seeder
                 'level' => 'admin-blk',
                 'email' => 'admin@blk.com',
                 'password' => bcrypt('admin'),
+                'sponsor' => '',
                 'remember_token' => Str::random(60),
             ],
             [
                 'name' => 'Admin Aplikasi',
                 'level' => 'admin-p3mi',
-                'email' => 'admin@p3mi.com',
+                'email' => 'adit@p3mi.com',
                 'password' => bcrypt('admin'),
+                'sponsor' => 'PT.Bagu bagu',
+                'remember_token' => Str::random(60),
+            ],
+            [
+                'name' => 'Admin Aplikasi',
+                'level' => 'admin-p3mi',
+                'email' => 'maylida@p3mi.com',
+                'password' => bcrypt('admin'),
+                'sponsor' => 'Cuit',
                 'remember_token' => Str::random(60),
             ],
         ]);

@@ -12,8 +12,8 @@ class LoginP3miController extends Controller
     }
 
     public function postlogin(Request $request){
-        if(Auth::attempt($request->only('email','password'))){
-            return redirect('/p3mi') ->with('login-success', 'Login Berhasil');
+        if(Auth::attempt($request->only('email','password','sponsor'))){
+            return redirect('p3mi/' . $request->sponsor) ->with('login-success', 'Login Berhasil');
         }
         return redirect('login-p3mi')->with('login-failed', 'Email atau Password salah');
     }

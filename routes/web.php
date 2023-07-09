@@ -122,7 +122,7 @@ Route::get('login-p3mi', 'App\Http\Controllers\LoginP3miController@loginP3mi');
 route::post('post-login-p3mi',[LoginP3miController::class,'postlogin'])->name('post-login-p3mi');
 Route::get('logout-p3mi', 'App\Http\Controllers\LoginP3miController@logout');
 Route::group(['middleware' => ['auth','ceklevel:admin,admin-p3mi']], function () {
-    route::get('p3mi',[P3miController::class,'dashboard'])->name('p3mi');
+    route::get('p3mi/{sponsor}',[P3miController::class,'dashboard']);
 });
 // Pendaftaran P3MI - P3MI
 Route::get('pendaftaran-p3mi', 'App\Http\Controllers\P3miPendaftaranController@data');
