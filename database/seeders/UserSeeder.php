@@ -66,6 +66,22 @@ class UserSeeder extends Seeder
                 'sponsor' => 'Cuit',
                 'remember_token' => Str::random(60),
             ],
+            [
+                'name' => 'Admin Aplikasi',
+                'level' => 'admin-p3mi',
+                'email' => 'amir@p3mi.com',
+                'password' => bcrypt('admin'),
+                'sponsor' => 'Cuit',
+                'remember_token' => Str::random(60),
+            ],
+            [
+                'name' => 'Admin Aplikasi',
+                'level' => 'admin-p3mi',
+                'email' => 'ardi@p3mi.com',
+                'password' => bcrypt('admin'),
+                'sponsor' => 'Volantis',
+                'remember_token' => Str::random(60),
+            ],
         ]);
     }
 }

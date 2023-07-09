@@ -3,6 +3,10 @@
 @section('title', 'Pendaftaran TKI')
 @section('breadcrumbs')
 
+    @php
+        $displayedSponsors = [];
+    @endphp
+
     <div class="breadcrumbs">
         <div class="col-sm-4">
             <div class="page-header float-left">
@@ -122,7 +126,12 @@
                                     <select name="sponsor" id="sponsor" style="width: 325px;">
                                         <option value="">Select P3MI</option>
                                         @foreach ($list_p3mi as $p3mi)
-                                            <option value="{{ $p3mi->nama_sponsor }}">{{ $p3mi->nama_sponsor }}</option>
+                                            @if ($p3mi->sponsor != null && !in_array($p3mi->sponsor, $displayedSponsors))
+                                                <option value="{{ $p3mi->sponsor }}">{{ $p3mi->sponsor }}</option>
+                                                @php
+                                                    $displayedSponsors[] = $p3mi->sponsor;
+                                                @endphp
+                                            @endif
                                         @endforeach
                                     </select>
                                 </div>
