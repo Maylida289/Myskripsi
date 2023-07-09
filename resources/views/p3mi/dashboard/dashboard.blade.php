@@ -54,6 +54,7 @@
                                 <th>Nama</th>
                                 <th>Alamat</th>
                                 <th>Sponsor</th>
+                                <th>Monitoring</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -63,6 +64,21 @@
                                         <td>{{ $item->nama }}</td>
                                         <td>{{ $item->alamat }}</td>
                                         <td>{{ $item->sponsor }}</td>
+                                        <td>
+                                            @if (isset($item->sertifikat_kesehatan) &&
+                                                    isset($item->sertifikat_blk) &&
+                                                    isset($item->hasil_validasi) &&
+                                                    $item->hasil_validasi === 'Approved')
+                                                Approved
+                                            @elseif (isset($item->sertifikat_kesehatan) && isset($item->sertifikat_blk))
+                                                Proses Review Admin Apjati
+                                            @elseif (isset($item->sertifikat_kesehatan))
+                                                Test BLK
+                                            @else
+                                                Periksa kesehatan
+                                            @endif
+
+                                        </td>
                                     </tr>
                                 @endif
                             @endforeach

@@ -57,6 +57,7 @@
                                 <th style="text-align: center;">Nama</th>
                                 <th style="text-align: center;">Jenis Kelamin</th>
                                 <th style="text-align: center;">Alamat</th>
+                                <th style="text-align: center;">Sponsor</th>
                                 <th style="text-align: center;">Serifikat Kesehatan</th>
                             </tr>
                         </thead>
@@ -67,6 +68,7 @@
                                     <td>{{ $item->nama }}</td>
                                     <td>{{ $item->jenis_kelamin }}</td>
                                     <td>{{ $item->alamat }}</td>
+                                    <td>{{ $item->sponsor }}</td>
                                     <td class="text-center">
                                         @if (isset($item->sertifikat_kesehatan))
                                             <i class="fa fa-check-circle" style="color: green;"></i>

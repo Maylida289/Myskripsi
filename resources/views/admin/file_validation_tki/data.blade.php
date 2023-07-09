@@ -58,6 +58,7 @@
                                 <th style="text-align: center;">Nama</th>
                                 <th style="text-align: center;">Jenis Kelamin</th>
                                 <th style="text-align: center;">Alamat</th>
+                                <th style="text-align: center;">Sponsor</th>
                                 <th style="text-align: center;">Aksi</th>
                             </tr>
                         </thead>
@@ -68,6 +69,7 @@
                                     <td>{{ $item->nama }}</td>
                                     <td>{{ $item->jenis_kelamin }}</td>
                                     <td>{{ $item->alamat }}</td>
+                                    <td>{{ $item->sponsor }}</td>
                                     <td class="text-center">
                                         <a href="{{ url('admin/detail-tki/' . $item->id) }}" class="btn btn-success btn-sm"
                                             style="color: white;">
