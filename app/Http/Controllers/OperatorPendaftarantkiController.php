@@ -20,7 +20,17 @@ class OperatorPendaftarantkiController extends Controller
     }
 
     public function addProcess (Request $request)
-    {
+
+   
+    {   
+        // Upload KTP
+        $request->validate([
+            'ktp' => 'required',
+            'ktp.*' => 'mimes:doc,docx,PDF,pdf,jpg,jpeg,png|max:2000'
+        ]);
+        $ktp = round(microtime(true) * 1000).'-'.str_replace(' ','-',$request->file('ktp')->getClientOriginalName());
+        $request->file('ktp')->move(public_path('images'), $ktp);
+
         //return $request;
         DB::table('pendaftaran_tki')->insert([
             'nama' => $request->nama ,
@@ -31,6 +41,9 @@ class OperatorPendaftarantkiController extends Controller
             'agama' => $request->agama,
             'pendidikan' => $request->pendidikan,
             'no_tlp' => $request->no_tlp,
+            'ktp'=> $ktp,
+            
+
         ]);
         return redirect('pendaftarantki')->with('status','Nama TKI Berhasil Ditambahkan');
     }

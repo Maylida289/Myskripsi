@@ -82,7 +82,26 @@
                                     <label> No Telfon</label>
                                     <input type="number" name="no_tlp" class="form-control" required>
                                 </div>
-                                <button type="submit" class="btn btn-success">Save</button>
+                                {{-- TODO: Implement upload image on this widget KTP --}}
+                                <div class="form-group">
+                                    <label> KTP</label>
+                                    <div class="card">
+                                        <div class="card-header">{{ __('Upload File or Images') }}</div>
+                                        <div class="card-body">
+                                            <div class="form-group row">
+                                                <label for="name"
+                                                    class="col-md-4 col-form-label text-md-right">{{ __('File') }}</label>
+                                                <div class="col-md-6">
+                                                    <input type="file" class="form-control" name="ktp"
+                                                        style="width: 300px;" required>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-success"> DAFTAR</button>
                             </form>
                         </div>
                     </div>

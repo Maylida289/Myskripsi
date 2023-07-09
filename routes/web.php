@@ -67,6 +67,8 @@ Route::group(['middleware' => ['auth','ceklevel:admin,admin-operator']], functio
 route::get('main-operator',[OperatorController::class,'mainOperator']);
 // Halaman Hasil Validasi Berkas TKI - Operator
 Route::get('validasi-tki-operator', 'App\Http\Controllers\OperatorController@validasiTki');
+// Fungsi Upload KTP - Operator
+Route::post('upload-ktp/store-operator/{id}','App\Http\Controllers\Operatorontroller@uploadKtp');
 
 
 

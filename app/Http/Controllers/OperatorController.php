@@ -21,4 +21,24 @@ class OperatorController extends Controller
         return view('operator.validasi_tki.data',  ['validasiTki' => $validasiTki]);
     }
     
+    public function uploadKtp(Request $request, $id)
+    {       
+        $request->validate([
+            'filename' => 'required',
+            'filename.*' => 'mimes:doc,docx,PDF,pdf,jpg,jpeg,png|max:2000'
+        ]);
+        if ($request->hasfile('filename')) {            
+            $filename = round(microtime(true) * 1000).'-'.str_replace(' ','-',$request->file('filename')->getClientOriginalName());
+            $request->file('filename')->move(public_path('images'), $filename);
+
+            DB::table('pendaftaran_tki')->where('id', $id)
+            ->update([
+               'ktp' => $filename
+         
+            ]);
+           /// TODO: Showing status upload on this line
+        }else{
+            echo'Gagal';
+        }
+    }
 }
