@@ -16,7 +16,8 @@ class OperatorPendaftarantkiController extends Controller
 
     public function add ()
     {
-        return view('operator.pendaftaran.add');
+        $list_p3mi = DB::table('p3mi')->get();
+        return view('operator.pendaftaran.add',['list_p3mi'=> $list_p3mi]);
     }
 
     public function addProcess (Request $request)

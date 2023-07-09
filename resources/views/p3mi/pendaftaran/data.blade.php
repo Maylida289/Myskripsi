@@ -45,11 +45,7 @@
                     <div class="pull-left">
                         <strong>List P3MI</strong>
                     </div>
-                    <div class="pull-right">
-                        <a href="{{-- url('pendaftarantki/add') --}}" class="btn btn-success btn-sm">
-                            <i class="fa fa-plus">Add</i>
-                        </a>
-                    </div>
+
                 </div>
                 <div class="card -body table-responsive">
                     <table class="table table-bordered">
@@ -65,26 +61,14 @@
                                     <td class="text-center">{{ $loop->iteration }}</td>
                                     <td>{{ $item->nama_sponsor }}</td>
 
-                                    <td class="text-center">
-                                        <form action="{{-- url('pendaftarantki/'.$item->id) --}}" method="" class="d-inline"
-                                            onsubmit="return confirm('Ingin Menghapus Data ?')">
-                                            @method('delete')
-                                            @csrf
-                                            <button class="btn btn-danger btn-sm">
-                                                <i class="fa fa-trash"></i>
-                                            </button>
-                                        </form>
-                                    </td>
+
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
-
-
         </div>
-
     </div>
 
 @endsection

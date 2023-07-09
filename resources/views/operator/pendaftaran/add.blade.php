@@ -117,6 +117,16 @@
                                         </div>
                                     </div>
                                 </div>
+                                <label>Select P3MI</label>
+                                <div style="margin-bottom: 50px;">
+                                    <select name="p3mi" id="p3mi" style="width: 325px;">
+                                        <option value="">Select P3MI</option>
+                                        @foreach ($list_p3mi as $p3mi)
+                                            <option value="{{ $p3mi->id }}">{{ $p3mi->nama_sponsor }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
 
                                 <button type="submit" class="btn btn-success"> DAFTAR</button>
                             </form>
