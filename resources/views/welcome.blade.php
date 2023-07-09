@@ -116,7 +116,7 @@
                 <img src="{{ asset('style/images/pendaftaran.jpg') }}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Halaman Operator</h5>
-                    <a href="{{ url('login-operator') }}"  class="btn btn-warning">Klik Disini !</a>
+                    <a href="{{ url('login-operator') }}" class="btn btn-warning">Klik Disini !</a>
                 </div>
             </div>
         </div>
@@ -168,11 +168,12 @@
                 <img src="{{ asset('style/images/P3MI.jpg') }}" class="card-img-top" alt="perjalanan tki">
                 <div class="card-body">
                     <h5 class="card-title">Halaman P3MI</h5>
-                    <a href="#" class="btn btn-warning">Klik Disini !</a>
+                    <a href="{{ url('login-p3mi') }}" class="btn btn-warning">Klik Disini !</a>
                 </div>
             </div>
         </div>
-    </div><br><hr><br><br>
+    </div><br>
+    <hr><br><br>
 
 
 </body>

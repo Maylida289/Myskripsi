@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>@yield('title') - APJATI </title>
+    <title>P3MI - APJATI </title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, iqnitial-scale=1">
     <link rel="apple-touch-icon" href="apple-icon.png">
@@ -40,10 +40,10 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="{{ url('operator') }}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                        <a href="{{-- url('operator') --}}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <li>
-                        <a href="{{ url('pendaftarantki') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>Pendaftaran
+                        <a href=""> <i class="menu-icon fa fa-puzzle-piece"></i>Pendaftaran
                             TKI </a>
                     </li>
                     <li>
@@ -51,7 +51,7 @@
                             P3MI </a>
                     </li>
                     <li>
-                        <a href="{{ url('validasi-tki-operator') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>
+                        <a href=""> <i class="menu-icon fa fa-puzzle-piece"></i>
                             Hasil Validasi
                             Berkas TKI </a>
                     </li>
@@ -102,8 +102,7 @@
                             <img class="user-avatar rounded-circle" src="{{ asset('style/images/user2.png') }}">
                         </a>
                         <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="{{ url('logout-operator') }}"><i
-                                    class="fa fa-power -off"></i>Logout</a>
+                            <a class="nav-link" href=""><i class="fa fa-power -off"></i>Logout</a>
                         </div>
                     </div>
 

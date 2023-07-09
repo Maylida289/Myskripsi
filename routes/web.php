@@ -119,3 +119,6 @@ route::get('listtki-blk',[BlkController::class,'listDataTki']);
 Route::get('blk/detail-tki/{id}', 'App\Http\Controllers\BlkController@detailTki');
 // Upload Sertifikat - BLK
 Route::post('upload/store-blk/{id}','App\Http\Controllers\BlkController@uploadSertifikatBlk');
+
+// Login P3MI
+Route::get('login-p3mi', 'App\Http\Controllers\LoginP3miController@loginP3mi'); 
