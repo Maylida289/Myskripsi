@@ -102,7 +102,8 @@
                             <img class="user-avatar rounded-circle" src="{{ asset('style/images/user2.png') }}">
                         </a>
                         <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href=""><i class="fa fa-power -off"></i>Logout</a>
+                            <a class="nav-link" href="{{ url('logout-p3mi') }}"><i
+                                    class="fa fa-power -off"></i>Logout</a>
                         </div>
                     </div>
 

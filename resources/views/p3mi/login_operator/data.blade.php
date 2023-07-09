@@ -37,7 +37,7 @@
             <h4 style="text-align: center;">Login P3mi</h4>
             <div class="login-content">
                 <div class="login-form">
-                    <form action="{{-- route('post-login-operator') --}}" method="">
+                    <form action="{{ route('post-login-p3mi') }}" method="POST">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label>Email address</label>

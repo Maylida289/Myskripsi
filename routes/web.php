@@ -5,10 +5,12 @@ use App\Http\Controllers\LoginOperatorController;
 use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\LoginMedicalCheckupController;
 use App\Http\Controllers\LoginBlkController;
+use App\Http\Controllers\LoginP3miController;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MedicalCheckupController;
 use App\Http\Controllers\BlkController;
+use App\Http\Controllers\P3miController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -122,3 +124,8 @@ Route::post('upload/store-blk/{id}','App\Http\Controllers\BlkController@uploadSe
 
 // Login P3MI
 Route::get('login-p3mi', 'App\Http\Controllers\LoginP3miController@loginP3mi'); 
+route::post('post-login-p3mi',[LoginP3miController::class,'postlogin'])->name('post-login-p3mi');
+Route::get('logout-p3mi', 'App\Http\Controllers\LoginP3miController@logout');
+Route::group(['middleware' => ['auth','ceklevel:admin,admin-p3mi']], function () {
+    route::get('p3mi',[P3miController::class,'dashboard'])->name('p3mi');
+});

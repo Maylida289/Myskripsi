@@ -46,6 +46,13 @@ class UserSeeder extends Seeder
                 'password' => bcrypt('admin'),
                 'remember_token' => Str::random(60),
             ],
+            [
+                'name' => 'Admin Aplikasi',
+                'level' => 'admin-p3mi',
+                'email' => 'admin@p3mi.com',
+                'password' => bcrypt('admin'),
+                'remember_token' => Str::random(60),
+            ],
         ]);
     }
 }
