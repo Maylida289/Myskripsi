@@ -15,8 +15,9 @@ class MedicalCheckupController extends Controller
         $totalTki = DB::table('pendaftaran_tki')->count();
         $totalMedical =  DB::table('medical_checkup')->count();
         $totalBlk =  DB::table('blk')->count();
+        $totalBerangkat = DB::table('pemberangkatan')->count();
         //------------------------------------------------
-        return view('medical_checkup.dashboard.dashboard', ['totalTki' => $totalTki, 'totalMedical' => $totalMedical, 'totalBlk' => $totalBlk]);
+        return view('medical_checkup.dashboard.dashboard', ['totalTki' => $totalTki, 'totalMedical' => $totalMedical, 'totalBlk' => $totalBlk, 'totalBerangkat' => $totalBerangkat]);
     }
 
     public function listDataTki(){

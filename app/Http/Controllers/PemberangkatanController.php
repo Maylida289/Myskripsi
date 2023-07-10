@@ -11,13 +11,13 @@ class PemberangkatanController extends Controller
 {
     public function dashboard()
     {
-        $list_tki = DB::table('pendaftaran_tki')->get();
+        $list_tki = DB::table('hasil_validasi')->get();
         return view('pemberangkatan.dashboard.dashboard', ['list_tki' => $list_tki]);
     }
 
     public function detailTki ($id)
     {
-        $detail_tki = DB::table('pendaftaran_tki')->where('id', $id)->first();
+        $detail_tki = DB::table('hasil_validasi')->where('id', $id)->first();
         return view('pemberangkatan/dashboard/detail', compact('detail_tki'));
     }
 
@@ -38,7 +38,7 @@ class PemberangkatanController extends Controller
                 $request->file('visa')->move(public_path('images'), $visa);
     
 
-            DB::table('pendaftaran_tki')->where('id', $id)
+            DB::table('hasil_validasi')->where('id', $id)
             ->update([
                'paspor' => $paspor,
                'visa' => $visa

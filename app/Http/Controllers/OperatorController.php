@@ -13,7 +13,8 @@ class OperatorController extends Controller
         $totalTki = DB::table('pendaftaran_tki')->count();
         $totalMedical =  DB::table('medical_checkup')->count();
         $totalBlk =  DB::table('blk')->count();
-        return view('operator.dashboard.dashboard',  ['totalTki' => $totalTki, 'totalMedical' => $totalMedical, 'totalBlk' => $totalBlk]);
+        $totalBerangkat = DB::table('pemberangkatan')->count();
+        return view('operator.dashboard.dashboard',  ['totalTki' => $totalTki, 'totalMedical' => $totalMedical, 'totalBlk' => $totalBlk, 'totalBerangkat' => $totalBerangkat]);
     }
 
     public function validasiTki()
