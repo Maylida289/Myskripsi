@@ -72,6 +72,10 @@ Route::post('upload-ktp/store-operator/{id}','App\Http\Controllers\Operatorontro
 // Daftar P3MI - Operator
 Route::get('pendaftaranp3mi/add', 'App\Http\Controllers\OperatorPendaftaranP3miController@addP3mi');
 Route::post('pendaftaranp3mi', 'App\Http\Controllers\OperatorPendaftaranP3miController@addProcess');
+// Halaman Pemberangkatan - Operator
+Route::get('pemberangkatan-operator', 'App\Http\Controllers\OperatorController@pemberangkatan');
+// Halaman Detail Pemberangkatan - Operator
+Route::get('pemberangkatan/operator/detail-tki/{id}', 'App\Http\Controllers\OperatorController@detailPemberangkatanTki');
 
 
 // Login Admin

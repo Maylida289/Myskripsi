@@ -43,4 +43,17 @@ class OperatorController extends Controller
             echo'Gagal';
         }
     }
+
+    public function pemberangkatan()
+    {   
+        $validasiTki = DB::table('pemberangkatan')->get();
+        return view('operator.pemberangkatan.data',  ['validasiTki' => $validasiTki]);
+    }
+
+    public function detailPemberangkatanTki ($id)
+    {
+        $detail_tki = DB::table('pemberangkatan')->where('id', $id)->first();
+        return view('operator/pemberangkatan/detail', compact('detail_tki'));
+    }
+
 }
