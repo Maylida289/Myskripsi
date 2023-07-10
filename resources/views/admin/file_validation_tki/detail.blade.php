@@ -110,6 +110,16 @@
                                     <input type="number" name="no_tlp" class="form-control"
                                         value="{{ $detail_tki->no_tlp }}" readonly required>
                                 </div>
+                                <div class="form-group">
+                                    <label>KTP</label>
+                                    <img src="{{ asset('images/' . $detail_tki->ktp) }}" alt="Gambar Contoh"
+                                        style="height: 200px; width: 400px;">
+                                </div>
+                                <div class="form-group">
+                                    <label> Ijazah</label>
+                                    <img src="{{ asset('images/' . $detail_tki->ijazah) }}" alt="Gambar Contoh"
+                                        style="height: 200px; width: 400px;">
+                                </div>
                                 <td class="text-center">
                                     @if (isset($detail_tki->sertifikat_kesehatan))
                                         <div class="form-group">

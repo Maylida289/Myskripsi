@@ -2,6 +2,9 @@
 
 @section('title', 'List TKI')
 @section('breadcrumbs')
+    @php
+        $iteration = 1;
+    @endphp
 
     <div class="breadcrumbs">
         <div class="col-sm-4">
@@ -61,6 +64,7 @@
                             @foreach ($list_p3mi as $item)
                                 @if ($item->sponsor == $sponsor)
                                     <tr>
+                                        <td class="text-center">{{ $iteration }}</td>
                                         <td>{{ $item->nama }}</td>
                                         <td>{{ $item->alamat }}</td>
                                         <td>{{ $item->sponsor }}</td>
@@ -77,9 +81,11 @@
                                             @else
                                                 Periksa kesehatan
                                             @endif
-
                                         </td>
                                     </tr>
+                                    @php
+                                        $iteration++;
+                                    @endphp
                                 @endif
                             @endforeach
                         </tbody>

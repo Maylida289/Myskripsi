@@ -16,7 +16,7 @@ class OperatorPendaftaranP3miController extends Controller
 
     public function addProcess (Request $request)
     {   
-        DB::table('users')->insert([
+        DB::table('p3mis')->insert([
             'name' => $request->nama,
             'level' => 'admin-p3mi',
             'email' => $request->email,

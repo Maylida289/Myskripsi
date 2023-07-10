@@ -64,6 +64,7 @@
                                 <th>Agama</th>
                                 <th>Pendidikan Terakhir</th>
                                 <th>No Telfon</th>
+                                <th>Sponsor</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -79,6 +80,7 @@
                                     <td>{{ $item->agama }}</td>
                                     <td>{{ $item->pendidikan }}</td>
                                     <td>{{ $item->no_tlp }}</td>
+                                    <td>{{ $item->sponsor }}</td>
                                     <td class="text-center">
                                         <a href="{{ url('pendaftarantki/edit/' . $item->id) }}"
                                             class="btn btn-primary btn-sm">
