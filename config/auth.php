@@ -40,6 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'p3mi' => [
+            'driver' => 'session',
+            'provider' => 'p3mi',
+        ],
     ],
 
     /*
@@ -64,11 +68,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'p3mi' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\P3mi::class,
+            'table' => 'p3mi',
+        ],
     ],
 
     /*
@@ -89,6 +93,12 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'p3mi' => [
+            'provider' => 'p3mi',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

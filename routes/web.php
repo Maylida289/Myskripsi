@@ -128,9 +128,7 @@ Route::get('login-p3mi', 'App\Http\Controllers\LoginP3miController@loginP3mi');
 route::post('post-login-p3mi',[LoginP3miController::class,'postlogin'])->name('post-login-p3mi');
 Route::get('logout-p3mi', 'App\Http\Controllers\LoginP3miController@logout');
 //Halaman List TKI - P3MI
-Route::group(['middleware' => ['auth','ceklevel:admin,admin-p3mi']], function () {
-    route::get('p3mi/{sponsor}',[P3miController::class,'dashboard']);
-});
+route::get('p3mi/{sponsor}',[P3miController::class,'dashboard']);
 
 
 // Login - Pemberangkatan
