@@ -13,19 +13,20 @@ class BlkController extends Controller
     {   
         // Menampilkan jumlah total TKI
         $totalTki = DB::table('pendaftaran_tki')->count();
-        $totalBlk = DB::table('pendaftaran_tki')->whereNotNull('sertifikat_blk')->count();
+        $totalMedical =  DB::table('medical_checkup')->count();
+        $totalBlk =  DB::table('blk')->count();
         //------------------------------------------------
-        return view('blk.dashboard.dashboard', ['totalTki' => $totalTki, 'totalBlk' => $totalBlk]);
+        return view('blk.dashboard.dashboard', ['totalTki' => $totalTki, 'totalMedical' => $totalMedical, 'totalBlk' => $totalBlk]);
     }
 
     public function listDataTki(){
-        $list_blk = DB::table('pendaftaran_tki')->get();
+        $list_blk = DB::table('blk')->get();
         return view('blk.list_tki.data', ['data_blk' => $list_blk]);
     }
 
     public function detailTki ($id)
     {
-        $detail_tki = DB::table('pendaftaran_tki')->where('id', $id)->first();
+        $detail_tki = DB::table('blk')->where('id', $id)->first();
         return view('blk/list_tki/detail', compact('detail_tki'));
     }
 
@@ -39,7 +40,7 @@ class BlkController extends Controller
             $filename = round(microtime(true) * 1000).'-'.str_replace(' ','-',$request->file('filename')->getClientOriginalName());
             $request->file('filename')->move(public_path('images'), $filename);
 
-            DB::table('pendaftaran_tki')->where('id', $id)
+            DB::table('blk')->where('id', $id)
             ->update([
                'sertifikat_blk' => $filename
          
