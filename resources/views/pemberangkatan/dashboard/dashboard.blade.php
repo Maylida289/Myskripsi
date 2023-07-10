@@ -1,4 +1,4 @@
-@extends('p3mi.main')
+@extends('pemberangkatan.main')
 
 @section('title', 'List TKI')
 @section('breadcrumbs')
@@ -7,7 +7,7 @@
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>List P3MI</h1>
+                    <h1>List Pemberangkatan</h1>
                 </div>
             </div>
         </div>
@@ -16,7 +16,7 @@
                 <div class="page-title">
                     <ol class="breadcrumb text-right">
                         <li>
-                            <a href="#">List P3MI</a>
+                            <a href="#">List Pemberangkatan</a>
                         </li>
                         <li class="active">Data</li>
                     </ol>
@@ -43,7 +43,7 @@
             <div class="card">
                 <div class="card-header">
                     <div class="pull-left">
-                        <strong>List P3MI</strong>
+                        <strong>List Pemberangkatan</strong>
                     </div>
 
                 </div>
@@ -54,34 +54,19 @@
                                 <th>Nama</th>
                                 <th>Alamat</th>
                                 <th>Sponsor</th>
-                                <th>Monitoring</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($list_p3mi as $item)
-                                @if ($item->sponsor == $sponsor)
+                            @foreach ($list_tki as $item)
+                                @if ($item->hasil_validasi === 'Approved')
                                     <tr>
                                         <td>{{ $item->nama }}</td>
                                         <td>{{ $item->alamat }}</td>
                                         <td>{{ $item->sponsor }}</td>
-                                        <td>
-                                            @if (isset($item->sertifikat_kesehatan) &&
-                                                    isset($item->sertifikat_blk) &&
-                                                    isset($item->hasil_validasi) &&
-                                                    $item->hasil_validasi === 'Approved')
-                                                Approved
-                                            @elseif (isset($item->sertifikat_kesehatan) && isset($item->sertifikat_blk))
-                                                Proses Review Admin Apjati
-                                            @elseif (isset($item->sertifikat_kesehatan))
-                                                Test BLK
-                                            @else
-                                                Periksa kesehatan
-                                            @endif
-
-                                        </td>
                                     </tr>
                                 @endif
                             @endforeach
+
                         </tbody>
                     </table>
                 </div>

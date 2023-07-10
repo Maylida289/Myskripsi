@@ -37,8 +37,8 @@
             <h4 style="text-align: center;">Login Pemberangkatan</h4>
             <div class="login-content">
                 <div class="login-form">
-                    <form action="{{-- route('post-login-p3mi') --}}" method="">
-                        {{-- csrf_field() --}}
+                    <form action="{{ route('post-login-pemberangkatan') }}" method="POST">
+                        {{ csrf_field() }}
                         <div class="form-group">
                             <label>Email address</label>
                             <input type="email" class="form-control" placeholder="Email" name="email">

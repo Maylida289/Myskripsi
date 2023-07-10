@@ -6,11 +6,13 @@ use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\LoginMedicalCheckupController;
 use App\Http\Controllers\LoginBlkController;
 use App\Http\Controllers\LoginP3miController;
+use App\Http\Controllers\LoginPemberangkatanController;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MedicalCheckupController;
 use App\Http\Controllers\BlkController;
 use App\Http\Controllers\P3miController;
+use App\Http\Controllers\PemberangkatanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -133,3 +135,9 @@ Route::group(['middleware' => ['auth','ceklevel:admin,admin-p3mi']], function ()
 
 // Login - Pemberangkatan
 Route::get('login-pemberangkatan', 'App\Http\Controllers\LoginPemberangkatanController@loginPemberangkatan'); 
+route::post('post-login-pemberangkatan',[LoginPemberangkatanController::class,'postlogin'])->name('post-login-pemberangkatan');
+Route::get('logout-pemberangkatan', 'App\Http\Controllers\LoginPemberangkatanController@logout');
+//Halaman List TKI - P3MI
+Route::group(['middleware' => ['auth','ceklevel:admin,admin-pemberangkatan']], function () {
+    route::get('pemberangkatan',[PemberangkatanController::class,'dashboard']);
+});

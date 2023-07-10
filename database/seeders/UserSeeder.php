@@ -52,6 +52,14 @@ class UserSeeder extends Seeder
             ],
             [
                 'name' => 'Admin Aplikasi',
+                'level' => 'admin-pemberangkatan',
+                'email' => 'admin@pemberangkatan.com',
+                'password' => bcrypt('admin'),
+                'sponsor' => '',
+                'remember_token' => Str::random(60),
+            ],
+            [
+                'name' => 'Admin Aplikasi',
                 'level' => 'admin-p3mi',
                 'email' => 'adit@p3mi.com',
                 'password' => bcrypt('admin'),
