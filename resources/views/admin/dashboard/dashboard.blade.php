@@ -55,7 +55,7 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3 style="margin-left: 10px; margin-top:10px">{{ $totalTki }}</h3>
+                            <h3 style="margin-left: 10px; margin-top:10px">{{ $totalMedical }}</h3>
 
                             <p style="margin-left: 10px; color:antiquewhite">Medical</p>
                         </div>

@@ -11,31 +11,28 @@ class AdminController extends Controller
 {
     public function dashboard()
     {
-        // Menampilkan jumlah total TKI
+        // Menampilkan jumlah total 
         $totalTki = DB::table('pendaftaran_tki')->count();
-        $totalBlk = DB::table('pendaftaran_tki')->whereNotNull('sertifikat_blk')->count();
+        $totalMedical =  DB::table('medical_checkup')->count();
+        $totalBlk =  DB::table('blk')->count();
         //------------------------------------------------
-        return view('admin.dashboard.dashboard', ['totalTki' => $totalTki, 'totalBlk' => $totalBlk]);
-    }
-
-    public function mainAdmin(){
-        return view('admin.main');
+        return view('admin.dashboard.dashboard', ['totalTki' => $totalTki, 'totalMedical' => $totalMedical, 'totalBlk' => $totalBlk]);
     }
 
     public function validationDataTki(){
 
-        $list_tki = DB::table('pendaftaran_tki')->get();
-        return view('admin.file_validation_tki.data', ['pendaftaran_tki' => $list_tki]);
+        $list_tki = DB::table('validasi_berkas')->get();
+        return view('admin.file_validation_tki.data', ['validasi_berkas' => $list_tki]);
     }
 
     public function detailTki ($id)
     {
-        $detail_tki = DB::table('pendaftaran_tki')->where('id', $id)->first();
+        $detail_tki = DB::table('validasi_berkas')->where('id', $id)->first();
         return view('admin/file_validation_tki/detail', compact('detail_tki'));
     }
 
     public function approved ($id){
-        DB::table('pendaftaran_tki')->where('id', $id)
+        DB::table('validasi_berkas')->where('id', $id)
         ->update([
            'hasil_validasi' => 'Approved'
         ]);
@@ -45,7 +42,7 @@ class AdminController extends Controller
 
     public function rejected ($id, $information){
 
-        DB::table('pendaftaran_tki')->where('id', $id)
+        DB::table('validasi_berkas')->where('id', $id)
         ->update([
            'hasil_validasi' => $information
         ]);

@@ -63,7 +63,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($pendaftaran_tki as $item)
+                            @foreach ($validasi_berkas as $item)
                                 <tr>
                                     <td class="text-center">{{ $loop->iteration }}</td>
                                     <td>{{ $item->nama }}</td>
