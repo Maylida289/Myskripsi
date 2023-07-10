@@ -14,4 +14,10 @@ class PemberangkatanController extends Controller
         $list_tki = DB::table('pendaftaran_tki')->get();
         return view('pemberangkatan.dashboard.dashboard', ['list_tki' => $list_tki]);
     }
+
+    public function detailTki ($id)
+    {
+        $detail_tki = DB::table('pendaftaran_tki')->where('id', $id)->first();
+        return view('pemberangkatan/dashboard/detail', compact('detail_tki'));
+    }
 }

@@ -51,9 +51,10 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>Nama</th>
-                                <th>Alamat</th>
-                                <th>Sponsor</th>
+                                <th style="text-align: center;">Nama</th>
+                                <th style="text-align: center;">Alamat</th>
+                                <th style="text-align: center;">Sponsor</th>
+                                <th style="text-align: center;">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -63,6 +64,12 @@
                                         <td>{{ $item->nama }}</td>
                                         <td>{{ $item->alamat }}</td>
                                         <td>{{ $item->sponsor }}</td>
+                                        <td class="text-center">
+                                            <a href="{{ url('pemberangkatan/detail-tki/' . $item->id) }}"
+                                                class="btn btn-success btn-sm" style="color: white;">
+                                                Upload Paspor & Visa
+                                            </a>
+                                        </td>
                                     </tr>
                                 @endif
                             @endforeach

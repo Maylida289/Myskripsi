@@ -137,7 +137,9 @@ Route::group(['middleware' => ['auth','ceklevel:admin,admin-p3mi']], function ()
 Route::get('login-pemberangkatan', 'App\Http\Controllers\LoginPemberangkatanController@loginPemberangkatan'); 
 route::post('post-login-pemberangkatan',[LoginPemberangkatanController::class,'postlogin'])->name('post-login-pemberangkatan');
 Route::get('logout-pemberangkatan', 'App\Http\Controllers\LoginPemberangkatanController@logout');
-//Halaman List TKI - P3MI
+//Halaman List TKI - Pemberangkatan
 Route::group(['middleware' => ['auth','ceklevel:admin,admin-pemberangkatan']], function () {
     route::get('pemberangkatan',[PemberangkatanController::class,'dashboard']);
 });
+// Halaman Detail TKI - Pemberangkatan
+Route::get('pemberangkatan/detail-tki/{id}', 'App\Http\Controllers\PemberangkatanController@detailTki');
