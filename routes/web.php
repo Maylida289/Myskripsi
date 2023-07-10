@@ -143,3 +143,5 @@ Route::group(['middleware' => ['auth','ceklevel:admin,admin-pemberangkatan']], f
 });
 // Halaman Detail TKI - Pemberangkatan
 Route::get('pemberangkatan/detail-tki/{id}', 'App\Http\Controllers\PemberangkatanController@detailTki');
+// Upload paspor dan visa
+Route::post('upload/store-pemberangkatan/{id}','App\Http\Controllers\PemberangkatanController@uploadPasporAndVisa');

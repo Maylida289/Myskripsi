@@ -66,21 +66,49 @@
 
                     <div class="row">
                         <div class="col-md-4 offset-md-4">
-                            <form action="">
+                            <form method="POST" action="{{ url('upload/store-pemberangkatan/' . $detail_tki->id) }}"
+                                enctype="multipart/form-data">
 
                                 @csrf
 
                                 <div class="form-group">
-                                    <label> Nama TKI</label>
-                                    <input type="text" name="nama" class="form-control"
-                                        value="{{ $detail_tki->nama }}" readonly autofocus required>
+                                    <label>Visa</label>
+                                    <div class="card">
+                                        <div class="card-header">{{ __('Upload File or Images') }}</div>
+                                        <div class="card-body">
+                                            <div class="form-group row">
+                                                <label for="name"
+                                                    class="col-md-4 col-form-label text-md-right">{{ __('File') }}</label>
+                                                <div class="col-md-6">
+                                                    <input type="file" class="form-control" name="visa"
+                                                        style="width: 200px;" required>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <label> Jenis Kelamin</label>
-                                    <input type="text" name="jenis_kelamin" class="form-control"
-                                        value="{{ $detail_tki->jenis_kelamin }}" readonly required>
+                                    <label>Paspor</label>
+                                    <div class="card">
+                                        <div class="card-header">{{ __('Upload File or Images') }}</div>
+                                        <div class="card-body">
+                                            <div class="form-group row">
+                                                <label for="name"
+                                                    class="col-md-4 col-form-label text-md-right">{{ __('File') }}</label>
+                                                <div class="col-md-6">
+                                                    <input type="file" class="form-control" name="paspor"
+                                                        style="width: 200px;" required>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
                                 </div>
 
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-success">Upload Visa dan Paspor</button>
+                                </div>
                             </form>
                         </div>
                     </div>

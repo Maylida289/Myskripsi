@@ -3,6 +3,16 @@
 @section('title', 'List TKI')
 @section('breadcrumbs')
 
+
+    @if (session('status-upload'))
+        <div class="alert alert-success">
+            {{ session('status-upload') }}
+        </div>
+        @php
+            session()->flash('status-upload');
+        @endphp
+    @endif
+
     <div class="breadcrumbs">
         <div class="col-sm-4">
             <div class="page-header float-left">
@@ -54,7 +64,7 @@
                                 <th style="text-align: center;">Nama</th>
                                 <th style="text-align: center;">Alamat</th>
                                 <th style="text-align: center;">Sponsor</th>
-                                <th style="text-align: center;">Aksi</th>
+                                <th style="text-align: center;">Paspor dan Visa</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -64,12 +74,18 @@
                                         <td>{{ $item->nama }}</td>
                                         <td>{{ $item->alamat }}</td>
                                         <td>{{ $item->sponsor }}</td>
-                                        <td class="text-center">
-                                            <a href="{{ url('pemberangkatan/detail-tki/' . $item->id) }}"
-                                                class="btn btn-success btn-sm" style="color: white;">
-                                                Upload Paspor & Visa
-                                            </a>
-                                        </td>
+                                        @if (isset($item->paspor) && isset($item->visa))
+                                            <td class="text-center"><i class="fa fa-check-circle" style="color: green;"></i>
+                                            </td>
+                                        @else
+                                            <td class="text-center">
+                                                <a href="{{ url('pemberangkatan/detail-tki/' . $item->id) }}"
+                                                    class="btn btn-success btn-sm" style="color: white;">
+                                                    Upload Paspor & Visa
+                                                </a>
+                                            </td>
+                                        @endif
+
                                     </tr>
                                 @endif
                             @endforeach
