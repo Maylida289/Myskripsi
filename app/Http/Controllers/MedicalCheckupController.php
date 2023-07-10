@@ -11,22 +11,22 @@ class MedicalCheckupController extends Controller
 {
     public function dashboard()
     {   
-        // Menampilkan jumlah total TKI
+        // Menampilkan jumlah total
         $totalTki = DB::table('pendaftaran_tki')->count();
-        $totalBlk = DB::table('pendaftaran_tki')->whereNotNull('sertifikat_blk')->count();
+        $totalMedical =  DB::table('medical_checkup')->count();
+        $totalBlk =  DB::table('blk')->count();
         //------------------------------------------------
-        return view('medical_checkup.dashboard.dashboard', ['totalTki' => $totalTki, 'totalBlk' => $totalBlk]);
+        return view('medical_checkup.dashboard.dashboard', ['totalTki' => $totalTki, 'totalMedical' => $totalMedical, 'totalBlk' => $totalBlk]);
     }
 
     public function listDataTki(){
-
-        $list_tki = DB::table('pendaftaran_tki')->get();
-        return view('medical_checkup.list_tki.data', ['pendaftaran_tki' => $list_tki]);
+        $list_tki = DB::table('medical_checkup')->get();
+        return view('medical_checkup.list_tki.data', ['list_tki' => $list_tki]);
     }
 
     public function detailTki ($id)
     {
-        $detail_tki = DB::table('pendaftaran_tki')->where('id', $id)->first();
+        $detail_tki = DB::table('medical_checkup')->where('id', $id)->first();
         return view('medical_checkup/list_tki/detail', compact('detail_tki'));
     }
 
@@ -41,7 +41,7 @@ class MedicalCheckupController extends Controller
             $filename = round(microtime(true) * 1000).'-'.str_replace(' ','-',$request->file('filename')->getClientOriginalName());
             $request->file('filename')->move(public_path('images'), $filename);
 
-            DB::table('pendaftaran_tki')->where('id', $id)
+            DB::table('medical_checkup')->where('id', $id)
             ->update([
                'sertifikat_kesehatan' => $filename
          
