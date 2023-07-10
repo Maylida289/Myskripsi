@@ -56,7 +56,7 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3 style="margin-left: 10px; margin-top:10px">{{ $totalTki }}</h3>
+                            <h3 style="margin-left: 10px; margin-top:10px">{{ $totalMedical }}</h3>
 
                             <p style="margin-left: 10px; color:antiquewhite">Medical</p>
                         </div>
@@ -82,23 +82,23 @@
                     </div>
                 </div>
 
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-danger">
-                        <div class="inner">
-                            <h3 style="margin-left: 10px; margin-top:10px">0</h3>
+                <!. /col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-danger">
+                            <div class="inner">
+                                <h3 style="margin-left: 10px; margin-top:10px">0</h3>
 
-                            <p style="color:antiquewhite; margin-left: 10px;">Berangkat</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-pie-graph"></i>
-                        </div>
+                                <p style="color:antiquewhite; margin-left: 10px;">Berangkat</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-pie-graph"></i>
+                            </div>
 
+                        </div>
                     </div>
-                </div>
 
-                <!-- ./col -->
+                    <!-- ./col -->
             </div>
         </div>
     </section>
