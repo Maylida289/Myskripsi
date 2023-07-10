@@ -158,7 +158,7 @@
                 <img src="{{ asset('style/images/traveling.jpg') }}" class="card-img-top" alt="perlindungan tki ">
                 <div class="card-body">
                     <h5 class="card-title">Halaman Pemberangkatan</h5>
-                    <a href="#" class="btn btn-warning">Klik Disini ! </a>
+                    <a href="{{ url('login-pemberangkatan') }}" class="btn btn-warning">Klik Disini ! </a>
                 </div>
             </div>
         </div>

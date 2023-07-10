@@ -22,5 +22,4 @@ class LoginOperatorController extends Controller
         Auth::logout();
         return redirect ('/');
     }
-
 }

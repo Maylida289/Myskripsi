@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
-class LoginP3miController extends Controller
+class LoginPemberangkatanController extends Controller
 {
-    public function loginP3mi(){
-        return view('p3mi.login_p3mi.data');
+    public function loginPemberangkatan(){
+        return view('pemberangkatan.login_pemberangkatan.data');
     }
 
     public function postlogin(Request $request){
