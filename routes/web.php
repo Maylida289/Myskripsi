@@ -76,6 +76,8 @@ Route::post('pendaftaranp3mi', 'App\Http\Controllers\OperatorPendaftaranP3miCont
 Route::get('pemberangkatan-operator', 'App\Http\Controllers\OperatorController@pemberangkatan');
 // Halaman Detail Pemberangkatan - Operator
 Route::get('pemberangkatan/operator/detail-tki/{id}', 'App\Http\Controllers\OperatorController@detailPemberangkatanTki');
+// Halaman List P3MI - Operator
+Route::get('list-p3mi-operator', 'App\Http\Controllers\OperatorController@listP3mi');
 
 
 // Login Admin

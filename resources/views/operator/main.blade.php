@@ -46,10 +46,15 @@
                         <a href="{{ url('pendaftarantki') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>Pendaftaran
                             TKI </a>
                     </li>
+
                     <li>
                         <a href="{{ url('pendaftaranp3mi/add') }}"> <i
                                 class="menu-icon fa fa-puzzle-piece"></i>Pendaftaran
                             P3MI </a>
+                    </li>
+                    <li>
+                        <a href="{{ url('list-p3mi-operator') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>
+                            List P3MI </a>
                     </li>
                     <li>
                         <a href="{{ url('validasi-tki-operator') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>

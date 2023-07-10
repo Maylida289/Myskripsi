@@ -56,4 +56,9 @@ class OperatorController extends Controller
         return view('operator/pemberangkatan/detail', compact('detail_tki'));
     }
 
+    public function listP3mi()
+    {   
+        $listP3mi = DB::table('p3mis')->get();
+        return view('operator.list_p3mi.data',  ['listP3mi' => $listP3mi]);
+    }
 }
