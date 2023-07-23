@@ -47,9 +47,29 @@
             padding: 20px;
         }
     </style>
+
+    <style>
+        .login-link {
+            position: absolute;
+            top: 10px;
+            right: 30px;
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .login-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
 </head>
 
 <body>
+
+    <a href="{{ url('/login') }}" class="login-link">Login</a>
 
     {{-- div untuk image halaman atas --}}
     <br><br>
@@ -101,81 +121,7 @@
                 </div>
             </div>
         </div>
-    </div><br><br><br>
-    <hr><br>
-    <h3 style="margin-left: 50px">Silahkan login sesuai role anda</h3>
-    <p style="margin-left: 50px">Akun dibawan hanya bisa di akses oleh pihak APJATI tertentu.</p>
-    <br><br><br>
-
-    {{-- Halaman Role --}}
-
-
-    <div class="row row-cols-2 row-cols-md-3 g-5">
-        <div class="col">
-            <div class="card border-primary-subtle border-3" style="width: 25rem; margin-left:25px;">
-                <img src="{{ asset('style/images/pendaftaran.jpg') }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Halaman Operator</h5>
-                    <a href="{{ url('login-operator') }}" class="btn btn-warning">Klik Disini !</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card border-primary-subtle border-3" style="width: 26rem;">
-                <img src="{{ asset('style/images/validation2.jpg') }}" class="card-img-top" alt="perlindungan tki ">
-                <div class="card-body">
-                    <h5 class="card-title">Halaman Admin</h5>
-                    <a href="{{ url('login-admin') }}" class="btn btn-warning">Klik Disini ! </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card border-primary-subtle border-3" style="width: 26rem;">
-                <img src="{{ asset('style/images/pemeriksaan.jpg') }}" class="card-img-top" alt="perjalanan tki">
-                <div class="card-body">
-                    <h5 class="card-title">Halaman Medical Checkup</h5>
-                    <a href="{{ url('login-medical-checkup') }}" class="btn btn-warning">Klik Disini !</a>
-                </div>
-            </div>
-        </div>
-    </div><br>
-
-    <div class="row row-cols-2 row-cols-md-3 g-5">
-        <div class="col">
-            <div class="card border-primary-subtle border-3" style="width: 25rem; margin-left:25px">
-                <img src="{{ asset('style/images/BLK.jpg') }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Halaman BLK (Sertifikasi)</h5>
-                    <a href="{{ url('login-blk') }}" class="btn btn-warning">Klik Disini !</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card border-primary-subtle border-3" style="width: 26rem;">
-                <img src="{{ asset('style/images/traveling.jpg') }}" class="card-img-top" alt="perlindungan tki ">
-                <div class="card-body">
-                    <h5 class="card-title">Halaman Pemberangkatan</h5>
-                    <a href="{{ url('login-pemberangkatan') }}" class="btn btn-warning">Klik Disini ! </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card border-primary-subtle border-3" style="width: 25rem;">
-                <img src="{{ asset('style/images/P3MI.jpg') }}" class="card-img-top" alt="perjalanan tki">
-                <div class="card-body">
-                    <h5 class="card-title">Halaman P3MI</h5>
-                    <a href="{{ url('login-p3mi') }}" class="btn btn-warning">Klik Disini !</a>
-                </div>
-            </div>
-        </div>
-    </div><br>
-    <hr><br><br>
-
-
+    </div>
 </body>
 
 </html>

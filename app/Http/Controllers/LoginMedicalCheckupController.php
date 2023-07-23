@@ -15,7 +15,7 @@ class LoginMedicalCheckupController extends Controller
         if(Auth::attempt($request->only('email','password'))){
             return redirect('/medical-checkup') ->with('login-success', 'Login Berhasil');
         }
-        return redirect('login-medical-checkup')->with('login-failed', 'Email atau Password salah');
+        return redirect('login')->with('login-failed', 'Email atau Password salah');
     }
 
     public function logout(){

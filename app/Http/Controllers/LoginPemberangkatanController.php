@@ -15,7 +15,7 @@ class LoginPemberangkatanController extends Controller
         if(Auth::attempt($request->only('email','password'))){
             return redirect('/pemberangkatan') ->with('login-success', 'Login Berhasil');
         }
-        return redirect('login-pemberangkatan')->with('login-failed', 'Email atau Password salah');
+        return redirect('login')->with('login-failed', 'Email atau Password salah');
     }
 
     public function logout(){
