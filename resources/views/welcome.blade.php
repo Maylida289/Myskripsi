@@ -15,6 +15,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous">
+    </script>
     <style>
         * {
             box-sizing: border-box;
@@ -58,6 +64,7 @@
             color: #fff;
             text-decoration: none;
             border-radius: 4px;
+            `
         }
 
         .login-link:hover {
@@ -69,7 +76,35 @@
 
 <body>
 
-    <a href="{{ url('/login') }}" class="login-link">Login</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Nama Aplikasi</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <!-- Tambahkan lebih banyak menu navbar sesuai kebutuhan -->
+                    <!-- Misalnya: <li class="nav-item"><a class="nav-link" href="#">Contact</a></li> -->
+                </ul>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: flex-end; padding: 1rem;">
+            <a href="{{ url('/login') }}" class="login-link"
+                style="text-decoration: none; padding: 0.5rem 1rem; color: #333; background-color: #ffffff; border: 1px solid #8ac3ff; border-radius: 4px; margin-right: 10px;">Login</a>
+        </div>
+    </nav>
+
 
     {{-- div untuk image halaman atas --}}
     <br><br>
@@ -118,6 +153,74 @@
                     <h5 class="card-title">Perjalanan Aman</h5>
                     <p class="card-text">Semua calon Pekerja Migran akan diberikan rasa aman dan nyaman dalam
                         pemberangkatan.</p>
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+    <hr><br><br>
+    <h3 style="margin-left: 30px"> Proses Perekrutan TKI </h3><br>
+    <div class="row">
+        <div class="col-sm-6 mb-3 mb-sm-0" style="color: #007bff">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">1. Pendaftaran</h5>
+                        <p class="card-text">Tahap Pertama yang dikakukan pada perekrutan TKI yaitu tahap
+                            pendaftaran.<br>
+                            pada tahap ini TKI beserta Petugas Penyalur harus mendatangi APJATI untuk melakukan
+                            pendaftaran
+                            kepada Operator.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">2. Medical Checkup</h5>
+                        <p class="card-text">Tahap Selanjutnya yaitu, Medical Ceheckup yang dimana selesai TKI melakukan
+                            pendaftaran maka TKI harus melakukan <br> pemeriksaan kesehatan ke klinik terdekat yang
+                            sudah bekerja sama
+                            dengan
+                            APJATI.</p>
+                </div>
+            </div>
+        </div>
+    </div><br>
+
+    <div class="row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">3. BLK</h5>
+                        <p class="card-text">Tahap Pertama yang dikakukan pada perekrutan TKI yaitu tahap pendaftaran.
+                        </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">4. Pemberangkatan</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+            </div>
+        </div>
+    </div><br>
+
+    <div class="row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">5. Validasi Data</h5>
+                        <p class="card-text">Tahap Pertama yang dikakukan pada perekrutan TKI yaitu tahap pendaftaran.
+                        </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">6. Halaman P3MI</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                 </div>
             </div>
         </div>
