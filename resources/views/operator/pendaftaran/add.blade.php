@@ -59,28 +59,47 @@
                                     <input type="text" name="nama" class="form-control" autofocus required>
                                 </div>
                                 <div class="form-group">
-                                    <label> Jenis Kelamim</label>
-                                    <input type="text" name="jenis_kelamin" class="form-control" required>
+                                    <label> Jenis Kelamin</label>
+                                    <select id="gender" name="jenis_kelamin" class="form-control" required>
+                                        <option value="">Pilih jenis kelamin</option>
+                                        <option value="Laki-laki">Laki-laki</option>
+                                        <option value="Perempuan">Perempuan</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label> Tempat Lahir</label>
                                     <input type="text" name="tempat_lahir" class="form-control" required>
                                 </div>
+
                                 <div class="form-group">
                                     <label> Tgl Lahir</label>
-                                    <input type="text" name="tgl_lahir" class="form-control" required>
+                                    <input type="date" name="tgl_lahir" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label> Alamat TKI</label>
                                     <textarea name="alamat" class="form-control" required></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label> Agama </label>
-                                    <input type="text" name="agama" class="form-control" required>
+                                    <label for="agama">Agama</label>
+                                    <select name="agama" id="agama" class="form-control" required>
+                                        <option value="">Pilih agama</option>
+                                        <option value="islam">Islam</option>
+                                        <option value="kristen">Kristen</option>
+                                        <option value="hindu">Hindu</option>
+                                        <option value="budha">Budha</option>
+                                        <option value="konghucu">Konghucu</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <label> Pendidikan Terakhir</label>
-                                    <input type="text" name="pendidikan" class="form-control" required>
+                                    <label for="pendidikan">Pendidikan Terakhir</label>
+                                    <select id="pendidikan" name="pendidikan" class="form-control" required>
+                                        <option value="">Pilih pendidikan terakhir</option>
+                                        <option value="SD">SD</option>
+                                        <option value="SMP">SMP</option>
+                                        <option value="SMA/SMK">SMA/SMK</option>
+                                        <option value="D3">D3</option>
+                                        <option value="S1">S1</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label> No Telfon</label>
@@ -120,24 +139,23 @@
 
                                         </div>
                                     </div>
-                                </div>
-                                <label>Select P3MI</label>
-                                <div style="margin-bottom: 50px;">
-                                    <select name="sponsor" id="sponsor" style="width: 325px;">
-                                        <option value="">Select P3MI</option>
-                                        @foreach ($list_p3mi as $p3mi)
-                                            @if ($p3mi->sponsor != null && !in_array($p3mi->sponsor, $displayedSponsors))
-                                                <option value="{{ $p3mi->sponsor }}">{{ $p3mi->sponsor }}</option>
-                                                @php
-                                                    $displayedSponsors[] = $p3mi->sponsor;
-                                                @endphp
-                                            @endif
-                                        @endforeach
-                                    </select>
-                                </div>
+                                    <div class="form-group">
+                                        <label for="sponsor">Select P3MI</label>
+                                        <select name="sponsor" id="sponsor" class="form-control" style="width: 325px;">
+                                            <option value="">Select P3MI</option>
+                                            @foreach ($list_p3mi as $p3mi)
+                                                @if ($p3mi->sponsor != null && !in_array($p3mi->sponsor, $displayedSponsors))
+                                                    <option value="{{ $p3mi->sponsor }}">{{ $p3mi->sponsor }}</option>
+                                                    @php
+                                                        $displayedSponsors[] = $p3mi->sponsor;
+                                                    @endphp
+                                                @endif
+                                            @endforeach
+                                        </select>
+                                    </div>
 
 
-                                <button type="submit" class="btn btn-success"> DAFTAR</button>
+                                    <button type="submit" class="btn btn-success"> DAFTAR</button>
                             </form>
                         </div>
                     </div>

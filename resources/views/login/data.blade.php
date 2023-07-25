@@ -28,6 +28,83 @@
             height: 100vh;
         }
     </style>
+
+    <style>
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            /* Untuk mengatur agar elemen berada di sebelah kiri (start) */
+        }
+
+        .form-group label {
+            margin-bottom: 10px;
+            /* Spasi antara label dan dropdown */
+        }
+
+        .form-group select {
+            margin-bottom: 20px;
+            width: 100%;
+            /* Agar dropdown mengisi seluruh lebar container */
+            max-width: 200px;
+            /* Atur lebar maksimal dropdown jika diperlukan */
+        }
+    </style>
+
+    <style>
+        /* Style untuk container */
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Style untuk label */
+        .container label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Style untuk select box */
+        .container select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        /* Style untuk field dengan tampilan dropdown */
+        .container .field-dropdown {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Style untuk tampilan opsi dropdown */
+        .container .field-dropdown select {
+            width: 100%;
+            padding: 10px;
+            background-color: transparent;
+            border: none;
+            font-size: 16px;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+        /* Style untuk tampilan arrow dropdown */
+        .container .field-dropdown::after {
+            content: '\25BC';
+            /* Unicode karakter untuk tanda panah bawah */
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+        }
+    </style>
 </head>
 
 
@@ -58,7 +135,7 @@
                         </div>
                         <div class="form-group">
                             <label id="label-sponsor">Sponsor</label>
-                            <div style="margin-bottom: 50px;">
+                            <div>
                                 <select name="sponsor" id="sponsor">
                                     <option value="">Select P3MI</option>
                                     @foreach ($list_p3mi as $p3mi)
@@ -72,15 +149,18 @@
                                 </select>
                             </div>
                         </div>
-                        <select id="userTypeDropdown" style="margin-bottom: 20px;">
-                            <option value="">Pilih tipe user</option>
-                            <option value="operator">Operator</option>
-                            <option value="admin">Admin</option>
-                            <option value="medical-checkup">Medical Checkup</option>
-                            <option value="blk">BLK</option>
-                            <option value="pemberangkatan">Pemberangkatan</option>
-                            <option value="p3mi">P3MI</option>
-                        </select>
+                        <div class="form-group">
+                            <label id="label-sponsor">Tipe Akses</label>
+                            <select id="userTypeDropdown">
+                                <option value="">Pilih tipe</option>
+                                <option value="operator">Operator</option>
+                                <option value="admin">Admin</option>
+                                <option value="medical-checkup">Medical Checkup</option>
+                                <option value="blk">BLK</option>
+                                <option value="pemberangkatan">Pemberangkatan</option>
+                                <option value="p3mi">P3MI</option>
+                            </select>
+                        </div>
 
                         <div style="display: flex; justify-content: center; margin-bottom: 20px">
                             <!-- Tambahkan atribut disabled untuk menonaktifkan tombol secara default -->
