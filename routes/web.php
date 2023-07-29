@@ -78,6 +78,10 @@ Route::get('pemberangkatan-operator', 'App\Http\Controllers\OperatorController@p
 Route::get('pemberangkatan/operator/detail-tki/{id}', 'App\Http\Controllers\OperatorController@detailPemberangkatanTki');
 // Halaman List P3MI - Operator
 Route::get('list-p3mi-operator', 'App\Http\Controllers\OperatorController@listP3mi');
+// Halaman List Total TKI - Operator
+Route::get('list-total-tki-operator', 'App\Http\Controllers\OperatorController@listTki');
+// Halaman Detail TKI - Operator
+Route::get('list-total-tki/operator/detail-tki/{id}', 'App\Http\Controllers\OperatorController@detailTki');
 
 
 // Login Admin

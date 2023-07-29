@@ -61,4 +61,16 @@ class OperatorController extends Controller
         $listP3mi = DB::table('p3mis')->get();
         return view('operator.list_p3mi.data',  ['listP3mi' => $listP3mi]);
     }
+
+    public function listTki()
+    {   
+        $listTki = DB::table('pendaftaran_tki')->get();
+        return view('operator.dashboard.list_dashboard.total_tki',  ['listTki' => $listTki]);
+    }
+
+    public function detailTki ($id)
+    {
+        $detail_tki = DB::table('pendaftaran_tki')->where('id', $id)->first();
+        return view('operator.dashboard.list_dashboard.detail.detail_tki', compact('detail_tki'));
+    }
 }

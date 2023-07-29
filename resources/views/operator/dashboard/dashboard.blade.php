@@ -43,7 +43,10 @@
                         <div class="inner">
                             <h3 style="margin-left: 10px; margin-top:10px">{{ $totalTki }}</h3>
 
-                            <p style="color:antiquewhite; margin-left: 10px;">Total TKI</p>
+                            <p style="color: antiquewhite; margin-left: 10px;">
+                                <a href="/list-total-tki-operator" style="text-decoration: none; color: antiquewhite;">Total
+                                    TKI</a>
+                            </p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-bag"></i>
