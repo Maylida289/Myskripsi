@@ -69,7 +69,7 @@
                                     <td>{{ $item->pendidikan }}</td>
                                     <td>{{ $item->no_tlp }}</td>
                                     <td class="text-center">
-                                        <a href="{{ url('pemberangkatan/operator/detail-tki/' . $item->id) }}"
+                                        <a href="{{ url('list-total-medical/operator/detail-blk/' . $item->id) }}"
                                             class="btn btn-success btn-sm" style="color: white;">
                                             Detail
                                         </a>

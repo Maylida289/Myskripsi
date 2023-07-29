@@ -80,7 +80,10 @@
                         <div class="inner">
                             <h3 style="margin-left: 10px; margin-top:10px">{{ $totalBlk }}</h3>
 
-                            <p style="color:antiquewhite; margin-left: 10px;">BLK</p>
+                            <p style="color: antiquewhite; margin-left: 10px;">
+                                <a href="/list-total-blk-operator" style="text-decoration: none; color: antiquewhite;">
+                                    BLK</a>
+                            </p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-person-add"></i>

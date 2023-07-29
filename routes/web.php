@@ -86,6 +86,10 @@ Route::get('list-total-tki/operator/detail-tki/{id}', 'App\Http\Controllers\Oper
 Route::get('list-total-medical-operator', 'App\Http\Controllers\OperatorController@listMedical');
 // Halaman Detail Medical - Operator
 Route::get('list-total-medical/operator/detail-medical/{id}', 'App\Http\Controllers\OperatorController@detailMedical');
+// Halaman List Total BLK - Operator
+Route::get('list-total-blk-operator', 'App\Http\Controllers\OperatorController@listBlk');
+// Halaman Detail BLK - Operator
+Route::get('list-total-medical/operator/detail-blk/{id}', 'App\Http\Controllers\OperatorController@detailBlk');
 
 
 // Login Admin

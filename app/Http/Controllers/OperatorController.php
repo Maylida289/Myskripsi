@@ -87,5 +87,17 @@ class OperatorController extends Controller
         return view('operator/dashboard/list_dashboard/detail/detail_medical', compact('detail_medical'));
     }
 
+    public function listBlk()
+    {   
+        $listBlk = DB::table('blk')->get();
+        return view('operator.dashboard.list_dashboard.blk',  ['listBlk' => $listBlk]);
+    }
+
+    public function detailBlk ($id)
+    {
+        $detail_blk = DB::table('blk')->where('id', $id)->first();
+        return view('operator/dashboard/list_dashboard/detail/detail_blk', compact('detail_blk'));
+    }
+
 
 }
