@@ -17,7 +17,7 @@ class AdminController extends Controller
         $totalBlk =  DB::table('blk')->count();
         $totalBerangkat = DB::table('pemberangkatan')->count();
         //------------------------------------------------
-        return view('operator.dashboard.dashboard', ['totalTki' => $totalTki, 'totalMedical' => $totalMedical, 'totalBlk' => $totalBlk, 'totalBerangkat' => $totalBerangkat]);
+        return view('admin.dashboard.dashboard', ['totalTki' => $totalTki, 'totalMedical' => $totalMedical, 'totalBlk' => $totalBlk, 'totalBerangkat' => $totalBerangkat]);
     }
 
     public function validationDataTki(){

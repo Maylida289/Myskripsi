@@ -90,7 +90,10 @@ Route::get('list-total-medical/operator/detail-medical/{id}', 'App\Http\Controll
 Route::get('list-total-blk-operator', 'App\Http\Controllers\OperatorController@listBlk');
 // Halaman Detail BLK - Operator
 Route::get('list-total-medical/operator/detail-blk/{id}', 'App\Http\Controllers\OperatorController@detailBlk');
-
+// Halaman List Total BLK - Operator
+Route::get('list-total-berangkat-operator', 'App\Http\Controllers\OperatorController@listBerangkat');
+// Halaman Detail BLK - Operator
+Route::get('list-total-berangkat/operator/detail-blk/{id}', 'App\Http\Controllers\OperatorController@detailBerangkat');
 
 // Login Admin
 Route::get('login-admin', 'App\Http\Controllers\LoginAdminController@loginAdmin');

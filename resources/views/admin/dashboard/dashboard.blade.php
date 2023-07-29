@@ -1,4 +1,4 @@
-@extends('operator.main')
+@extends('admin.main')
 
 @section('title', 'Dashboard')
 

@@ -98,6 +98,16 @@ class OperatorController extends Controller
         $detail_blk = DB::table('blk')->where('id', $id)->first();
         return view('operator/dashboard/list_dashboard/detail/detail_blk', compact('detail_blk'));
     }
+    public function listBerangkat()
+    {   
+        $listPemberangkatan = DB::table('pemberangkatan')->get();
+        return view('operator.dashboard.list_dashboard.pemberangkatan',  ['listPemberangkatan' => $listPemberangkatan]);
+    }
 
+    public function detailBerangkat ($id)
+    {
+        $detail_pemberangkatan = DB::table('pemberangkatan')->where('id', $id)->first();
+        return view('operator/dashboard/list_dashboard/detail/detail_pemberangkatan', compact('detail_pemberangkatan'));
+    }
 
 }
