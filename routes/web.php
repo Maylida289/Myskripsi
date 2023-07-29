@@ -78,6 +78,9 @@ Route::get('pemberangkatan-operator', 'App\Http\Controllers\OperatorController@p
 Route::get('pemberangkatan/operator/detail-tki/{id}', 'App\Http\Controllers\OperatorController@detailPemberangkatanTki');
 // Halaman List P3MI - Operator
 Route::get('list-p3mi-operator', 'App\Http\Controllers\OperatorController@listP3mi');
+
+
+
 // Halaman List Total TKI - Operator
 Route::get('list-total-tki-operator', 'App\Http\Controllers\OperatorController@listTki');
 // Halaman Detail TKI - Operator
@@ -112,6 +115,24 @@ Route::get('admin/detail-tki/{id}', 'App\Http\Controllers\AdminController@detail
 Route::get('validasi-tki/approved/{id}', 'App\Http\Controllers\AdminController@approved');
 // Routing Rejected - admin
 Route::get('validasi-tki/rejected/{id}/{information}', 'App\Http\Controllers\AdminController@rejected');
+
+
+// Halaman List Total TKI - Admin
+Route::get('list-total-tki-admin', 'App\Http\Controllers\AdminController@listTki');
+// Halaman Detail TKI - Admin
+Route::get('list-total-tki/admin/detail-tki/{id}', 'App\Http\Controllers\AdminController@detailTki');
+// Halaman List Total Medical - Admin
+Route::get('list-total-medical-admin', 'App\Http\Controllers\AdminController@listMedical');
+// Halaman Detail Medical - Admin
+Route::get('list-total-medical/admin/detail-medical/{id}', 'App\Http\Controllers\AdminController@detailMedical');
+// Halaman List Total BLK - Admin
+Route::get('list-total-blk-admin', 'App\Http\Controllers\AdminController@listBlk');
+// Halaman Detail BLK - Admin
+Route::get('list-total-medical/admin/detail-blk/{id}', 'App\Http\Controllers\AdminController@detailBlk');
+// Halaman List Total BLK - Admin
+Route::get('list-total-berangkat-admin', 'App\Http\Controllers\AdminController@listBerangkat');
+// Halaman Detail BLK - Admin
+Route::get('list-total-berangkat/admin/detail-blk/{id}', 'App\Http\Controllers\AdminController@detailBerangkat');
 
 
 // Login Medical Checkup

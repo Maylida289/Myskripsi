@@ -44,7 +44,7 @@
                             <h3 style="margin-left: 10px; margin-top:10px">{{ $totalTki }}</h3>
 
                             <p style="color: antiquewhite; margin-left: 10px;">
-                                <a href="/list-total-tki-operator" style="text-decoration: none; color: antiquewhite;">Total
+                                <a href="/list-total-tki-admin" style="text-decoration: none; color: antiquewhite;">Total
                                     TKI</a>
                             </p>
                         </div>
@@ -62,7 +62,7 @@
                             <h3 style="margin-left: 10px; margin-top:10px">{{ $totalMedical }}</h3>
 
                             <p style="color: antiquewhite; margin-left: 10px;">
-                                <a href="/list-total-medical-operator"
+                                <a href="/list-total-medical-admin"
                                     style="text-decoration: none; color: antiquewhite;">Total
                                     Medical</a>
                             </p>
@@ -81,7 +81,7 @@
                             <h3 style="margin-left: 10px; margin-top:10px">{{ $totalBlk }}</h3>
 
                             <p style="color: antiquewhite; margin-left: 10px;">
-                                <a href="/list-total-blk-operator" style="text-decoration: none; color: antiquewhite;">
+                                <a href="/list-total-blk-admin" style="text-decoration: none; color: antiquewhite;">
                                     BLK</a>
                             </p>
                         </div>
@@ -100,7 +100,7 @@
                                 <h3 style="margin-left: 10px; margin-top:10px">{{ $totalBerangkat }}</h3>
 
                                 <p style="color: antiquewhite; margin-left: 10px;">
-                                    <a href="/list-total-berangkat-operator"
+                                    <a href="/list-total-berangkat-admin"
                                         style="text-decoration: none; color: antiquewhite;">
                                         Berangkat</a>
                                 </p>
