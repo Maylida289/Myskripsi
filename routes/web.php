@@ -82,6 +82,10 @@ Route::get('list-p3mi-operator', 'App\Http\Controllers\OperatorController@listP3
 Route::get('list-total-tki-operator', 'App\Http\Controllers\OperatorController@listTki');
 // Halaman Detail TKI - Operator
 Route::get('list-total-tki/operator/detail-tki/{id}', 'App\Http\Controllers\OperatorController@detailTki');
+// Halaman List Total Medical - Operator
+Route::get('list-total-medical-operator', 'App\Http\Controllers\OperatorController@listMedical');
+// Halaman Detail Medical - Operator
+Route::get('list-total-medical/operator/detail-medical/{id}', 'App\Http\Controllers\OperatorController@detailMedical');
 
 
 // Login Admin

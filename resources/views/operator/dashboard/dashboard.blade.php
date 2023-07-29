@@ -61,7 +61,11 @@
                         <div class="inner">
                             <h3 style="margin-left: 10px; margin-top:10px">{{ $totalMedical }}</h3>
 
-                            <p style="margin-left: 10px; color:antiquewhite">Medical</p>
+                            <p style="color: antiquewhite; margin-left: 10px;">
+                                <a href="/list-total-medical-operator"
+                                    style="text-decoration: none; color: antiquewhite;">Total
+                                    Medical</a>
+                            </p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-stats-bars"></i>

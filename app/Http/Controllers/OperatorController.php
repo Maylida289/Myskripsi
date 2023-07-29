@@ -73,4 +73,19 @@ class OperatorController extends Controller
         $detail_tki = DB::table('pendaftaran_tki')->where('id', $id)->first();
         return view('operator.dashboard.list_dashboard.detail.detail_tki', compact('detail_tki'));
     }
+
+
+    public function listMedical()
+    {   
+        $listMedical = DB::table('medical_checkup')->get();
+        return view('operator.dashboard.list_dashboard.medical',  ['listMedical' => $listMedical]);
+    }
+
+    public function detailMedical ($id)
+    {
+        $detail_medical = DB::table('medical_checkup')->where('id', $id)->first();
+        return view('operator/dashboard/list_dashboard/detail/detail_medical', compact('detail_medical'));
+    }
+
+
 }
