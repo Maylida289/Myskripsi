@@ -47,6 +47,10 @@
                             Berkas
                             TKI</a>
                     </li>
+                    <li>
+                        <a href="{{ url('status-tki-admin') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>Status
+                            TKI </a>
+                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>

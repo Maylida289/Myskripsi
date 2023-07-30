@@ -135,6 +135,9 @@ Route::get('list-total-berangkat-admin', 'App\Http\Controllers\AdminController@l
 // Halaman Detail Berangkat - Admin
 Route::get('list-total-berangkat/admin/detail-blk/{id}', 'App\Http\Controllers\AdminController@detailBerangkat');
 
+// Halaman Status TKI - Admin
+Route::get('status-tki-admin', 'App\Http\Controllers\AdminController@statusTki');
+
 
 // Login Medical Checkup
 Route::get('login-medical-checkup', 'App\Http\Controllers\LoginMedicalCheckupController@loginMedicalCheckup');

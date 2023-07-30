@@ -91,4 +91,12 @@ class AdminController extends Controller
         $detail_pemberangkatan = DB::table('pemberangkatan')->where('id', $id)->first();
         return view('admin/dashboard/list_dashboard/detail/detail_pemberangkatan', compact('detail_pemberangkatan'));
     }
+
+
+    public function statusTki()
+    {
+        $statusTki = DB::table('validasi_berkas')->get();
+        return view('admin.status_tki.data', ['statusTki' => $statusTki]);
+    }
+
 }
