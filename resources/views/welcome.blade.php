@@ -72,6 +72,15 @@
         }
     </style>
 
+    <style>
+        .navbar-brand {
+            font-size: 30px;
+            /* Atur ukuran font sesuai kebutuhan */
+            height: 50px;
+            line-height: 50px;
+        }
+    </style>
+
 </head>
 
 <body>
