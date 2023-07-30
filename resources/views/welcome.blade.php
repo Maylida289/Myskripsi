@@ -86,26 +86,13 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">APJATI</a>
+        <div style="margin-right: 500px" class="container">
+            <a class="navbar-brand" href="Landing-Page">SPSK</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#"><span class="sr-only"></span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"></a>
-                    </li>
-                    <!-- Tambahkan lebih banyak menu navbar sesuai kebutuhan -->
-                    <!-- Misalnya: <li class="nav-item"><a class="nav-link" href="#">Contact</a></li> -->
-                </ul>
             </div>
         </div>
         <div style="display: flex; justify-content: flex-end; padding: 1rem;">
@@ -186,7 +173,7 @@
                 <div class="card-body">
                     <h4 class="card-title">2. Medical Checkup</h5>
                         <p class="card-text">Tahap Selanjutnya yaitu, Medical Ceheckup yang dimana selesai TKI melakukan
-                            pendaftaran maka TKI harus melakukan <br> pemeriksaan kesehatan ke klinik terdekat yang
+                            pendaftaran maka TKI harus melakukan pemeriksaan kesehatan ke klinik terdekat yang
                             sudah bekerja sama
                             dengan
                             APJATI.</p>
@@ -200,7 +187,9 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">3. BLK</h5>
-                        <p class="card-text">Tahap Pertama yang dikakukan pada perekrutan TKI yaitu tahap pendaftaran.
+                        <p class="card-text">Tahap yang ketiga yaitu BLK, dimana setelah melakuakan cek pemeriksaan TKI
+                            disarankan untuk melakukan pelatihan sertifikasi agar TKI dinyatakan berkompeten dan layak untuk
+                            bekerja.
                         </p>
                 </div>
             </div>
@@ -208,8 +197,9 @@
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">4. Pemberangkatan</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <h4 class="card-title">4. Validasi Data</h5>
+                        <p class="card-text">Setelah semua data beseta dokumen diunggah pada masing-masing platform selanjutnya
+                        data dilakukan validasi dengan mengecek kelengkapan data dan kesesuaian data yang dilakukan oleh admin.</p>
                 </div>
             </div>
         </div>
@@ -219,8 +209,10 @@
         <div class="col-sm-6 mb-3 mb-sm-0">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">5. Validasi Data</h5>
-                        <p class="card-text">Tahap Pertama yang dikakukan pada perekrutan TKI yaitu tahap pendaftaran.
+                    <h4 class="card-title">5. Pemberangkatan</h5>
+                        <p class="card-text">Tahap yang terakhir ialah Pemberangkatan. Dimana pada tahap ini, setelah data sudah
+                            dinyatakan sesuai dan lengkap maka TKI diharuskan untuk membuat visa dan paspor lalu diunggah melalui admin
+                            pemberangkatan yg ada di APJATI.
                         </p>
                 </div>
             </div>
@@ -229,11 +221,13 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">6. Halaman P3MI</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <p class="card-text">Pada halaman ini merupakan halaman P3MI yang digunakan untuk memantau setiap TKI
+                            yang berada di bawah naungan P3MI tersebut agar P3MI sudah sampai mana proses perekrutan yang
+                            dilakukan oleh TKI.</p>
                 </div>
             </div>
         </div>
-    </div>
+    </div><br><br>
 </body>
 
 </html>
