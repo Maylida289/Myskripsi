@@ -129,9 +129,9 @@ Route::get('list-total-medical/admin/detail-medical/{id}', 'App\Http\Controllers
 Route::get('list-total-blk-admin', 'App\Http\Controllers\AdminController@listBlk');
 // Halaman Detail BLK - Admin
 Route::get('list-total-medical/admin/detail-blk/{id}', 'App\Http\Controllers\AdminController@detailBlk');
-// Halaman List Total BLK - Admin
+// Halaman List Total Berangkat - Admin
 Route::get('list-total-berangkat-admin', 'App\Http\Controllers\AdminController@listBerangkat');
-// Halaman Detail BLK - Admin
+// Halaman Detail Berangkat - Admin
 Route::get('list-total-berangkat/admin/detail-blk/{id}', 'App\Http\Controllers\AdminController@detailBerangkat');
 
 
@@ -148,6 +148,24 @@ route::get('listtki-medical-checkup',[MedicalCheckupController::class,'listDataT
 Route::get('medical-checkup/detail-tki/{id}', 'App\Http\Controllers\MedicalCheckupController@detailTki');
 // Upload Sertifikat - Medical Checkup
 Route::post('upload/store-medical/{id}','App\Http\Controllers\MedicalCheckupController@uploadSertifikatKesehatan');
+
+
+// Halaman List Total TKI - MedicalCheckup
+Route::get('list-total-tki-medical', 'App\Http\Controllers\MedicalCheckupController@listTki');
+// Halaman Detail TKI - MedicalCheckup
+Route::get('list-total-tki/medical/detail-tki/{id}', 'App\Http\Controllers\MedicalCheckupController@detailTki');
+// Halaman List Total Medical - MedicalCheckup
+Route::get('list-total-medical-medical', 'App\Http\Controllers\MedicalCheckupController@listMedical');
+// Halaman Detail Medical - MedicalCheckup
+Route::get('list-total-medical/medical/detail-medical/{id}', 'App\Http\Controllers\MedicalCheckupController@detailMedical');
+// Halaman List Total BLK - MedicalCheckup
+Route::get('list-total-blk-medical', 'App\Http\Controllers\MedicalCheckupController@listBlk');
+// Halaman Detail BLK - MedicalCheckup
+Route::get('list-total-medical/medical/detail-blk/{id}', 'App\Http\Controllers\MedicalCheckupController@detailBlk');
+// Halaman List Total Berangkat - MedicalCheckup
+Route::get('list-total-berangkat-medical', 'App\Http\Controllers\MedicalCheckupController@listBerangkat');
+// Halaman Detail Berangkat - MedicalCheckup
+Route::get('list-total-berangkat/medical/detail-blk/{id}', 'App\Http\Controllers\MedicalCheckupController@detailBerangkat');
 
 
 // Login BLK

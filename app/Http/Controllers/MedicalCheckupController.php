@@ -52,4 +52,46 @@ class MedicalCheckupController extends Controller
             echo'Gagal';
         }
     }
+
+    public function listTki()
+    {   
+        $listTki = DB::table('pendaftaran_tki')->get();
+        return view('medical_checkup.dashboard.list_dashboard.total_tki',  ['listTki' => $listTki]);
+    }
+
+
+    public function listMedical()
+    {   
+        $listMedical = DB::table('medical_checkup')->get();
+        return view('medical_checkup.dashboard.list_dashboard.medical',  ['listMedical' => $listMedical]);
+    }
+
+    public function detailMedical ($id)
+    {
+        $detail_medical = DB::table('medical_checkup')->where('id', $id)->first();
+        return view('medical_checkup/dashboard/list_dashboard/detail/detail_medical', compact('detail_medical'));
+    }
+
+    public function listBlk()
+    {   
+        $listBlk = DB::table('blk')->get();
+        return view('medical_checkup.dashboard.list_dashboard.blk',  ['listBlk' => $listBlk]);
+    }
+
+    public function detailBlk ($id)
+    {
+        $detail_blk = DB::table('blk')->where('id', $id)->first();
+        return view('medical_checkup/dashboard/list_dashboard/detail/detail_blk', compact('detail_blk'));
+    }
+    public function listBerangkat()
+    {   
+        $listPemberangkatan = DB::table('pemberangkatan')->get();
+        return view('medical_checkup.dashboard.list_dashboard.pemberangkatan',  ['listPemberangkatan' => $listPemberangkatan]);
+    }
+
+    public function detailBerangkat ($id)
+    {
+        $detail_pemberangkatan = DB::table('pemberangkatan')->where('id', $id)->first();
+        return view('medical_checkup/dashboard/list_dashboard/detail/detail_pemberangkatan', compact('detail_pemberangkatan'));
+    }
 }
