@@ -133,9 +133,9 @@
                             <input type="password" class="form-control" placeholder="Password" name="password"
                                 id="passwordInput">
                         </div>
-                        {{-- <div class="form-group">
-                            <label id="label-sponsor">Sponsor</label>
-                            <div>
+                        <div class="form-group">
+                            <label id="label-sponsor" style="cursor: pointer;">Login sebagai P3MI?</label>
+                            <div id="sponsorDropdown" style="display: none;">
                                 <select name="sponsor" id="sponsor">
                                     <option value="">Select P3MI</option>
                                     @foreach ($list_p3mi as $p3mi)
@@ -148,7 +148,8 @@
                                     @endforeach
                                 </select>
                             </div>
-                        </div> --}}
+                        </div>
+
 
 
                         <div style="display: flex; justify-content: center; margin-bottom: 20px">
@@ -196,6 +197,21 @@
                             // Tambahkan event listener pada input email dan password untuk memantau perubahan nilai
                             emailInput.addEventListener('input', checkInputValidity);
                             passwordInput.addEventListener('input', checkInputValidity);
+
+                            const labelSponsor = document.getElementById('label-sponsor');
+                            const sponsorDropdown = document.getElementById('sponsorDropdown');
+
+                            // Fungsi untuk menampilkan atau menyembunyikan dropdown Sponsor
+                            function toggleSponsorDropdown() {
+                                if (sponsorDropdown.style.display === 'none') {
+                                    sponsorDropdown.style.display = 'block';
+                                } else {
+                                    sponsorDropdown.style.display = 'none';
+                                }
+                            }
+
+                            // Tambahkan event listener pada teks "Login sebagai P3MI?" untuk memantau klik
+                            labelSponsor.addEventListener('click', toggleSponsorDropdown);
                         </script>
 
 
