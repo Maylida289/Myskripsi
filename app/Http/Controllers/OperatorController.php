@@ -61,4 +61,59 @@ class OperatorController extends Controller
         $listP3mi = DB::table('p3mis')->get();
         return view('operator.list_p3mi.data',  ['listP3mi' => $listP3mi]);
     }
+
+    public function listTki()
+    {   
+        $listTki = DB::table('pendaftaran_tki')->get();
+        return view('operator.dashboard.list_dashboard.total_tki',  ['listTki' => $listTki]);
+    }
+
+    public function detailTki ($id)
+    {
+        $detail_tki = DB::table('pendaftaran_tki')->where('id', $id)->first();
+        return view('operator.dashboard.list_dashboard.detail.detail_tki', compact('detail_tki'));
+    }
+
+
+    public function listMedical()
+    {   
+        $listMedical = DB::table('medical_checkup')->get();
+        return view('operator.dashboard.list_dashboard.medical',  ['listMedical' => $listMedical]);
+    }
+
+    public function detailMedical ($id)
+    {
+        $detail_medical = DB::table('medical_checkup')->where('id', $id)->first();
+        return view('operator/dashboard/list_dashboard/detail/detail_medical', compact('detail_medical'));
+    }
+
+    public function listBlk()
+    {   
+        $listBlk = DB::table('blk')->get();
+        return view('operator.dashboard.list_dashboard.blk',  ['listBlk' => $listBlk]);
+    }
+
+    public function detailBlk ($id)
+    {
+        $detail_blk = DB::table('blk')->where('id', $id)->first();
+        return view('operator/dashboard/list_dashboard/detail/detail_blk', compact('detail_blk'));
+    }
+    public function listBerangkat()
+    {   
+        $listPemberangkatan = DB::table('pemberangkatan')->get();
+        return view('operator.dashboard.list_dashboard.pemberangkatan',  ['listPemberangkatan' => $listPemberangkatan]);
+    }
+
+    public function detailBerangkat ($id)
+    {
+        $detail_pemberangkatan = DB::table('pemberangkatan')->where('id', $id)->first();
+        return view('operator/dashboard/list_dashboard/detail/detail_pemberangkatan', compact('detail_pemberangkatan'));
+    }
+
+    public function statusTki()
+    {
+        $statusTki = DB::table('validasi_berkas')->get();
+        return view('operator.status_tki.data', ['statusTki' => $statusTki]);
+    }
+
 }

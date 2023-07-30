@@ -7,7 +7,7 @@
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Pendaftarn TKI</h1>
+                    <h1>Pendaftaran TKI</h1>
                 </div>
             </div>
         </div>

@@ -79,6 +79,25 @@ Route::get('pemberangkatan/operator/detail-tki/{id}', 'App\Http\Controllers\Oper
 // Halaman List P3MI - Operator
 Route::get('list-p3mi-operator', 'App\Http\Controllers\OperatorController@listP3mi');
 
+// Halaman List Total TKI - Operator
+Route::get('list-total-tki-operator', 'App\Http\Controllers\OperatorController@listTki');
+// Halaman Detail TKI - Operator
+Route::get('list-total-tki/operator/detail-tki/{id}', 'App\Http\Controllers\OperatorController@detailTki');
+// Halaman List Total Medical - Operator
+Route::get('list-total-medical-operator', 'App\Http\Controllers\OperatorController@listMedical');
+// Halaman Detail Medical - Operator
+Route::get('list-total-medical/operator/detail-medical/{id}', 'App\Http\Controllers\OperatorController@detailMedical');
+// Halaman List Total BLK - Operator
+Route::get('list-total-blk-operator', 'App\Http\Controllers\OperatorController@listBlk');
+// Halaman Detail BLK - Operator
+Route::get('list-total-medical/operator/detail-blk/{id}', 'App\Http\Controllers\OperatorController@detailBlk');
+// Halaman List Total BLK - Operator
+Route::get('list-total-berangkat-operator', 'App\Http\Controllers\OperatorController@listBerangkat');
+// Halaman Detail BLK - Operator
+Route::get('list-total-berangkat/operator/detail-blk/{id}', 'App\Http\Controllers\OperatorController@detailBerangkat');
+
+// Halaman Status TKI - Operator
+Route::get('status-tki-operator', 'App\Http\Controllers\OperatorController@statusTki');
 
 // Login Admin
 Route::get('login-admin', 'App\Http\Controllers\LoginAdminController@loginAdmin');
@@ -99,19 +118,63 @@ Route::get('validasi-tki/approved/{id}', 'App\Http\Controllers\AdminController@a
 Route::get('validasi-tki/rejected/{id}/{information}', 'App\Http\Controllers\AdminController@rejected');
 
 
+// Halaman List Total TKI - Admin
+Route::get('list-total-tki-admin', 'App\Http\Controllers\AdminController@listTki');
+// Halaman Detail TKI - Admin
+Route::get('list-total-tki/admin/detail-tki/{id}', 'App\Http\Controllers\AdminController@detailTki');
+// Halaman List Total Medical - Admin
+Route::get('list-total-medical-admin', 'App\Http\Controllers\AdminController@listMedical');
+// Halaman Detail Medical - Admin
+Route::get('list-total-medical/admin/detail-medical/{id}', 'App\Http\Controllers\AdminController@detailMedical');
+// Halaman List Total BLK - Admin
+Route::get('list-total-blk-admin', 'App\Http\Controllers\AdminController@listBlk');
+// Halaman Detail BLK - Admin
+Route::get('list-total-medical/admin/detail-blk/{id}', 'App\Http\Controllers\AdminController@detailBlk');
+// Halaman List Total Berangkat - Admin
+Route::get('list-total-berangkat-admin', 'App\Http\Controllers\AdminController@listBerangkat');
+// Halaman Detail Berangkat - Admin
+Route::get('list-total-berangkat/admin/detail-blk/{id}', 'App\Http\Controllers\AdminController@detailBerangkat');
+
+// Halaman Status TKI - Admin
+Route::get('status-tki-admin', 'App\Http\Controllers\AdminController@statusTki');
+
+
 // Login Medical Checkup
 Route::get('login-medical-checkup', 'App\Http\Controllers\LoginMedicalCheckupController@loginMedicalCheckup');
-route::post('post-login-medical-checkup',[LoginMedicalCheckupController::class,'postlogin'])->name('post-login-medical-checkup');
+route::post('post-login-medical',[LoginMedicalCheckupController::class,'postlogin'])->name('post-login-medical');
 Route::get('logout-medical-checkup', 'App\Http\Controllers\LoginMedicalCheckupController@logout');
 Route::group(['middleware' => ['auth','ceklevel:admin,admin-medical']], function () {
     route::get('medical-checkup',[MedicalCheckupController::class,'dashboard'])->name('medical-checkup');
 });
+// Halaman Dashbiard 
+route::get('medical-checkup-dashboard',[MedicalCheckupController::class,'dashboard'])->name('medical-checkup');
 // List TKI - Medical Checkup
 route::get('listtki-medical-checkup',[MedicalCheckupController::class,'listDataTki']);
 // Halaman Detail TKI - Medical Checkup
 Route::get('medical-checkup/detail-tki/{id}', 'App\Http\Controllers\MedicalCheckupController@detailTki');
 // Upload Sertifikat - Medical Checkup
 Route::post('upload/store-medical/{id}','App\Http\Controllers\MedicalCheckupController@uploadSertifikatKesehatan');
+
+
+// Halaman List Total TKI - MedicalCheckup
+Route::get('list-total-tki-medical', 'App\Http\Controllers\MedicalCheckupController@listTki');
+// Halaman Detail TKI - MedicalCheckup
+Route::get('list-total-tki/medical/detail-tki/{id}', 'App\Http\Controllers\MedicalCheckupController@detailTki');
+// Halaman List Total Medical - MedicalCheckup
+Route::get('list-total-medical-medical', 'App\Http\Controllers\MedicalCheckupController@listMedical');
+// Halaman Detail Medical - MedicalCheckup
+Route::get('list-total-medical/medical/detail-medical/{id}', 'App\Http\Controllers\MedicalCheckupController@detailMedical');
+// Halaman List Total BLK - MedicalCheckup
+Route::get('list-total-blk-medical', 'App\Http\Controllers\MedicalCheckupController@listBlk');
+// Halaman Detail BLK - MedicalCheckup
+Route::get('list-total-medical/medical/detail-blk/{id}', 'App\Http\Controllers\MedicalCheckupController@detailBlk');
+// Halaman List Total Berangkat - MedicalCheckup
+Route::get('list-total-berangkat-medical', 'App\Http\Controllers\MedicalCheckupController@listBerangkat');
+// Halaman Detail Berangkat - MedicalCheckup
+Route::get('list-total-berangkat/medical/detail-blk/{id}', 'App\Http\Controllers\MedicalCheckupController@detailBerangkat');
+
+// Halaman Status TKI - Operator
+Route::get('status-tki-medical', 'App\Http\Controllers\MedicalCheckupController@statusTki');
 
 
 // Login BLK
@@ -127,6 +190,9 @@ route::get('listtki-blk',[BlkController::class,'listDataTki']);
 Route::get('blk/detail-tki/{id}', 'App\Http\Controllers\BlkController@detailTki');
 // Upload Sertifikat - BLK
 Route::post('upload/store-blk/{id}','App\Http\Controllers\BlkController@uploadSertifikatBlk');
+
+// Halaman Status TKI - Operator
+Route::get('status-tki-blk', 'App\Http\Controllers\BlkController@statusTki');
 
 
 // Login - P3MI

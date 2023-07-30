@@ -68,17 +68,18 @@
                                         <td>{{ $item->nama }}</td>
                                         <td>{{ $item->jenis_kelamin }}</td>
                                         <td>{{ $item->alamat }}</td>
-                                        @if ($item->sertifikat_blk !== null)
-                                            <td class="text-center"><i class="fa fa-check-circle" style="color: green;"></i>
-                                            </td>
-                                        @else
-                                            <td class="text-center">
+                                        <td class="text-center">
+                                            @if (isset($item->sertifikat_blk))
+                                                <a href="images/{{ $item->sertifikat_blk }}" class="btn btn-success btn-sm"
+                                                    style="color: white;" target="_blank">Lihat
+                                                    Foto</a>
+                                            @else
                                                 <a href="{{ url('blk/detail-tki/' . $item->id) }}"
                                                     class="btn btn-success btn-sm" style="color: white;">
                                                     Upload Sertifikat
                                                 </a>
-                                            </td>
-                                        @endif
+                                            @endif
+                                        </td>
                                     </tr>
                                 @else
                                 @endif

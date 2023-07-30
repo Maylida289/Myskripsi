@@ -17,7 +17,7 @@
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1 style="color :blue"> Halaman Admin</h1>
+                    <h1 style="color :blue"> Halaman Dashboard</h1>
                 </div>
             </div>
         </div>
@@ -42,7 +42,11 @@
                     <div class="small-box bg-info">
                         <div class="inner">
                             <h3 style="margin-left: 10px; margin-top:10px">{{ $totalTki }}</h3>
-                            <p style="color:antiquewhite; margin-left: 10px;">Total TKI</p>
+
+                            <p style="color: antiquewhite; margin-left: 10px;">
+                                <a href="/list-total-tki-admin" style="text-decoration: none; color: antiquewhite;">Total
+                                    TKI</a>
+                            </p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-bag"></i>
@@ -57,7 +61,11 @@
                         <div class="inner">
                             <h3 style="margin-left: 10px; margin-top:10px">{{ $totalMedical }}</h3>
 
-                            <p style="margin-left: 10px; color:antiquewhite">Medical</p>
+                            <p style="color: antiquewhite; margin-left: 10px;">
+                                <a href="/list-total-medical-admin"
+                                    style="text-decoration: none; color: antiquewhite;">Total
+                                    Medical</a>
+                            </p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-stats-bars"></i>
@@ -72,7 +80,10 @@
                         <div class="inner">
                             <h3 style="margin-left: 10px; margin-top:10px">{{ $totalBlk }}</h3>
 
-                            <p style="color:antiquewhite; margin-left: 10px;">BLK</p>
+                            <p style="color: antiquewhite; margin-left: 10px;">
+                                <a href="/list-total-blk-admin" style="text-decoration: none; color: antiquewhite;">
+                                    BLK</a>
+                            </p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-person-add"></i>
@@ -81,23 +92,27 @@
                     </div>
                 </div>
 
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-danger">
-                        <div class="inner">
-                            <h3 style="margin-left: 10px; margin-top:10px">{{ $totalBerangkat }}</h3>
+                <!. /col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-danger">
+                            <div class="inner">
+                                <h3 style="margin-left: 10px; margin-top:10px">{{ $totalBerangkat }}</h3>
 
-                            <p style="color:antiquewhite; margin-left: 10px;">Berangkat</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-pie-graph"></i>
-                        </div>
+                                <p style="color: antiquewhite; margin-left: 10px;">
+                                    <a href="/list-total-berangkat-admin"
+                                        style="text-decoration: none; color: antiquewhite;">
+                                        Berangkat</a>
+                                </p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-pie-graph"></i>
+                            </div>
 
+                        </div>
                     </div>
-                </div>
 
-                <!-- ./col -->
+                    <!-- ./col -->
             </div>
         </div>
     </section>

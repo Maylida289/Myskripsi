@@ -37,7 +37,7 @@
             <h4 style="text-align: center;">Login Medical Checkup</h4>
             <div class="login-content">
                 <div class="login-form">
-                    <form action="{{ route('post-login-medical-checkup') }}" method="post">
+                    <form action="{{ route('post-login-medical') }}" method="post">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label>Email address</label>

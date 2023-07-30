@@ -2,17 +2,9 @@
 
 @section('title', 'List TKI')
 @section('breadcrumbs')
-
-
-    @if (session('status-upload'))
-        <div class="alert alert-success">
-            {{ session('status-upload') }}
-        </div>
-        @php
-            session()->flash('status-upload');
-        @endphp
-    @endif
-
+    @php
+        $iteration = 1;
+    @endphp
 
     <div class="breadcrumbs">
         <div class="col-sm-4">
@@ -29,7 +21,7 @@
                         <li>
                             <a href="#">List TKI</a>
                         </li>
-                        <li class="active">Data</li>
+                        <li class="active">List TKI</li>
                     </ol>
                 </div>
             </div>
@@ -43,56 +35,63 @@
     <div class="content mt-3">
 
         <div class="animated fadeIn">
+
+            {{-- fungsi redirect tools --}}
+            @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+            @endif
+
             <div class="card">
                 <div class="card-header">
                     <div class="pull-left">
-                        <strong>Data TKI</strong>
+                        <strong>List TKI</strong>
                     </div>
+
                 </div>
                 <div class="card -body table-responsive">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th style="text-align: center;">No</th>
-                                <th style="text-align: center;">Nama</th>
-                                <th style="text-align: center;">Jenis Kelamin</th>
-                                <th style="text-align: center;">Alamat</th>
-                                <th style="text-align: center;">Sponsor</th>
-                                <th style="text-align: center;">Serifikat Kesehatan</th>
+                                <th>No</th>
+                                <th>Nama</th>
+                                <th>Alamat</th>
+                                <th>Sponsor</th>
+                                <th>Monitoring</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($list_tki as $item)
+                            @foreach ($statusTki as $item)
                                 <tr>
-                                    <td class="text-center">{{ $loop->iteration }}</td>
+                                    <td class="text-center">{{ $iteration }}</td>
                                     <td>{{ $item->nama }}</td>
-                                    <td>{{ $item->jenis_kelamin }}</td>
                                     <td>{{ $item->alamat }}</td>
                                     <td>{{ $item->sponsor }}</td>
-                                    <td class="text-center">
-                                        @if (isset($item->sertifikat_kesehatan))
-                                            <a href="images/{{ $item->sertifikat_kesehatan }}"
-                                                class="btn btn-success btn-sm" style="color: white;" target="_blank">Lihat
-                                                Foto</a>
+                                    <td>
+                                        @if (isset($item->sertifikat_kesehatan) &&
+                                                isset($item->sertifikat_blk) &&
+                                                isset($item->hasil_validasi) &&
+                                                $item->hasil_validasi === 'Approved')
+                                            Approved
+                                        @elseif (isset($item->sertifikat_kesehatan) && isset($item->sertifikat_blk))
+                                            Proses Review Admin Apjati
+                                        @elseif (isset($item->sertifikat_kesehatan))
+                                            Test BLK
                                         @else
-                                            <a href="{{ url('medical-checkup/detail-tki/' . $item->id) }}"
-                                                class="btn btn-success btn-sm" style="color: white;">
-                                                Upload Sertifikat
-                                            </a>
+                                            Periksa kesehatan
                                         @endif
                                     </td>
-
-
                                 </tr>
+                                @php
+                                    $iteration++;
+                                @endphp
                             @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
-
-
         </div>
-
     </div>
 
 @endsection

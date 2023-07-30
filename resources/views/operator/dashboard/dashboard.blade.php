@@ -43,7 +43,10 @@
                         <div class="inner">
                             <h3 style="margin-left: 10px; margin-top:10px">{{ $totalTki }}</h3>
 
-                            <p style="color:antiquewhite; margin-left: 10px;">Total TKI</p>
+                            <p style="color: antiquewhite; margin-left: 10px;">
+                                <a href="/list-total-tki-operator" style="text-decoration: none; color: antiquewhite;">Total
+                                    TKI</a>
+                            </p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-bag"></i>
@@ -58,7 +61,11 @@
                         <div class="inner">
                             <h3 style="margin-left: 10px; margin-top:10px">{{ $totalMedical }}</h3>
 
-                            <p style="margin-left: 10px; color:antiquewhite">Medical</p>
+                            <p style="color: antiquewhite; margin-left: 10px;">
+                                <a href="/list-total-medical-operator"
+                                    style="text-decoration: none; color: antiquewhite;">Total
+                                    Medical</a>
+                            </p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-stats-bars"></i>
@@ -73,7 +80,10 @@
                         <div class="inner">
                             <h3 style="margin-left: 10px; margin-top:10px">{{ $totalBlk }}</h3>
 
-                            <p style="color:antiquewhite; margin-left: 10px;">BLK</p>
+                            <p style="color: antiquewhite; margin-left: 10px;">
+                                <a href="/list-total-blk-operator" style="text-decoration: none; color: antiquewhite;">
+                                    BLK</a>
+                            </p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-person-add"></i>
@@ -89,7 +99,11 @@
                             <div class="inner">
                                 <h3 style="margin-left: 10px; margin-top:10px">{{ $totalBerangkat }}</h3>
 
-                                <p style="color:antiquewhite; margin-left: 10px;">Berangkat</p>
+                                <p style="color: antiquewhite; margin-left: 10px;">
+                                    <a href="/list-total-berangkat-operator"
+                                        style="text-decoration: none; color: antiquewhite;">
+                                        Berangkat</a>
+                                </p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-pie-graph"></i>
