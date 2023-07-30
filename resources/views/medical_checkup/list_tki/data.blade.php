@@ -71,7 +71,9 @@
                                     <td>{{ $item->sponsor }}</td>
                                     <td class="text-center">
                                         @if (isset($item->sertifikat_kesehatan))
-                                            <i class="fa fa-check-circle" style="color: green;"></i>
+                                            <a href="images/{{ $item->sertifikat_kesehatan }}"
+                                                class="btn btn-success btn-sm" style="color: white;" target="_blank">Lihat
+                                                Foto</a>
                                         @else
                                             <a href="{{ url('medical-checkup/detail-tki/' . $item->id) }}"
                                                 class="btn btn-success btn-sm" style="color: white;">
