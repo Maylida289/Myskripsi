@@ -46,6 +46,10 @@
                         <a href={{ url('listtki-medical-checkup') }}> <i class="menu-icon fa fa-puzzle-piece"></i>List
                             TKI</a>
                     </li>
+                    <li>
+                        <a href="{{ url('status-tki-medical') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>Status
+                            TKI </a>
+                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
