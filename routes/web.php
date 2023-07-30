@@ -137,11 +137,13 @@ Route::get('list-total-berangkat/admin/detail-blk/{id}', 'App\Http\Controllers\A
 
 // Login Medical Checkup
 Route::get('login-medical-checkup', 'App\Http\Controllers\LoginMedicalCheckupController@loginMedicalCheckup');
-route::post('post-login-medical-checkup',[LoginMedicalCheckupController::class,'postlogin'])->name('post-login-medical-checkup');
+route::post('post-login-medical',[LoginMedicalCheckupController::class,'postlogin'])->name('post-login-medical');
 Route::get('logout-medical-checkup', 'App\Http\Controllers\LoginMedicalCheckupController@logout');
 Route::group(['middleware' => ['auth','ceklevel:admin,admin-medical']], function () {
     route::get('medical-checkup',[MedicalCheckupController::class,'dashboard'])->name('medical-checkup');
 });
+// Halaman Dashbiard 
+route::get('medical-checkup-dashboard',[MedicalCheckupController::class,'dashboard'])->name('medical-checkup');
 // List TKI - Medical Checkup
 route::get('listtki-medical-checkup',[MedicalCheckupController::class,'listDataTki']);
 // Halaman Detail TKI - Medical Checkup

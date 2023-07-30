@@ -1,4 +1,4 @@
-@extends('admin.main')
+@extends('medical_checkup.main')
 
 @section('title', 'Dashboard')
 

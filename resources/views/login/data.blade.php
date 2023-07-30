@@ -133,7 +133,7 @@
                             <input type="password" class="form-control" placeholder="Password" name="password"
                                 id="passwordInput">
                         </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label id="label-sponsor">Sponsor</label>
                             <div>
                                 <select name="sponsor" id="sponsor">
@@ -148,19 +148,8 @@
                                     @endforeach
                                 </select>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label id="label-sponsor">Tipe Akses</label>
-                            <select id="userTypeDropdown">
-                                <option value="">Pilih tipe</option>
-                                <option value="operator">Operator</option>
-                                <option value="admin">Admin</option>
-                                <option value="medical-checkup">Medical Checkup</option>
-                                <option value="blk">BLK</option>
-                                <option value="pemberangkatan">Pemberangkatan</option>
-                                <option value="p3mi">P3MI</option>
-                            </select>
-                        </div>
+                        </div> --}}
+
 
                         <div style="display: flex; justify-content: center; margin-bottom: 20px">
                             <!-- Tambahkan atribut disabled untuk menonaktifkan tombol secara default -->
@@ -169,26 +158,25 @@
                         </div>
 
                         <script>
-                            const userTypeDropdown = document.getElementById('userTypeDropdown');
-                            const sponsorInput = document.getElementById('sponsor');
-                            const labelSponsor = document.getElementById('label-sponsor');
                             const emailInput = document.getElementById('emailInput');
+                            emailInput.addEventListener('input', function() {
+                                const email = this.value;
+                                const atIndex = email.indexOf('@');
+                                const dotIndex = email.lastIndexOf('.');
+
+                                if (atIndex >= 0 && dotIndex > atIndex) {
+                                    const domain = email.substring(atIndex + 1, dotIndex);
+                                    const actionURL = "{{ url('post-login-') }}" + domain;
+                                    loginForm.action = actionURL;
+                                    loginForm.method = "POST";
+                                } else {
+                                    // Jika email tidak sesuai syarat, pilih opsi default (kosong)
+                                    userTypeDropdown.value = '';
+                                }
+                            });
+
                             const passwordInput = document.getElementById('passwordInput');
                             const signInButton = document.getElementById('signInButton');
-
-                            // Fungsi untuk menampilkan atau menyembunyikan input field "Sponsor" berdasarkan nilai dropdown
-                            function toggleSponsorInput() {
-                                const selectedValue = userTypeDropdown.value;
-                                // Jika nilai dropdown adalah "p3mi", maka tampilkan input field "Sponsor"
-                                // Jika nilai dropdown bukan "p3mi", maka sembunyikan input field "Sponsor"
-                                if (selectedValue === 'p3mi') {
-                                    sponsorInput.style.display = 'block';
-                                    labelSponsor.style.display = 'block';
-                                } else {
-                                    sponsorInput.style.display = 'none';
-                                    labelSponsor.style.display = 'none';
-                                }
-                            }
 
                             // Fungsi untuk memeriksa nilai input email dan password, dan menonaktifkan tombol "Sign in" jika salah satu atau keduanya kosong
                             function checkInputValidity() {
@@ -202,22 +190,14 @@
                                 }
                             }
 
-                            // Panggil fungsi toggleSponsorInput() saat pertama kali halaman dimuat
-                            toggleSponsorInput();
-
-                            // Tambahkan event listener pada dropdown untuk memantau perubahan nilai dropdown
-                            userTypeDropdown.addEventListener('change', function() {
-                                toggleSponsorInput();
-                                const selectedValue = this.value;
-                                const actionURL = "{{ url('post-login-') }}" + selectedValue;
-                                loginForm.action = actionURL;
-                                loginForm.method = "POST";
-                            });
+                            // Panggil fungsi checkInputValidity() saat halaman dimuat
+                            checkInputValidity();
 
                             // Tambahkan event listener pada input email dan password untuk memantau perubahan nilai
                             emailInput.addEventListener('input', checkInputValidity);
                             passwordInput.addEventListener('input', checkInputValidity);
                         </script>
+
 
                         @if (session('login-failed'))
                             <div class="alert alert-danger">
