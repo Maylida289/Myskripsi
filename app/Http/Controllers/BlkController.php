@@ -52,4 +52,10 @@ class BlkController extends Controller
         }
        
     }
+
+    public function statusTki()
+    {
+        $statusTki = DB::table('validasi_berkas')->get();
+        return view('blk.status_tki.data', ['statusTki' => $statusTki]);
+    }
 }
