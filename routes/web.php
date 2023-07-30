@@ -217,3 +217,6 @@ Route::get('pemberangkatan/detail-tki/{id}', 'App\Http\Controllers\Pemberangkata
 Route::post('upload/store-pemberangkatan/{id}','App\Http\Controllers\PemberangkatanController@uploadPasporAndVisa');
 
 Route::get('login', 'App\Http\Controllers\LoginController@login'); 
+
+// Halaman Status TKI - Pemberangkatan
+Route::get('status-tki-pemberangkatan', 'App\Http\Controllers\PemberangkatanController@statusTki');

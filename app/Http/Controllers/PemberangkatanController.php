@@ -46,4 +46,10 @@ class PemberangkatanController extends Controller
             ]);
             return redirect('/pemberangkatan')->with('status-upload', 'Paspor dan Visa berhasil di upload!');
     }
+
+    public function statusTki()
+    {
+        $statusTki = DB::table('validasi_berkas')->get();
+        return view('pemberangkatan.status_tki.data', ['statusTki' => $statusTki]);
+    }
 }
