@@ -110,4 +110,10 @@ class OperatorController extends Controller
         return view('operator/dashboard/list_dashboard/detail/detail_pemberangkatan', compact('detail_pemberangkatan'));
     }
 
+    public function statusTki()
+    {
+        $statusTki = DB::table('validasi_berkas')->get();
+        return view('operator.status_tki.data', ['statusTki' => $statusTki]);
+    }
+
 }

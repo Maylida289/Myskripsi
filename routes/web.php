@@ -79,8 +79,6 @@ Route::get('pemberangkatan/operator/detail-tki/{id}', 'App\Http\Controllers\Oper
 // Halaman List P3MI - Operator
 Route::get('list-p3mi-operator', 'App\Http\Controllers\OperatorController@listP3mi');
 
-
-
 // Halaman List Total TKI - Operator
 Route::get('list-total-tki-operator', 'App\Http\Controllers\OperatorController@listTki');
 // Halaman Detail TKI - Operator
@@ -97,6 +95,9 @@ Route::get('list-total-medical/operator/detail-blk/{id}', 'App\Http\Controllers\
 Route::get('list-total-berangkat-operator', 'App\Http\Controllers\OperatorController@listBerangkat');
 // Halaman Detail BLK - Operator
 Route::get('list-total-berangkat/operator/detail-blk/{id}', 'App\Http\Controllers\OperatorController@detailBerangkat');
+
+// Halaman Status TKI - Operator
+Route::get('status-tki-operator', 'App\Http\Controllers\OperatorController@statusTki');
 
 // Login Admin
 Route::get('login-admin', 'App\Http\Controllers\LoginAdminController@loginAdmin');

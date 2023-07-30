@@ -46,7 +46,10 @@
                         <a href="{{ url('pendaftarantki') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>Pendaftaran
                             TKI </a>
                     </li>
-
+                    <li>
+                        <a href="{{ url('status-tki-operator') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>Status
+                            TKI </a>
+                    </li>
                     <li>
                         <a href="{{ url('pendaftaranp3mi/add') }}"> <i
                                 class="menu-icon fa fa-puzzle-piece"></i>Pendaftaran
