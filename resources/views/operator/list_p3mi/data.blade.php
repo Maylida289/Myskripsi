@@ -3,6 +3,8 @@
 @section('title', 'List P3MI')
 @section('breadcrumbs')
 
+
+
     <div class="breadcrumbs">
         <div class="col-sm-4">
             <div class="page-header float-left">
@@ -33,11 +35,25 @@
 
         <div class="animated fadeIn">
 
+            @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+                @php
+                    session()->flash('status');
+                @endphp
+            @endif
+
 
             <div class="card">
                 <div class="card-header">
                     <div class="pull-left">
                         <strong>List TKI</strong>
+                    </div>
+                    <div class="pull-right">
+                        <a href="{{ url('pendaftaranp3mi/add') }}" class="btn btn-success btn-sm">
+                            <i class="fa fa-plus">Add</i>
+                        </a>
                     </div>
                 </div>
                 <div class="card -body table-responsive">

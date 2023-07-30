@@ -24,6 +24,6 @@ class OperatorPendaftaranP3miController extends Controller
             'sponsor' => $request->sponsor,
             'remember_token' => Str::random(60),
         ]);
-        return redirect('pendaftaranp3mi/add')->with('status','P3MI Berhasil di Daftarkan');
+        return redirect('list-p3mi-operator')->with('status','P3MI Berhasil di Daftarkan');
     }
 }
