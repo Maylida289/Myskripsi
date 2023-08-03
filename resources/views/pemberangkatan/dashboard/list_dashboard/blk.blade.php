@@ -1,13 +1,13 @@
-@extends('blk.main')
+@extends('pemberangkatan.main')
 
-@section('title', 'Medical')
+@section('title', 'BLK')
 @section('breadcrumbs')
 
     <div class="breadcrumbs">
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Medical</h1>
+                    <h1>BLK</h1>
                 </div>
             </div>
         </div>
@@ -16,9 +16,9 @@
                 <div class="page-title">
                     <ol class="breadcrumb text-right">
                         <li>
-                            <a href="#">Medical</a>
+                            <a href="#">BLK</a>
                         </li>
-                        <li class="active">Medical</li>
+                        <li class="active">BLK</li>
                     </ol>
                 </div>
             </div>
@@ -57,7 +57,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($listMedical as $item)
+                            @foreach ($listBlk as $item)
                                 <tr>
                                     <td class="text-center">{{ $loop->iteration }}</td>
                                     <td>{{ $item->nama }}</td>
@@ -69,7 +69,7 @@
                                     <td>{{ $item->pendidikan }}</td>
                                     <td>{{ $item->no_tlp }}</td>
                                     <td class="text-center">
-                                        <a href="{{ url('list-total-medical/blk/detail-medical/' . $item->id) }}"
+                                        <a href="{{ url('list-total-blk/pemberangkatan/detail-blk/' . $item->id) }}"
                                             class="btn btn-success btn-sm" style="color: white;">
                                             Detail
                                         </a>

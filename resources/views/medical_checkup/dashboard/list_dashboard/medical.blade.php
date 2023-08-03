@@ -18,7 +18,7 @@
                         <li>
                             <a href="#">Medical</a>
                         </li>
-                        <li class="active">Medial</li>
+                        <li class="active">Medical</li>
                     </ol>
                 </div>
             </div>

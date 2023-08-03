@@ -1,4 +1,4 @@
-@extends('blk.main')
+@extends('pemberangkatan.main')
 
 @section('title', 'Medical')
 @section('breadcrumbs')
@@ -69,7 +69,7 @@
                                     <td>{{ $item->pendidikan }}</td>
                                     <td>{{ $item->no_tlp }}</td>
                                     <td class="text-center">
-                                        <a href="{{ url('list-total-medical/blk/detail-medical/' . $item->id) }}"
+                                        <a href="{{ url('list-total-medical/pemberangkatan/detail-medical/' . $item->id) }}"
                                             class="btn btn-success btn-sm" style="color: white;">
                                             Detail
                                         </a>

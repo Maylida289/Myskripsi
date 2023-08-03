@@ -1,15 +1,15 @@
 @extends('pemberangkatan.main')
 
-@section('title', 'List TKI')
+@section('title', 'Dashboard')
+
 @section('breadcrumbs')
 
-
-    @if (session('status-upload'))
+    @if (session('login-success'))
         <div class="alert alert-success">
-            {{ session('status-upload') }}
+            {{ session('login-success') }}
         </div>
         @php
-            session()->flash('status-upload');
+            session()->flash('login-success');
         @endphp
     @endif
 
@@ -17,7 +17,7 @@
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>List Pemberangkatan</h1>
+                    <h1 style="color :blue"> Halaman Dashboard</h1>
                 </div>
             </div>
         </div>
@@ -25,76 +25,98 @@
             <div class="page-header float-right">
                 <div class="page-title">
                     <ol class="breadcrumb text-right">
-                        <li>
-                            <a href="#">List Pemberangkatan</a>
-                        </li>
-                        <li class="active">Data</li>
+                        <li class="active"><i class="fa fa-dashboard"></i></li>
                     </ol>
                 </div>
             </div>
         </div>
     </div>
 
-@endsection
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3 style="margin-left: 10px; margin-top:10px">{{ $totalTki }}</h3>
 
-@section('content')
+                            <p style="color: antiquewhite; margin-left: 10px;">
+                                <a href="/list-total-tki-pemberangkatan"
+                                    style="text-decoration: none; color: antiquewhite;">Total
+                                    TKI</a>
+                            </p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
 
-    <div class="content mt-3">
-
-        <div class="animated fadeIn">
-
-            {{-- fungsi redirect tools --}}
-            @if (session('status'))
-                <div class="alert alert-success">
-                    {{ session('status') }}
+                    </div>
                 </div>
-            @endif
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3 style="margin-left: 10px; margin-top:10px">{{ $totalMedical }}</h3>
 
-            <div class="card">
-                <div class="card-header">
-                    <div class="pull-left">
-                        <strong>List Pemberangkatan</strong>
+                            <p style="color: antiquewhite; margin-left: 10px;">
+                                <a href="/list-total-medical-pemberangkatan"
+                                    style="text-decoration: none; color: antiquewhite;">Total
+                                    Medical</a>
+                            </p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-stats-bars"></i>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3 style="margin-left: 10px; margin-top:10px">{{ $totalBlk }}</h3>
+
+                            <p style="color: antiquewhite; margin-left: 10px;">
+                                <a href="/list-total-blk-pemberangkatan"
+                                    style="text-decoration: none; color: antiquewhite;">
+                                    BLK</a>
+                            </p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!. /col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-danger">
+                            <div class="inner">
+                                <h3 style="margin-left: 10px; margin-top:10px">{{ $totalBerangkat }}</h3>
+
+                                <p style="color: antiquewhite; margin-left: 10px;">
+                                    <a href="/list-total-berangkat-pemberangkatan"
+                                        style="text-decoration: none; color: antiquewhite;">
+                                        Berangkat</a>
+                                </p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-pie-graph"></i>
+                            </div>
+
+                        </div>
                     </div>
 
-                </div>
-                <div class="card -body table-responsive">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th style="text-align: center;">Nama</th>
-                                <th style="text-align: center;">Alamat</th>
-                                <th style="text-align: center;">Sponsor</th>
-                                <th style="text-align: center;">Paspor dan Visa</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($list_tki as $item)
-                                @if ($item->hasil_validasi === 'Approved')
-                                    <tr>
-                                        <td>{{ $item->nama }}</td>
-                                        <td>{{ $item->alamat }}</td>
-                                        <td>{{ $item->sponsor }}</td>
-                                        @if (isset($item->paspor) && isset($item->visa))
-                                            <td class="text-center"><i class="fa fa-check-circle" style="color: green;"></i>
-                                            </td>
-                                        @else
-                                            <td class="text-center">
-                                                <a href="{{ url('pemberangkatan/detail-tki/' . $item->id) }}"
-                                                    class="btn btn-success btn-sm" style="color: white;">
-                                                    Upload Paspor & Visa
-                                                </a>
-                                            </td>
-                                        @endif
-
-                                    </tr>
-                                @endif
-                            @endforeach
-
-                        </tbody>
-                    </table>
-                </div>
+                    <!-- ./col -->
             </div>
         </div>
-    </div>
+    </section>
 
 @endsection

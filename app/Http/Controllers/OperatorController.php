@@ -20,7 +20,7 @@ class OperatorController extends Controller
     public function validasiTki()
     {   
         $validasiTki = DB::table('hasil_validasi')->get();
-        return view('operator.validasi_tki.data',  ['validasiTki' => $validasiTki]);
+        return vixfew('operator.validasi_tki.data',  ['validasiTki' => $validasiTki]);
     }
     
     public function uploadKtp(Request $request, $id)

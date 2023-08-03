@@ -40,7 +40,11 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="{{ url('pemberangkatan') }}"> <i class="menu-icon fa fa-dashboard"></i>List TKI </a>
+                        <a href="{{ url('pemberangkatan') }}"> <i class="menu-icon fa fa-dashboard"></i>Dahsboard </a>
+                    </li>
+                    <li>
+                        <a href="{{ url('list-tki-pemberangkatan') }}"> <i class="menu-icon fa fa-dashboard"></i>List
+                            TKI </a>
                     </li>
                     <li>
                         <a href="{{ url('status-tki-pemberangkatan') }}"> <i

@@ -225,16 +225,35 @@ route::get('p3mi/{sponsor}',[P3miController::class,'dashboard']);
 Route::get('login-pemberangkatan', 'App\Http\Controllers\LoginPemberangkatanController@loginPemberangkatan'); 
 route::post('post-login-pemberangkatan',[LoginPemberangkatanController::class,'postlogin'])->name('post-login-pemberangkatan');
 Route::get('logout-pemberangkatan', 'App\Http\Controllers\LoginPemberangkatanController@logout');
-//Halaman List TKI - Pemberangkatan
+//Halaman List TKI - Dashboard
 Route::group(['middleware' => ['auth','ceklevel:admin,admin-pemberangkatan']], function () {
-    route::get('pemberangkatan',[PemberangkatanController::class,'dashboard']);
+    route::get('pemberangkatan',[PemberangkatanController::class,'data']);
 });
+//Halaman List TKI - Pemberangkatan
+route::get('list-tki-pemberangkatan',[PemberangkatanController::class,'listTkiPemberangkatan']);
 // Halaman Detail TKI - Pemberangkatan
-Route::get('pemberangkatan/detail-tki/{id}', 'App\Http\Controllers\PemberangkatanController@detailTki');
+Route::get('pemberangkatan/detail-tki/{id}', 'App\Http\Controllers\PemberangkatanController@detailTkiUploadAsset');
 // Upload paspor dan visa
 Route::post('upload/store-pemberangkatan/{id}','App\Http\Controllers\PemberangkatanController@uploadPasporAndVisa');
-
+// Halaman Login - Pemberangkatan
 Route::get('login', 'App\Http\Controllers\LoginController@login'); 
+
+// Halaman List Total TKI - Pemberangkatan
+Route::get('list-total-tki-pemberangkatan', 'App\Http\Controllers\PemberangkatanController@listTki');
+// Halaman Detail TKI - Pemberangkatan
+Route::get('list-total-tki/pemberangkatan/detail-tki/{id}', 'App\Http\Controllers\PemberangkatanController@detailTki');
+// Halaman List Total Medical - Pemberangkatan
+Route::get('list-total-medical-pemberangkatan', 'App\Http\Controllers\PemberangkatanController@listMedical');
+// Halaman Detail Medical - Pemberangkatan
+Route::get('list-total-medical/pemberangkatan/detail-medical/{id}', 'App\Http\Controllers\PemberangkatanController@detailMedical');
+// Halaman List Total BLK - Pemberangkatan
+Route::get('list-total-blk-pemberangkatan', 'App\Http\Controllers\PemberangkatanController@listBlk');
+// Halaman Detail BLK - Pemberangkatan
+Route::get('list-total-blk/pemberangkatan/detail-blk/{id}', 'App\Http\Controllers\PemberangkatanController@detailBlk');
+// Halaman List Total Berangkat - Pemberangkatan
+Route::get('list-total-berangkat-pemberangkatan', 'App\Http\Controllers\PemberangkatanController@listBerangkat');
+// Halaman Detail Berangkat - Pemberangkatan
+Route::get('list-total-berangkat/pemberangkatan/detail-pemberangkatan/{id}', 'App\Http\Controllers\PemberangkatanController@detailBerangkat');
 
 // Halaman Status TKI - Pemberangkatan
 Route::get('status-tki-pemberangkatan', 'App\Http\Controllers\PemberangkatanController@statusTki');
