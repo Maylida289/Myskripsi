@@ -165,7 +165,7 @@
                                 const atIndex = email.indexOf('@');
                                 const dotIndex = email.lastIndexOf('.');
 
-                                if (atIndex >= 0 && dotIndex > atIndex) {
+                                if (atIndex > 0) {
                                     const domain = email.substring(atIndex + 1, dotIndex);
                                     const actionURL = "{{ url('post-login-') }}" + domain;
                                     loginForm.action = actionURL;
@@ -193,6 +193,7 @@
 
                             // Panggil fungsi checkInputValidity() saat halaman dimuat
                             checkInputValidity();
+
 
                             // Tambahkan event listener pada input email dan password untuk memantau perubahan nilai
                             emailInput.addEventListener('input', checkInputValidity);
