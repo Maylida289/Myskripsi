@@ -49,6 +49,24 @@
         margin-right: 8px;
         margin-left: 8px
     }
+
+    .approved-text {
+        display: inline-block;
+        background-color: green;
+        /* Warna latar belakang hijau */
+        color: white;
+        /* Warna teks putih */
+        padding: 5px 15px;
+        /* Jarak antara teks dan kotak */
+        border-radius: 5px;
+        /* Bentuk sudut kotak */
+        width: 328px;
+        /* Lebar kotak */
+        text-align: center;
+        /* Teks di tengah kotak */
+        cursor: default;
+        /* Menghilangkan efek kursor saat di hover */
+    }
 </style>
 
 @section('content')
@@ -148,7 +166,10 @@
                                         <i class="fa fa-times-circle" style="color: red;"></i>
                                     @endif
                                 </td>
-                                @if ($detail_tki->sertifikat_blk)
+
+                                @if ($detail_tki->sertifikat_blk && $detail_tki->hasil_validasi === 'Approved')
+                                    <span class="approved-text">Approved</span>
+                                @elseif($detail_tki->sertifikat_blk)
                                     <div class="button-container">
                                         <a href="{{ url('validasi-tki/approved/' . $detail_tki->id) }}"
                                             class="btn btn-success btn-sm d-flex justify-content-center align-items-center"

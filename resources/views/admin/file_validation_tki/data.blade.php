@@ -36,6 +36,18 @@
 
 @endsection
 
+<style>
+    .approved-text {
+
+        display: inline-block;
+        background-color: green;
+        color: white;
+        padding: 5px 15px;
+        text-align: center;
+        cursor: default;
+    }
+</style>
+
 @section('content')
 
     <div class="content mt-3">
@@ -70,12 +82,21 @@
                                     <td>{{ $item->jenis_kelamin }}</td>
                                     <td>{{ $item->alamat }}</td>
                                     <td>{{ $item->sponsor }}</td>
-                                    <td class="text-center">
-                                        <a href="{{ url('admin/detail-tki/' . $item->id) }}" class="btn btn-success btn-sm"
-                                            style="color: white;">
-                                            Detail
-                                        </a>
-                                    </td>
+                                    @if ($item->hasil_validasi === 'Approved')
+                                        <td class="text-center">
+                                            <a href="{{ url('admin/detail-tki/' . $item->id) }}"
+                                                class="btn btn-success btn-sm" style="color: white;">
+                                                Approved
+                                            </a>
+                                        </td>
+                                    @else
+                                        <td class="text-center">
+                                            <a href="{{ url('admin/detail-tki/' . $item->id) }}"
+                                                class="btn btn-success btn-sm" style="color: white;">
+                                                Detail
+                                            </a>
+                                        </td>
+                                    @endif
                                 </tr>
                             @endforeach
                         </tbody>
