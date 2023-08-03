@@ -187,9 +187,27 @@ Route::group(['middleware' => ['auth','ceklevel:admin,admin-blk']], function () 
 // List TKI - BLK
 route::get('listtki-blk',[BlkController::class,'listDataTki']);
 // Halaman Detail TKI - BLK
-Route::get('blk/detail-tki/{id}', 'App\Http\Controllers\BlkController@detailTki');
+Route::get('blk/detail-tki/{id}', 'App\Http\Controllers\BlkController@detailTkiUploadSertifikat');
 // Upload Sertifikat - BLK
 Route::post('upload/store-blk/{id}','App\Http\Controllers\BlkController@uploadSertifikatBlk');
+
+
+// Halaman List Total TKI - Blk
+Route::get('list-total-tki-blk', 'App\Http\Controllers\BlkController@listTki');
+// Halaman Detail TKI - Blk
+Route::get('list-total-tki/blk/detail-tki/{id}', 'App\Http\Controllers\BlkController@detailTki');
+// Halaman List Total Medical - Blk
+Route::get('list-total-medical-blk', 'App\Http\Controllers\BlkController@listMedical');
+// Halaman Detail Medical - Blk
+Route::get('list-total-medical/blk/detail-medical/{id}', 'App\Http\Controllers\BlkController@detailMedical');
+// Halaman List Total BLK - Blk
+Route::get('list-total-blk-blk', 'App\Http\Controllers\BlkController@listBlk');
+// Halaman Detail BLK - Blk
+Route::get('list-total-medical/blk/detail-blk/{id}', 'App\Http\Controllers\BlkController@detailBlk');
+// Halaman List Total Berangkat - Blk
+Route::get('list-total-berangkat-blk', 'App\Http\Controllers\BlkController@listBerangkat');
+// Halaman Detail Berangkat - Blk
+Route::get('list-total-berangkat/blk/detail-blk/{id}', 'App\Http\Controllers\BlkController@detailBerangkat');
 
 // Halaman Status TKI - Operator
 Route::get('status-tki-blk', 'App\Http\Controllers\BlkController@statusTki');

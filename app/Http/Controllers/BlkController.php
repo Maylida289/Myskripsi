@@ -25,7 +25,7 @@ class BlkController extends Controller
         return view('blk.list_tki.data', ['data_blk' => $list_blk]);
     }
 
-    public function detailTki ($id)
+    public function detailTkiUploadSertifikat ($id)
     {
         $detail_tki = DB::table('blk')->where('id', $id)->first();
         return view('blk/list_tki/detail', compact('detail_tki'));
@@ -51,6 +51,54 @@ class BlkController extends Controller
             echo'Gagal';
         }
        
+    }
+
+    public function listTki()
+    {   
+        $listTki = DB::table('pendaftaran_tki')->get();
+        return view('blk.dashboard.list_dashboard.total_tki',  ['listTki' => $listTki]);
+    }
+
+    public function detailTki ($id)
+    {
+        $detail_tki = DB::table('pendaftaran_tki')->where('id', $id)->first();
+        return view('blk.dashboard.list_dashboard.detail.detail_tki', compact('detail_tki'));
+    }
+
+
+    public function listMedical()
+    {   
+        $listMedical = DB::table('medical_checkup')->get();
+        return view('blk.dashboard.list_dashboard.medical',  ['listMedical' => $listMedical]);
+    }
+
+    public function detailMedical ($id)
+    {
+        $detail_medical = DB::table('medical_checkup')->where('id', $id)->first();
+        return view('blk/dashboard/list_dashboard/detail/detail_medical', compact('detail_medical'));
+    }
+
+    public function listBlk()
+    {   
+        $listBlk = DB::table('blk')->get();
+        return view('blk.dashboard.list_dashboard.blk',  ['listBlk' => $listBlk]);
+    }
+
+    public function detailBlk ($id)
+    {
+        $detail_blk = DB::table('blk')->where('id', $id)->first();
+        return view('blk/dashboard/list_dashboard/detail/detail_blk', compact('detail_blk'));
+    }
+    public function listBerangkat()
+    {   
+        $listPemberangkatan = DB::table('pemberangkatan')->get();
+        return view('blk.dashboard.list_dashboard.pemberangkatan',  ['listPemberangkatan' => $listPemberangkatan]);
+    }
+
+    public function detailBerangkat ($id)
+    {
+        $detail_pemberangkatan = DB::table('pemberangkatan')->where('id', $id)->first();
+        return view('blk/dashboard/list_dashboard/detail/detail_pemberangkatan', compact('detail_pemberangkatan'));
     }
 
     public function statusTki()
