@@ -133,7 +133,7 @@ Route::get('list-total-medical/admin/detail-blk/{id}', 'App\Http\Controllers\Adm
 // Halaman List Total Berangkat - Admin
 Route::get('list-total-berangkat-admin', 'App\Http\Controllers\AdminController@listBerangkat');
 // Halaman Detail Berangkat - Admin
-Route::get('list-total-berangkat/admin/detail-blk/{id}', 'App\Http\Controllers\AdminController@detailBerangkat');
+Route::get('list-total-berangkat/admin/detail-berangkat/{id}', 'App\Http\Controllers\AdminController@detailBerangkat');
 
 // Halaman Status TKI - Admin
 Route::get('status-tki-admin', 'App\Http\Controllers\AdminController@statusTki');
@@ -171,7 +171,7 @@ Route::get('list-total-medical/medical/detail-blk/{id}', 'App\Http\Controllers\M
 // Halaman List Total Berangkat - MedicalCheckup
 Route::get('list-total-berangkat-medical', 'App\Http\Controllers\MedicalCheckupController@listBerangkat');
 // Halaman Detail Berangkat - MedicalCheckup
-Route::get('list-total-berangkat/medical/detail-blk/{id}', 'App\Http\Controllers\MedicalCheckupController@detailBerangkat');
+Route::get('list-total-berangkat/medical/detail-berangkat/{id}', 'App\Http\Controllers\MedicalCheckupController@detailBerangkat');
 
 // Halaman Status TKI - Operator
 Route::get('status-tki-medical', 'App\Http\Controllers\MedicalCheckupController@statusTki');
