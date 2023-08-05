@@ -68,17 +68,17 @@
                                     <td>{{ $item->nama }}</td>
                                     <td>{{ $item->jenis_kelamin }}</td>
                                     <td>{{ $item->alamat }}</td>
-                                    <td>{{ $item->sponsor }}</td>
+                                    <td>{{ $item->sertifikat_kesehatan }}</td>
                                     <td class="text-center">
-                                        @if (isset($item->sertifikat_kesehatan))
-                                            <a href="images/{{ $item->sertifikat_kesehatan }}"
-                                                class="btn btn-success btn-sm" style="color: white;" target="_blank">Lihat
-                                                Foto</a>
-                                        @else
+                                        @if ($item->sertifikat_kesehatan === 'null')
                                             <a href="{{ url('medical-checkup/detail-tki/' . $item->id) }}"
                                                 class="btn btn-success btn-sm" style="color: white;">
                                                 Upload Sertifikat
                                             </a>
+                                        @else
+                                            <a href="images/{{ $item->sertifikat_kesehatan }}"
+                                                class="btn btn-success btn-sm" style="color: white;" target="_blank">Lihat
+                                                Foto</a>
                                         @endif
                                     </td>
 

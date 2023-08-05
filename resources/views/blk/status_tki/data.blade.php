@@ -1,6 +1,55 @@
 @extends('blk.main')
 
 @section('title', 'List TKI')
+
+<style>
+    .progress-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .step {
+        flex: 1;
+        text-align: center;
+        color: #000;
+        /* Warna teks default */
+    }
+
+    .line {
+        flex: 1;
+        height: 3px;
+        background-color: #ccc;
+    }
+
+    /* Merubah warna garis untuk langkah-langkah yang telah selesai */
+    .step:nth-child(-n + 3)~.line {
+        background-color: #39b54a;
+        /* Ganti dengan warna sesuai desain Anda */
+    }
+
+    /* Menampilkan warna yang berbeda untuk langkah saat ini */
+    .step:nth-child({{ $active }}) {
+        color: #39b54a;
+        /* Ganti dengan warna sesuai desain Anda */
+        font-weight: bold;
+    }
+
+    .step.active {
+        font-weight: bold;
+        color: #39b54a;
+        /* Warna teks saat aktif (di-tap) */
+    }
+
+    .step.active {
+        font-weight: bold;
+        color: #39b54a;
+    }
+
+    .step.active span {
+        color: #39b54a;
+    }
+</style>
 @section('breadcrumbs')
     @php
         $iteration = 1;
@@ -14,6 +63,7 @@
                 </div>
             </div>
         </div>
+
         <div class="col-sm-8">
             <div class="page-header float-right">
                 <div class="page-title">
@@ -27,6 +77,43 @@
             </div>
         </div>
     </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="progress-container" style="width: 1000px; margin:20px">
+                    <a class="step" href="{{ url('status-tki-operator/medical') }}">Medical<br><span>1</span></a>
+                    <div class="line"></div>
+                    <a class="step" href="{{ url('status-tki-operator/blk') }}">BLK<br><span>2</span></a>
+                    <div class="line"></div>
+                    <a class="step" href="{{ url('status-tki-operator/validasi') }}">Waiting<br><span>3</span></a>
+                    <div class="line"></div>
+                    <a class="step" href="{{ url('status-tki-operator/hasil-validasi') }}">Approved<br><span>4</span></a>
+                    <div class="line"></div>
+                    <a class="step" href="{{ url('status-tki-operator/berangkat') }}">Berangkat<br><span>5</span></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const steps = document.querySelectorAll('.step');
+
+            steps.forEach(function(step) {
+                step.addEventListener('click', function() {
+                    // Menghapus kelas "active" dari semua langkah
+                    steps.forEach(function(s) {
+                        s.classList.remove('active');
+                    });
+
+                    // Menambahkan kelas "active" ke langkah yang diklik
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
 
 @endsection
 
@@ -69,17 +156,19 @@
                                     <td>{{ $item->alamat }}</td>
                                     <td>{{ $item->sponsor }}</td>
                                     <td>
-                                        @if (isset($item->sertifikat_kesehatan) &&
+                                        @if ($active === 9)
+                                            Berangkat
+                                        @elseif (isset($item->sertifikat_kesehatan) &&
                                                 isset($item->sertifikat_blk) &&
                                                 isset($item->hasil_validasi) &&
                                                 $item->hasil_validasi === 'Approved')
-                                            Approved
+                                            5
                                         @elseif (isset($item->sertifikat_kesehatan) && isset($item->sertifikat_blk))
-                                            Proses Review Admin Apjati
+                                            4
                                         @elseif (isset($item->sertifikat_kesehatan))
-                                            Test BLK
+                                            3
                                         @else
-                                            Periksa kesehatan
+                                            2
                                         @endif
                                     </td>
                                 </tr>
