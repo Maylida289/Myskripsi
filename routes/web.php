@@ -199,8 +199,8 @@ Route::get('list-total-berangkat-blk', 'App\Http\Controllers\BlkController@listB
 // Halaman Detail Berangkat - Blk
 Route::get('list-total-berangkat/blk/detail-blk/{id}', 'App\Http\Controllers\BlkController@detailBerangkat');
 
-// Halaman Status TKI - Operator
-Route::get('status-tki-blk', 'App\Http\Controllers\BlkController@statusTki');
+// Halaman Status TKI - BLK
+Route::get('status-tki-blk/{typeStatus}', 'App\Http\Controllers\BlkController@statusTki');
 
 
 // Login - P3MI
