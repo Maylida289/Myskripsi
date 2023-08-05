@@ -12,6 +12,8 @@
     .step {
         flex: 1;
         text-align: center;
+        color: #000;
+        /* Warna teks default */
     }
 
     .line {
@@ -24,6 +26,28 @@
     .step:nth-child(-n + 3)~.line {
         background-color: #39b54a;
         /* Ganti dengan warna sesuai desain Anda */
+    }
+
+    /* Menampilkan warna yang berbeda untuk langkah saat ini */
+    .step:nth-child({{ $active }}) {
+        color: #39b54a;
+        /* Ganti dengan warna sesuai desain Anda */
+        font-weight: bold;
+    }
+
+    .step.active {
+        font-weight: bold;
+        color: #39b54a;
+        /* Warna teks saat aktif (di-tap) */
+    }
+
+    .step.active {
+        font-weight: bold;
+        color: #39b54a;
+    }
+
+    .step.active span {
+        color: #39b54a;
     }
 </style>
 @section('breadcrumbs')
@@ -67,11 +91,29 @@
                     <a class="step" href="{{ url('status-tki-operator/hasil-validasi') }}">Approved<br><span>4</span></a>
                     <div class="line"></div>
                     <a class="step" href="{{ url('status-tki-operator/berangkat') }}">Berangkat<br><span>5</span></a>
-
                 </div>
+
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const steps = document.querySelectorAll('.step');
+
+            steps.forEach(function(step) {
+                step.addEventListener('click', function() {
+                    // Menghapus kelas "active" dari semua langkah
+                    steps.forEach(function(s) {
+                        s.classList.remove('active');
+                    });
+
+                    // Menambahkan kelas "active" ke langkah yang diklik
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
 
 @endsection
 
