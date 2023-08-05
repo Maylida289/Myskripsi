@@ -14,7 +14,7 @@ class P3miController extends Controller
           // Status Medical
           if($typeStatus === 'medical'){
             $active = 1;
-            $list_p3mi = DB::table('medical_checkup')
+            $list_p3mi = DB::table('validasi_berkas')
             ->whereNull('sertifikat_kesehatan')
             ->get();
             return view('p3mi.dashboard.dashboard', ['list_p3mi' => $list_p3mi, 'active' => $active, 'sponsor' => $sponsor]);
@@ -34,7 +34,7 @@ class P3miController extends Controller
         // Status Approved
         elseif($typeStatus === 'hasil-validasi'){
             $active = 7;
-            $list_p3mi = DB::table('validasi_berkas')->whereNull('berangkat')->get();
+            $list_p3mi = DB::table('validasi_berkas')->whereNotNull('sertifikat_kesehatan')->whereNotNull('sertifikat_blk')->whereNull('berangkat')->get();
              return view('p3mi.dashboard.dashboard', ['list_p3mi' => $list_p3mi, 'active' => $active, 'sponsor' => $sponsor]);
         }
         // Status Berangkat

@@ -100,7 +100,7 @@ class MedicalCheckupController extends Controller
         // Status Medical
         if($typeStatus === 'medical'){
             $active = 1;
-            $statusTki = DB::table('medical_checkup')
+            $statusTki = DB::table('validasi_berkas')
             ->whereNull('sertifikat_kesehatan')
             ->get();
             return view('medical_checkup.status_tki.data', ['statusTki' => $statusTki, 'active' => $active]);
@@ -120,7 +120,7 @@ class MedicalCheckupController extends Controller
         // Status Approved
         elseif($typeStatus === 'hasil-validasi'){
             $active = 7;
-            $statusTki = DB::table('validasi_berkas')->whereNull('berangkat')->get();
+            $statusTki = DB::table('validasi_berkas')->whereNotNull('sertifikat_kesehatan')->whereNotNull('sertifikat_blk')->whereNull('berangkat')->get();
              return view('medical_checkup.status_tki.data', ['statusTki' => $statusTki, 'active' => $active]);
         }
         // Status Berangkat
