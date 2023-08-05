@@ -246,4 +246,4 @@ Route::get('list-total-berangkat-pemberangkatan', 'App\Http\Controllers\Pemberan
 Route::get('list-total-berangkat/pemberangkatan/detail-pemberangkatan/{id}', 'App\Http\Controllers\PemberangkatanController@detailBerangkat');
 
 // Halaman Status TKI - Pemberangkatan
-Route::get('status-tki-pemberangkatan', 'App\Http\Controllers\PemberangkatanController@statusTki');
+Route::get('status-tki-pemberangkatan/{typeStatus}', 'App\Http\Controllers\PemberangkatanController@statusTki');
