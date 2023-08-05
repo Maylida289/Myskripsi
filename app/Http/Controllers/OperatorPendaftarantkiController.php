@@ -65,18 +65,38 @@ class OperatorPendaftarantkiController extends Controller
 
     public function editProcess(Request $request, $id)
     {
-     DB::table('pendaftaran_tki')->where('id', $id)
-     ->update([
-        'nama' => $request->nama ,
-        'jenis_kelamin' => $request->jenis_kelamin,
-        'tempat_lahir' => $request->tempat_lahir,
-        'tgl_lahir' => $request->tgl_lahir,
-        'alamat' => $request->alamat,
-        'agama' => $request->agama,
-        'pendidikan' => $request->pendidikan,
-        'no_tlp' => $request->no_tlp,
-     ]);
-     return redirect('pendaftarantki')->with('status', 'Data TKI berhasil diupdate!');
+    
+        if ($request->hasFile('ktp')) {
+            $ktp = round(microtime(true) * 1000) . '-' . str_replace(' ', '-', $request->file('ktp')->getClientOriginalName());
+            $request->file('ktp')->move(public_path('images'), $ktp);
+            DB::table('pendaftaran_tki')->where('id', $id)
+            ->update([
+                'ktp' => $ktp
+            ]);
+        }
+
+        if ($request->hasFile('ijazah')) {
+            $ijazah = round(microtime(true) * 1000) . '-' . str_replace(' ', '-', $request->file('ijazah')->getClientOriginalName());
+            $request->file('ijazah')->move(public_path('images'), $ijazah);
+            DB::table('pendaftaran_tki')->where('id', $id)
+            ->update([
+                'ijazah' => $ijazah
+            ]);
+        }
+    
+
+        DB::table('pendaftaran_tki')->where('id', $id)
+        ->update([
+            'nama' => $request->nama ,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'tempat_lahir' => $request->tempat_lahir,
+            'tgl_lahir' => $request->tgl_lahir,
+            'alamat' => $request->alamat,
+            'agama' => $request->agama,
+            'pendidikan' => $request->pendidikan,
+            'no_tlp' => $request->no_tlp,
+        ]);
+        return redirect('pendaftarantki')->with('status', 'Data TKI berhasil diupdate!');
     }
 
     public function delete($id)
