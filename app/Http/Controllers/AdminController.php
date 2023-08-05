@@ -118,7 +118,7 @@ class AdminController extends Controller
         // Status Approved
         elseif($typeStatus === 'hasil-validasi'){
             $active = 7;
-            $statusTki = DB::table('hasil_validasi')->whereNull('hasil_validasi')->get();
+            $statusTki = DB::table('validasi_berkas')->whereNull('berangkat')->get();
              return view('admin.status_tki.data', ['statusTki' => $statusTki, 'active' => $active]);
         }
         // Status Berangkat

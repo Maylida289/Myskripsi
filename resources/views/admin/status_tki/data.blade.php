@@ -156,14 +156,15 @@
                                     <td>{{ $item->alamat }}</td>
                                     <td>{{ $item->sponsor }}</td>
                                     <td>
-                                        @if (isset($item->paspor) && isset($item->paspor) && $active === 7)
-                                            Approved
-                                        @elseif (isset($item->paspor) && isset($item->paspor))
+                                        @if ($active === 9)
+                                            Berangkat
+                                        @elseif ($item->berangkat === 'true')
                                             Berangkat
                                         @elseif (isset($item->sertifikat_kesehatan) &&
                                                 isset($item->sertifikat_blk) &&
                                                 isset($item->hasil_validasi) &&
-                                                $item->hasil_validasi === 'Approved')
+                                                $item->hasil_validasi === 'Approved' &&
+                                                $item->berangkat === 'null')
                                             Approved
                                         @elseif (isset($item->sertifikat_kesehatan) && isset($item->sertifikat_blk))
                                             Waiting
