@@ -208,7 +208,7 @@ Route::get('login-p3mi', 'App\Http\Controllers\LoginP3miController@loginP3mi');
 route::post('post-login-p3mi',[LoginP3miController::class,'postlogin'])->name('post-login-p3mi');
 Route::get('logout-p3mi', 'App\Http\Controllers\LoginP3miController@logout');
 //Halaman List TKI - P3MI
-route::get('p3mi/{sponsor}',[P3miController::class,'dashboard']);
+route::get('p3mi/{sponsor}/{typeStatus}',[P3miController::class,'dashboard']);
 
 
 // Login - Pemberangkatan
