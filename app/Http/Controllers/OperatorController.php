@@ -110,10 +110,41 @@ class OperatorController extends Controller
         return view('operator/dashboard/list_dashboard/detail/detail_pemberangkatan', compact('detail_pemberangkatan'));
     }
 
-    public function statusTki()
-    {
-        $statusTki = DB::table('validasi_berkas')->get();
-        return view('operator.status_tki.data', ['statusTki' => $statusTki]);
+    public function statusTki($typeStatus = null)
+    {   
+        // Status Medical
+        if($typeStatus === 'medical'){
+            $statusTki = DB::table('medical_checkup')
+            ->whereNull('sertifikat_kesehatan')
+            ->get();
+            return view('operator.status_tki.data', ['statusTki' => $statusTki]);
+        }
+        // Status Blk
+        elseif($typeStatus === 'blk'){
+            $statusTki = DB::table('blk')->whereNull('sertifikat_blk')->get();
+            return view('operator.status_tki.data', ['statusTki' => $statusTki]);
+        }
+        // Status Waiting
+        elseif($typeStatus === 'validasi'){
+            $statusTki = DB::table('validasi_berkas')->whereNotNull('sertifikat_blk')->whereNull('hasil_validasi')->get();
+            return view('operator.status_tki.data', ['statusTki' => $statusTki]);
+        }
+        // Status Approved
+        elseif($typeStatus === 'hasil-validasi'){
+            $statusTki = DB::table('hasil_validasi')->whereNotNull('hasil_validasi')->get();
+            return view('operator.status_tki.data', ['statusTki' => $statusTki]);
+        }
+        // Status Berangkat
+        elseif($typeStatus === 'berangkat'){
+            $statusTki = DB::table('pemberangkatan')->get();
+            return view('operator.status_tki.data', ['statusTki' => $statusTki]);
+        }
+        // Status Menampilkan semua status
+        else{
+            $statusTki = DB::table('validasi_berkas')->get();
+            return view('operator.status_tki.data', ['statusTki' => $statusTki]);
+        }
+       
     }
 
 }

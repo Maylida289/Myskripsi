@@ -15,18 +15,6 @@ use App\Http\Controllers\P3miController;
 use App\Http\Controllers\PemberangkatanController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-
 // coba routing array assosoatif untuk edit blade tempalate di view
 route::get('/',function() {
     return view ('welcome');
@@ -97,7 +85,9 @@ Route::get('list-total-berangkat-operator', 'App\Http\Controllers\OperatorContro
 Route::get('list-total-berangkat/operator/detail-blk/{id}', 'App\Http\Controllers\OperatorController@detailBerangkat');
 
 // Halaman Status TKI - Operator
-Route::get('status-tki-operator', 'App\Http\Controllers\OperatorController@statusTki');
+Route::get('status-tki-operator/{typeStatus}', 'App\Http\Controllers\OperatorController@statusTki');
+
+
 
 // Login Admin
 Route::get('login-admin', 'App\Http\Controllers\LoginAdminController@loginAdmin');

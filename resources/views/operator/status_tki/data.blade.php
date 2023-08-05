@@ -1,6 +1,31 @@
 @extends('operator.main')
 
 @section('title', 'List TKI')
+
+<style>
+    .progress-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .step {
+        flex: 1;
+        text-align: center;
+    }
+
+    .line {
+        flex: 1;
+        height: 3px;
+        background-color: #ccc;
+    }
+
+    /* Merubah warna garis untuk langkah-langkah yang telah selesai */
+    .step:nth-child(-n + 3)~.line {
+        background-color: #39b54a;
+        /* Ganti dengan warna sesuai desain Anda */
+    }
+</style>
 @section('breadcrumbs')
     @php
         $iteration = 1;
@@ -14,6 +39,7 @@
                 </div>
             </div>
         </div>
+
         <div class="col-sm-8">
             <div class="page-header float-right">
                 <div class="page-title">
@@ -23,6 +49,25 @@
                         </li>
                         <li class="active">List TKI</li>
                     </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="progress-container" style="width: 1000px; margin:20px">
+                    <a class="step" href="{{ url('status-tki-operator/medical') }}">Medical<br><span>1</span></a>
+                    <div class="line"></div>
+                    <a class="step" href="{{ url('status-tki-operator/blk') }}">BLK<br><span>2</span></a>
+                    <div class="line"></div>
+                    <a class="step" href="{{ url('status-tki-operator/validasi') }}">Waiting<br><span>3</span></a>
+                    <div class="line"></div>
+                    <a class="step" href="{{ url('status-tki-operator/hasil-validasi') }}">Approved<br><span>4</span></a>
+                    <div class="line"></div>
+                    <a class="step" href="{{ url('status-tki-operator/berangkat') }}">Berangkat<br><span>5</span></a>
+
                 </div>
             </div>
         </div>
@@ -73,13 +118,13 @@
                                                 isset($item->sertifikat_blk) &&
                                                 isset($item->hasil_validasi) &&
                                                 $item->hasil_validasi === 'Approved')
-                                            Approved
+                                            5
                                         @elseif (isset($item->sertifikat_kesehatan) && isset($item->sertifikat_blk))
-                                            Proses Review Admin Apjati
+                                            4
                                         @elseif (isset($item->sertifikat_kesehatan))
-                                            Test BLK
+                                            3
                                         @else
-                                            Periksa kesehatan
+                                            2
                                         @endif
                                     </td>
                                 </tr>
