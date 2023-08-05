@@ -164,7 +164,7 @@ Route::get('list-total-berangkat-medical', 'App\Http\Controllers\MedicalCheckupC
 Route::get('list-total-berangkat/medical/detail-berangkat/{id}', 'App\Http\Controllers\MedicalCheckupController@detailBerangkat');
 
 // Halaman Status TKI - Operator
-Route::get('status-tki-medical', 'App\Http\Controllers\MedicalCheckupController@statusTki');
+Route::get('status-tki-medical/{typeStatus}', 'App\Http\Controllers\MedicalCheckupController@statusTki');
 
 
 // Login BLK

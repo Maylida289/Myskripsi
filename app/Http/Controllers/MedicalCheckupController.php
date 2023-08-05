@@ -120,7 +120,7 @@ class MedicalCheckupController extends Controller
         // Status Approved
         elseif($typeStatus === 'hasil-validasi'){
             $active = 7;
-            $statusTki = DB::table('hasil_validasi')->whereNotNull('hasil_validasi')->get();
+            $statusTki = DB::table('validasi_berkas')->whereNull('berangkat')->get();
              return view('medical_checkup.status_tki.data', ['statusTki' => $statusTki, 'active' => $active]);
         }
         // Status Berangkat

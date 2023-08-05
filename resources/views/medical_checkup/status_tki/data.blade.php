@@ -82,15 +82,15 @@
         <div class="row">
             <div class="col-sm-8">
                 <div class="progress-container" style="width: 1000px; margin:20px">
-                    <a class="step" href="{{ url('status-tki-operator/medical') }}">Medical<br><span>1</span></a>
+                    <a class="step" href="{{ url('status-tki-medical/medical') }}">Medical<br><span>1</span></a>
                     <div class="line"></div>
-                    <a class="step" href="{{ url('status-tki-operator/blk') }}">BLK<br><span>2</span></a>
+                    <a class="step" href="{{ url('status-tki-medical/blk') }}">BLK<br><span>2</span></a>
                     <div class="line"></div>
-                    <a class="step" href="{{ url('status-tki-operator/validasi') }}">Waiting<br><span>3</span></a>
+                    <a class="step" href="{{ url('status-tki-medical/validasi') }}">Waiting<br><span>3</span></a>
                     <div class="line"></div>
-                    <a class="step" href="{{ url('status-tki-operator/hasil-validasi') }}">Approved<br><span>4</span></a>
+                    <a class="step" href="{{ url('status-tki-medical/hasil-validasi') }}">Approved<br><span>4</span></a>
                     <div class="line"></div>
-                    <a class="step" href="{{ url('status-tki-operator/berangkat') }}">Berangkat<br><span>5</span></a>
+                    <a class="step" href="{{ url('status-tki-medical/berangkat') }}">Berangkat<br><span>5</span></a>
                 </div>
 
             </div>
@@ -158,18 +158,22 @@
                                     <td>
                                         @if ($active === 9)
                                             Berangkat
+                                        @elseif ($item->berangkat === 'true')
+                                            Berangkat
                                         @elseif (isset($item->sertifikat_kesehatan) &&
                                                 isset($item->sertifikat_blk) &&
                                                 isset($item->hasil_validasi) &&
-                                                $item->hasil_validasi === 'Approved')
-                                            5
+                                                $item->hasil_validasi === 'Approved' &&
+                                                $item->berangkat === 'null')
+                                            Approved
                                         @elseif (isset($item->sertifikat_kesehatan) && isset($item->sertifikat_blk))
-                                            4
+                                            Waiting
                                         @elseif (isset($item->sertifikat_kesehatan))
-                                            3
+                                            BLK
                                         @else
-                                            2
+                                            Medical
                                         @endif
+
                                     </td>
                                 </tr>
                                 @php
