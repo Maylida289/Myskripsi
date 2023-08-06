@@ -162,9 +162,8 @@
                                             Berangkat
                                         @elseif (isset($item->sertifikat_kesehatan) &&
                                                 isset($item->sertifikat_blk) &&
-                                                isset($item->hasil_validasi) &&
                                                 $item->hasil_validasi === 'Approved' &&
-                                                $item->berangkat === 'null')
+                                                !isset($item->berangkat))
                                             Approved
                                         @elseif (isset($item->sertifikat_kesehatan) && isset($item->sertifikat_blk))
                                             Waiting

@@ -110,7 +110,7 @@ class PemberangkatanController extends Controller
         // Status Medical
         if($typeStatus === 'medical'){
             $active = 1;
-            $statusTki = DB::table('medical_checkup')
+            $statusTki = DB::table('validasi_berkas')
             ->whereNull('sertifikat_kesehatan')
             ->get();
             return view('pemberangkatan.status_tki.data', ['statusTki' => $statusTki, 'active' => $active]);
@@ -118,19 +118,24 @@ class PemberangkatanController extends Controller
         // Status Blk
         elseif($typeStatus === 'blk'){
             $active = 3;
-            $statusTki = DB::table('blk')->whereNull('sertifikat_blk')->get();
+            $statusTki = DB::table('validasi_berkas')->whereNotNull('sertifikat_kesehatan')->whereNull('sertifikat_blk')->get();
             return view('pemberangkatan.status_tki.data', ['statusTki' => $statusTki, 'active' => $active]);
         }
         // Status Waiting
         elseif($typeStatus === 'validasi'){
             $active = 5;
-            $statusTki = DB::table('validasi_berkas')->whereNotNull('sertifikat_blk')->whereNull('hasil_validasi')->get();
+            $statusTki = DB::table('validasi_berkas')
+            ->whereNotNull('sertifikat_blk')
+            ->where('hasil_validasi', 'null')->whereNull('berangkat')
+            ->get();
              return view('pemberangkatan.status_tki.data', ['statusTki' => $statusTki, 'active' => $active]);
         }
         // Status Approved
         elseif($typeStatus === 'hasil-validasi'){
             $active = 7;
-            $statusTki = DB::table('validasi_berkas')->whereNull('berangkat')->get();
+            $statusTki = DB::table('validasi_berkas')->where('hasil_validasi', 'Approved')
+            ->whereNotNull('sertifikat_blk')->whereNull('berangkat')
+            ->get();
              return view('pemberangkatan.status_tki.data', ['statusTki' => $statusTki, 'active' => $active]);
         }
         // Status Berangkat
