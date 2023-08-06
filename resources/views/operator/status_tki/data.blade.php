@@ -73,7 +73,7 @@
                                                 isset($item->sertifikat_blk) &&
                                                 isset($item->hasil_validasi) &&
                                                 $item->hasil_validasi === 'Approved')
-                                            Approved
+                                            Approved  Document
                                         @elseif (isset($item->sertifikat_kesehatan) && isset($item->sertifikat_blk))
                                             Proses Review Admin Apjati
                                         @elseif (isset($item->sertifikat_kesehatan))
