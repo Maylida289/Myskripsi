@@ -172,6 +172,8 @@
                                                 Waiting
                                             @elseif (isset($item->sertifikat_kesehatan))
                                                 BLK
+                                            @elseif($item->hasil_validasi === 'null' && $item->hasil_validasi !== 'Approved')
+                                                Reject
                                             @else
                                                 Medical
                                             @endif
