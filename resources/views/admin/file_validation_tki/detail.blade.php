@@ -174,7 +174,7 @@
                                         <a href="{{ url('validasi-tki/approved/' . $detail_tki->id) }}"
                                             class="btn btn-success btn-sm d-flex justify-content-center align-items-center"
                                             style="color: white; width: 150px;">
-                                            Approved
+                                            Approved Document
                                         </a>
                                         <a onclick="openPopup()"
                                             class="btn btn-danger btn-sm d-flex justify-content-center align-items-center"

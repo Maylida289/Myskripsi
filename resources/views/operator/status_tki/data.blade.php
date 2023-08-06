@@ -164,7 +164,7 @@
                                                 isset($item->sertifikat_blk) &&
                                                 $item->hasil_validasi === 'Approved' &&
                                                 !isset($item->berangkat))
-                                            Approved
+                                            Approved Document
                                         @elseif (isset($item->sertifikat_kesehatan) && isset($item->sertifikat_blk))
                                             Waiting
                                         @elseif (isset($item->sertifikat_kesehatan))

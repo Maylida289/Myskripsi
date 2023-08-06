@@ -43,8 +43,7 @@
                         <a href="{{ url('operator') }}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <li>
-                        <a href="{{ url('pendaftarantki') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>Pendaftaran
-                            TKI </a>
+                        <a href="{{ url('pendaftarantki') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>Pengelolaan TKI </a>
                     </li>
                     <li>
                         <a href="{{ url('status-tki-operator/all') }}"> <i
@@ -53,8 +52,7 @@
                     </li>
 
                     <li>
-                        <a href="{{ url('list-p3mi-operator') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>
-                            Pengelolaan P3MI </a>
+                        <a href="{{ url('list-p3mi-operator') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>Pengelolaan P3MI </a>
                     </li>
                     <li>
                         <a href="{{ url('validasi-tki-operator') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>
