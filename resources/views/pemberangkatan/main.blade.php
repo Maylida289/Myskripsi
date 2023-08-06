@@ -47,7 +47,7 @@
                             TKI </a>
                     </li>
                     <li>
-                        <a href="{{ url('status-tki-pemberangkatan') }}"> <i
+                        <a href="{{ url('status-tki-pemberangkatan/all') }}"> <i
                                 class="menu-icon fa fa-puzzle-piece"></i>Status
                             TKI </a>
                     </li>

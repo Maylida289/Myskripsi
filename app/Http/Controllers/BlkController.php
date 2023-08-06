@@ -101,9 +101,46 @@ class BlkController extends Controller
         return view('blk/dashboard/list_dashboard/detail/detail_pemberangkatan', compact('detail_pemberangkatan'));
     }
 
-    public function statusTki()
-    {
-        $statusTki = DB::table('validasi_berkas')->get();
-        return view('blk.status_tki.data', ['statusTki' => $statusTki]);
+    public function statusTki($typeStatus = null)
+    {   
+        // Status Medical
+        if($typeStatus === 'medical'){
+            $active = 1;
+            $statusTki = DB::table('validasi_berkas')
+            ->whereNull('sertifikat_kesehatan')
+            ->get();
+            return view('blk.status_tki.data', ['statusTki' => $statusTki, 'active' => $active]);
+        }
+        // Status Blk
+        elseif($typeStatus === 'blk'){
+            $active = 3;
+            $statusTki = DB::table('validasi_berkas')->whereNotNull('sertifikat_kesehatan')->whereNull('sertifikat_blk')->get();
+            return view('blk.status_tki.data', ['statusTki' => $statusTki, 'active' => $active]);
+        }
+        // Status Waiting
+        elseif($typeStatus === 'validasi'){
+            $active = 5;
+            $statusTki = DB::table('validasi_berkas')->whereNotNull('sertifikat_blk')->get();
+             return view('blk.status_tki.data', ['statusTki' => $statusTki, 'active' => $active]);
+        }
+        // Status Approved
+        elseif($typeStatus === 'hasil-validasi'){
+            $active = 7;
+            $statusTki = DB::table('validasi_berkas')->whereNotNull('sertifikat_kesehatan')->whereNotNull('sertifikat_blk')->whereNotNull('berangkat')->get();
+             return view('blk.status_tki.data', ['statusTki' => $statusTki, 'active' => $active]);
+        }
+        // Status Berangkat
+        elseif($typeStatus === 'berangkat'){
+            $active = 9;
+            $statusTki = DB::table('pemberangkatan')->get();
+             return view('blk.status_tki.data', ['statusTki' => $statusTki, 'active' => $active]);
+        }
+        // Status Menampilkan semua status
+        else{
+            $active = 0;
+            $statusTki = DB::table('validasi_berkas')->get();
+             return view('blk.status_tki.data', ['statusTki' => $statusTki, 'active' => $active]);
+        }
+       
     }
 }

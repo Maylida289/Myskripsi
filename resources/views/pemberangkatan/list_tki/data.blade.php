@@ -74,7 +74,7 @@
                                         <td>{{ $item->nama }}</td>
                                         <td>{{ $item->alamat }}</td>
                                         <td>{{ $item->sponsor }}</td>
-                                        @if (isset($item->paspor) && isset($item->visa))
+                                        @if ($item->paspor !== 'null' && $item->visa !== 'null')
                                             <td class="text-center"><i class="fa fa-check-circle" style="color: green;"></i>
                                             </td>
                                         @else

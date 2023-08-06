@@ -15,18 +15,6 @@ use App\Http\Controllers\P3miController;
 use App\Http\Controllers\PemberangkatanController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-
 // coba routing array assosoatif untuk edit blade tempalate di view
 route::get('/',function() {
     return view ('welcome');
@@ -97,7 +85,9 @@ Route::get('list-total-berangkat-operator', 'App\Http\Controllers\OperatorContro
 Route::get('list-total-berangkat/operator/detail-blk/{id}', 'App\Http\Controllers\OperatorController@detailBerangkat');
 
 // Halaman Status TKI - Operator
-Route::get('status-tki-operator', 'App\Http\Controllers\OperatorController@statusTki');
+Route::get('status-tki-operator/{typeStatus}', 'App\Http\Controllers\OperatorController@statusTki');
+
+
 
 // Login Admin
 Route::get('login-admin', 'App\Http\Controllers\LoginAdminController@loginAdmin');
@@ -136,7 +126,7 @@ Route::get('list-total-berangkat-admin', 'App\Http\Controllers\AdminController@l
 Route::get('list-total-berangkat/admin/detail-berangkat/{id}', 'App\Http\Controllers\AdminController@detailBerangkat');
 
 // Halaman Status TKI - Admin
-Route::get('status-tki-admin', 'App\Http\Controllers\AdminController@statusTki');
+Route::get('status-tki-admin/{typeStatus}', 'App\Http\Controllers\AdminController@statusTki');
 
 
 // Login Medical Checkup
@@ -174,7 +164,7 @@ Route::get('list-total-berangkat-medical', 'App\Http\Controllers\MedicalCheckupC
 Route::get('list-total-berangkat/medical/detail-berangkat/{id}', 'App\Http\Controllers\MedicalCheckupController@detailBerangkat');
 
 // Halaman Status TKI - Operator
-Route::get('status-tki-medical', 'App\Http\Controllers\MedicalCheckupController@statusTki');
+Route::get('status-tki-medical/{typeStatus}', 'App\Http\Controllers\MedicalCheckupController@statusTki');
 
 
 // Login BLK
@@ -209,8 +199,8 @@ Route::get('list-total-berangkat-blk', 'App\Http\Controllers\BlkController@listB
 // Halaman Detail Berangkat - Blk
 Route::get('list-total-berangkat/blk/detail-blk/{id}', 'App\Http\Controllers\BlkController@detailBerangkat');
 
-// Halaman Status TKI - Operator
-Route::get('status-tki-blk', 'App\Http\Controllers\BlkController@statusTki');
+// Halaman Status TKI - BLK
+Route::get('status-tki-blk/{typeStatus}', 'App\Http\Controllers\BlkController@statusTki');
 
 
 // Login - P3MI
@@ -218,7 +208,7 @@ Route::get('login-p3mi', 'App\Http\Controllers\LoginP3miController@loginP3mi');
 route::post('post-login-p3mi',[LoginP3miController::class,'postlogin'])->name('post-login-p3mi');
 Route::get('logout-p3mi', 'App\Http\Controllers\LoginP3miController@logout');
 //Halaman List TKI - P3MI
-route::get('p3mi/{sponsor}',[P3miController::class,'dashboard']);
+route::get('p3mi/{sponsor}/{typeStatus}',[P3miController::class,'dashboard']);
 
 
 // Login - Pemberangkatan
@@ -256,4 +246,4 @@ Route::get('list-total-berangkat-pemberangkatan', 'App\Http\Controllers\Pemberan
 Route::get('list-total-berangkat/pemberangkatan/detail-pemberangkatan/{id}', 'App\Http\Controllers\PemberangkatanController@detailBerangkat');
 
 // Halaman Status TKI - Pemberangkatan
-Route::get('status-tki-pemberangkatan', 'App\Http\Controllers\PemberangkatanController@statusTki');
+Route::get('status-tki-pemberangkatan/{typeStatus}', 'App\Http\Controllers\PemberangkatanController@statusTki');
