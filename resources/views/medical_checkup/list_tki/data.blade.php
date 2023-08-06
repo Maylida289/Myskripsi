@@ -68,7 +68,7 @@
                                     <td>{{ $item->nama }}</td>
                                     <td>{{ $item->jenis_kelamin }}</td>
                                     <td>{{ $item->alamat }}</td>
-                                    <td>{{ $item->sertifikat_kesehatan }}</td>
+                                    <td>{{ $item->sponsor }}</td>
                                     <td class="text-center">
                                         @if ($item->sertifikat_kesehatan === 'null')
                                             <a href="{{ url('medical-checkup/detail-tki/' . $item->id) }}"

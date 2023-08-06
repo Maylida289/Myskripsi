@@ -114,19 +114,19 @@ class BlkController extends Controller
         // Status Blk
         elseif($typeStatus === 'blk'){
             $active = 3;
-            $statusTki = DB::table('blk')->whereNull('sertifikat_blk')->get();
+            $statusTki = DB::table('validasi_berkas')->whereNotNull('sertifikat_kesehatan')->whereNull('sertifikat_blk')->get();
             return view('blk.status_tki.data', ['statusTki' => $statusTki, 'active' => $active]);
         }
         // Status Waiting
         elseif($typeStatus === 'validasi'){
             $active = 5;
-            $statusTki = DB::table('validasi_berkas')->whereNotNull('sertifikat_blk')->whereNull('hasil_validasi')->get();
+            $statusTki = DB::table('validasi_berkas')->whereNotNull('sertifikat_blk')->get();
              return view('blk.status_tki.data', ['statusTki' => $statusTki, 'active' => $active]);
         }
         // Status Approved
         elseif($typeStatus === 'hasil-validasi'){
             $active = 7;
-            $statusTki = DB::table('validasi_berkas')->whereNotNull('sertifikat_kesehatan')->whereNotNull('sertifikat_blk')->whereNull('berangkat')->get();
+            $statusTki = DB::table('validasi_berkas')->whereNotNull('sertifikat_kesehatan')->whereNotNull('sertifikat_blk')->whereNotNull('berangkat')->get();
              return view('blk.status_tki.data', ['statusTki' => $statusTki, 'active' => $active]);
         }
         // Status Berangkat
